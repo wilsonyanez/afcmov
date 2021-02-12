@@ -1,0 +1,52 @@
+﻿/* ****************************************************************** */
+/* **************** Actualización de Centos 6.4 a 6.5 *************** */
+/* ****************************************************************** */
+Revisar versión de Centos:
+[root@tecmint ~]# cat /etc/redhat-release
+CentOS release 6.4 (Final)
+
+Revisar la lista de actualizaciones disponibles, se supone que se debe elegir, cuál paquete actualizar
+[root@tecmint ~]# yum list updates
+
+Se debe cambiar al yum repo al CentOS 6.5 Vault entonces el yum se descargará lo que se requiere 
+http://vault.centos.org/6.5
+
+/* ****************************************************************** */
+/* **************** Actualización de Centos 6.4 a 6.5 *************** */
+/* ****************************************************************** */
+https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-6/
+
+
+Revisar versión de Centos:
+[root@tecmint ~]# cat /etc/redhat-release
+CentOS release 6.4 (Final)
+
+Revisar la lista de actualizaciones disponibles, se supone que se debe elegir, cuál paquete actualizar
+[root@tecmint ~]# yum list updates
+
+Se debe cambiar al yum repo al CentOS 6.5 Vault entonces el yum se descargará lo que se requiere 
+http://vault.centos.org/6.5
+
+cat /etc/redhat-release
+
+To check your hostname run:
+hostname
+hostname -f
+
+Update your system:
+sudo yum update
+
+
+Install MySQL and tell it which runlevels to start on:
+sudo yum install mysql-server
+sudo /sbin/chkconfig --levels 235 mysqld on
+
+Then to start the MySQL server:
+sudo service mysqld start
+
+Run the mysql_secure_installation script to address several security concerns in a default MySQL installation
+sudo mysql_secure_installation
+
+
+mysql -u root -p
+mysql –u root -p sirusafc < sirus_pruebas_30082018.sql

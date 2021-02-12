@@ -1,0 +1,78 @@
+﻿/* ************************************************************************ */
+/* ************************ CONFIGURAR: iptables ************************** */
+/* ************************************************************************ */
+sudo iptables -L
+
+Adicionar esta línea, que permite tráfico de borde para los servicios que se requiere Para conexiones remotas, habilitar el SSH
+sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+Para conexiones remotas al servidor de base de datos Postgres habilitar el puerto 80
+sudo iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
+
+Para conexiones remotas al servidor de aplicaciones wildfly habilitar el puerto 9990
+sudo iptables -A INPUT -p tcp --dport 9990 -j ACCEPT
+
+Después de adicionar las reglas puede definir las otras cadenas seleccionando DROP o ACCEPT
+sudo iptables -P INPUT DROP
+sudo iptables -P INPUT ACCEPT
+
+Con el siguiente comando, se debe reiniciar el servidor para que todas las configuraciones de iptables
+puedan ser aplicadas. Por esta razón, guardar las reglas a un archivo.
+
+sudo iptables-save > /etc/iptables/rules.v4
+
+/* ************************************************************************ */
+/* ************************* IPTABLES: configurar ************************* */
+/* ************************************************************************ */
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04
+
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -F
+
+sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
+sudo iptables -I INPUT 1 -i lo -j ACCEPT
+
+sudo iptables -P INPUT ACCEPT
+sudo iptables -A INPUT -j DROP
+sudo iptables -D INPUT -j DROP
+
+sudo iptables -L --line-numbers
+
+Guardar:
+sudo apt-get update
+sudo apt-get install iptables-persistent
+
+Actualizar:
+sudo invoke-rc.d iptables-persistent save
+
+Esto te muestra los puertos abiertos en un linux, saber el ip real, si esta abierto el socket.
+netstat -nap | grep LIST | grep ^tcp
+
+Esto te muestra los puertos abiertos en un Windows, saber el ip real, si esta abierto el socket.
+netstat -nao o -no | more
+
+postgres.conf
+
+El comando siguiente ejecutado desde la consola, determina cuáles puertos están escuchando por conexiones TCP desde la red:
+sudo nmap -sT -O localhost
+
+
+Esta salida muestra que el sistema está ejecutando portmap debido a la presencia del servicio sunrpc. Sin embargo, existe también un servicio misterioso en el puerto 834. Para verificar si el puerto está asociado con la lista oficial de servicios conocidos, escriba: 
+cat /etc/services | grep 834
+
+cat /etc/services | grep 5432
+
+Luego, puede verificar por información sobre el puerto usando netstat o lsof. Para verificar el puerto 834 usando netstat, utilice el comando siguiente
+netstat -anp | grep 834
+
+netstat -anp | grep 5432
+
+service postgresql restart
+systemctl restart postgresql.service
+psql -h 192.168.56.8 -U afc -d afc
+

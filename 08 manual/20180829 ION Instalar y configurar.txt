@@ -1,0 +1,378 @@
+﻿/* ************** */
+/* Instalar ionic */
+/* ************** */
+Aplicaciones híbridas, tienen ventajas como la velocidad de desarrollo, debido que con un único código, se 
+genera aplicaciones para todas las plataformas: Android, iOS, Windows Phone, Etc. Hay que crear la aplicación
+nativa de cada plataforma con un visor web e incluir el código desarrollado.
+
+Tiene integrado Cordova (PhoneGap), que permite el acceso a características nativas de los dispositivos. Es 
+decir, desde el código web podremos hacer uso de los sensores del dispositivo como GPS, cámara, acelerómetros,
+brújula, etc. o incluso opciones de almacenamiento o la agenda de contactos.
+
+
+Instalar Ionic:
+$ sudo npm install -g cordova ionic
+En windows quitar el "sudo"
+
+Resultado:
+
+C:\App\nodejs>npm install -g cordova ionic
+npm WARN deprecated hoek@2.16.3: The major version is no longer supported. Pleas
+e update to 4.x or newer
+npm WARN deprecated socks@1.1.10: If using 2.x branch, please upgrade to at leas
+t 2.1.6 to avoid a serious bug with socket data flow and an import issue introdu
+ced in 2.1.0
+C:\Users\Wilson\AppData\Roaming\npm\cordova -> C:\Users\Wilson\AppData\Roaming\n
+pm\node_modules\cordova\bin\cordova
+C:\Users\Wilson\AppData\Roaming\npm\ionic -> C:\Users\Wilson\AppData\Roaming\npm
+\node_modules\ionic\bin\ionic
++ cordova@8.0.0
++ ionic@4.1.1
+added 676 packages from 498 contributors in 142.653s
+
+C:\App\nodejs>ionic --version
+4.1.1
+
+LINUX
+$ sudo npm install -g gulp
+$ sudo npm install -g bower
+$ sudo gem install sass
+
+WINDOWS
+npm install -g gulp
+
+npm WARN deprecated gulp-util@3.0.8: gulp-util is deprecated - replace it, follo
+wing the guidelines at https://medium.com/gulpjs/gulp-util-ca3b1f9f9ac5
+npm WARN deprecated graceful-fs@3.0.11: please upgrade to graceful-fs 4 for comp
+atibility with current and future versions of Node.js
+npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher
+ to avoid a RegExp DoS issue
+npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher
+ to avoid a RegExp DoS issue
+npm WARN deprecated graceful-fs@1.2.3: please upgrade to graceful-fs 4 for compa
+tibility with current and future versions of Node.js
+C:\Users\Wilson\AppData\Roaming\npm\gulp -> C:\Users\Wilson\AppData\Roaming\npm\
+node_modules\gulp\bin\gulp.js
++ gulp@3.9.1
+added 253 packages from 162 contributors in 21.106s
+
+C:\App\nodejs>gulp --version
+[10:41:01] CLI version 3.9.1
+
+
+https://bower.io/
+
+npm install -g bower
+
+npm WARN deprecated bower@1.8.4: We don't recommend using Bower for new projects
+. Please consider Yarn and Webpack or Parcel. You can read how to migrate legacy
+ project here: https://bower.io/blog/2017/how-to-migrate-away-from-bower/
+C:\Users\Wilson\AppData\Roaming\npm\bower -> C:\Users\Wilson\AppData\Roaming\npm
+\node_modules\bower\bin\bower
++ bower@1.8.4
+added 1 package from 1 contributor in 31.953s
+
+
+C:\App\nodejs>bower --version
+1.8.4
+
+
+http://sass-lang.com/install
+
+-> no funciona: gem install sass
+
+npm install -g sass
+C:\Users\Wilson\AppData\Roaming\npm\sass -> C:\Users\Wilson\AppData\Roaming\npm\
+node_modules\sass\sass.js
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\sas
+s\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"}
+)
+
++ sass@1.13.0
+added 140 packages from 107 contributors in 12.349s
+
+
+C:\App\nodejs>sass --version
+1.13.0 compiled with dart2js 2.0.0
+
+
+Actualizar Ionic:
+ionic lib update
+
+Luego de instalar los paquetes previos, para actualizar, se ejecuta el siguiente comando:
+https://www.thepolyglotdeveloper.com/2014/10/updating-ionic-framework-project-cli/
+sudo npm install -g cordova
+
+Se supone que con este todo será actualizado.
+
+C:\App\nodejs>npm install -g cordova
+npm WARN deprecated hoek@2.16.3: The major version is no longer supported. Pleas
+e update to 4.x or newer
+C:\Users\Wilson\AppData\Roaming\npm\cordova -> C:\Users\Wilson\AppData\Roaming\n
+pm\node_modules\cordova\bin\cordova
++ cordova@8.0.0
+updated 1 package in 39.037s
+
+C:\App\nodejs>cordova --version
+? May Cordova anonymously report usage statistics to improve the tool over time?
+ Yes
+
+Thanks for opting into telemetry to help us improve cordova.
+8.0.0
+
+C:\App\nodejs>npm install npm@latest -g
+C:\Users\Wilson\AppData\Roaming\npm\npx -> C:\Users\Wilson\AppData\Roaming\npm\n
+ode_modules\npm\bin\npx-cli.js
+C:\Users\Wilson\AppData\Roaming\npm\npm -> C:\Users\Wilson\AppData\Roaming\npm\n
+ode_modules\npm\bin\npm-cli.js
++ npm@6.4.0
+added 391 packages from 763 contributors in 68.392s
+
+C:\App\nodejs>npm --version
+6.4.0
+
+C:\App\nodejs>node --version
+v10.9.0
+
+C:\App\nodejs>node -p process.versions
+{ http_parser: '2.8.0',
+  node: '10.9.0',
+  v8: '6.8.275.24-node.14',
+  uv: '1.22.0',
+  zlib: '1.2.11',
+  ares: '1.14.0',
+  modules: '64',
+  nghttp2: '1.32.0',
+  napi: '3',
+  openssl: '1.1.0i',
+  icu: '62.1',
+  unicode: '11.0',
+  cldr: '33.1',
+  tz: '2018e' }
+
+
+C:\App\nodejs>npm install npm@latest -g
+C:\Users\Wilson\AppData\Roaming\npm\npx -> C:\Users\Wilson\AppData\Roaming\npm\n
+ode_modules\npm\bin\npx-cli.js
+C:\Users\Wilson\AppData\Roaming\npm\npm -> C:\Users\Wilson\AppData\Roaming\npm\n
+ode_modules\npm\bin\npm-cli.js
++ npm@6.4.0
+added 391 packages from 763 contributors in 68.392s
+
+C:\App\nodejs>cordova --version
+8.0.0
+
+C:\App\nodejs>ionic --version
+4.1.1
+
+C:\App\nodejs>npm --version
+6.4.0
+
+C:\App\nodejs>node --version
+v10.9.0
+
+C:\App\nodejs>node -p process.versions
+{ http_parser: '2.8.0',
+  node: '10.9.0',
+  v8: '6.8.275.24-node.14',
+  uv: '1.22.0',
+  zlib: '1.2.11',
+  ares: '1.14.0',
+  modules: '64',
+  nghttp2: '1.32.0',
+  napi: '3',
+  openssl: '1.1.0i',
+  icu: '62.1',
+  unicode: '11.0',
+  cldr: '33.1',
+  tz: '2018e' }
+
+C:\App\nodejs>node -p process.platform
+win32
+
+C:\App\nodejs>node -p process.arch
+x64
+
+C:\App\nodejs>node -p "require('node-sass').info"
+
+
+/* ******************************************** */
+/* ***************** Proyecto ***************** */
+/* ******************************************** */
+Crear proyecto:
+Eje: ionic start myApp blank
+Exe:
+Blanco:
+ionic start vrSirusMovilRep blank
+Tabulador:
+ionic start vrSirusMovilRep tabs
+Menus:
+ionic start vrSirusMovilRep sidemenu
+
+Incluir Plataforma:
+Eje: ionic platform add <nombre-de-la-plataforma>
+Exe: ionic platform add android
+Exe: ionic platform add ios
+
+Para ver un listado de las plataformas instaladas y las disponibles simplemente tenéis que
+ejecutar:
+$ ionic platform
+
+
+
+
+/* ******************************************** */
+/* ************** Crear Proyecto ************** */
+/* ******************************************** */
+
+C:\App>ionic start wyApp
+
+Let's pick the perfect starter template!
+
+Starter templates are ready-to-go Ionic apps that come packed with everything
+you need to build your app. To bypass this prompt next time, supply template,
+the second argument to ionic start.
+
+? Starter template: (Use arrow keys)
+> tabs     | A starting project with a simple tabbed interface
+  blank    | A blank starter project
+? Starter template:
+  tabs     | A starting project with a simple tabbed interface
+> blank    | A blank starter project
+? Starter template:
+  tabs     | A starting project with a simple tabbed interface
+  blank    | A blank starter project
+? Starter template:
+  blank    | A blank starter project
+  sidemenu | A starting project with a side menu with navigation in the content
+? Starter template: super
+V Preparing directory .\wyApp - done!
+V Downloading and extracting super starter - done!
+? Integrate your new app with Cordova to target native iOS and Android? Yes
+> ionic integrations enable cordova --quiet
+[INFO] Downloading integration cordova
+[INFO] Copying integrations files to project
+[OK] Integration cordova added!
+
+Installing dependencies may take several minutes.
+
+     *   IONIC  DEVAPP   *
+
+ Speed up development with the Ionic DevApp, our fast, on-device testing mobile
+app
+
+  -     Test on iOS and Android without Native SDKs
+  -     LiveReload for instant style and JS updates
+
+ -->    Install DevApp: https://bit.ly/ionic-dev-app    <--
+
+────────────────────────────────────────────────────────────
+
+> npm i
+npm WARN deprecated browserslist@2.11.3: Browserslist 2 could fail on reading Br
+owserslist >3.0 config used in other tools.
+npm WARN deprecated hoek@2.16.3: The major version is no longer supported. Pleas
+e update to 4.x or newer
+
+> node-sass@4.9.0 install C:\App\wyApp\node_modules\node-sass
+> node scripts/install.js
+
+Cached binary found at C:\Users\Wilson\AppData\Roaming\npm-cache\node-sass\4.9.0
+\win32-x64-64_binding.node
+
+> uglifyjs-webpack-plugin@0.4.6 postinstall C:\App\wyApp\node_modules\uglifyjs-w
+ebpack-plugin
+> node lib/post_install.js
+
+
+> node-sass@4.9.0 postinstall C:\App\wyApp\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at C:\App\wyApp\node_modules\node-sass\vendor\win32-x64-64\binding.
+node
+Testing binary
+Binary is fine
+npm notice created a lockfile as package-lock.json. You should commit this file.
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\fse
+vents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"}
+)
+
+added 713 packages from 659 contributors and audited 3526 packages in 46.2s
+found 0 vulnerabilities
+
+
+     *   IONIC  PRO   *
+
+ Supercharge your Ionic development with the Ionic Pro SDK
+
+  -     Track runtime errors in real-time, back to your original TypeScript
+  -    Push remote updates and skip the app store queue
+
+ Learn more about Ionic Pro: https://ionicframework.com/pro
+
+────────────────────────────────────────────────────────────
+
+? Install the free Ionic Pro SDK and connect your app? (Y/n) Y
+? Install the free Ionic Pro SDK and connect your app? Yes
+> npm i --save -E @ionic/pro
+npm WARN @ionic/pro@2.0.3 requires a peer of cordova-plugin-ionic@^5.0.0 but non
+e is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\fse
+vents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"}
+)
+
++ @ionic/pro@2.0.3
+added 1 package from 1 contributor and audited 3527 packages in 9.471s
+found 0 vulnerabilities
+
+> ionic link --name wyApp
+Log into your Ionic Pro account
+
+If you don't have one yet, create yours by running: ionic signup
+? Email: wilsonyanez@hotmail.com
+? Password: ********
+[ERROR] Incorrect email or password.
+
+C:\App>ionic signup
+[OK] Launched signup form in your browser!
+
+C:\App>
+
+
+
+https://dashboard.ionicframework.com/signup
+Wtyj#as21
+
+
+
+Instalación de xampp:
+https://bitnami.com/stack/xampp?utm_source=bitnami&utm_medium=installer&utm_campaign=XAMPP%2BInstaller
+
+Installing dependencies may take several minutes.
+     *   IONIC  DEVAPP   *
+ Speed up development with the Ionic DevApp, our fast, on-device testing mobile
+app
+
+  -     Test on iOS and Android without Native SDKs
+  -     LiveReload for instant style and JS updates
+
+ -->    Install DevApp: https://bit.ly/ionic-dev-app    <--
+
+────────────────────────────────────────────────────────────
+
+> npm i
+npm WARN registry Unexpected warning for https://registry.npmjs.org/: Miscellane
+ous Warning ECONNRESET: request to https://registry.npmjs.org/@angular%2fanimati
+ons failed, reason: read ECONNRESET
+npm WARN registry Using stale package data from https://registry.npmjs.org/ due
+to a request error during revalidation.
+[ .................] \ fetchMetadata: sill pacote range manifest for express@^4
+
+https://registry.npmjs.org/@angular%2fanimations

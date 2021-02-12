@@ -1,0 +1,100 @@
+﻿+----------------------------------------------------------+
+| Se descarga la Base de Datos Postgres:                   |
++----------------------------------------------------------+
+sudo apt-get --purge remove postgresql-9.3 postgresql-client-9.3 postgresql-client-common postgresql-common postgresql-contrib postgresql-contrib-9.3 postgresql-doc-9.3 
+
+sudo add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg main"
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install postgresql-9.6
+
+service postgresql status
+sudo passwd postgres
+sudo service postgresql start
+su postgres
+createdb afc
+psql -d afc
+
+pip install pgadmin4-2.0-py2.py3-none-any.whl
+apt-get install virtualenv python-pip libpq-dev python-dev
+
+virtualenv pgadmin4
+It will execute the 
+cd pgadmin4
+source bin/activate
+
+wget https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v1.4/pip/pgadmin4-1.4-py2.py3-none-any.whl
+
+pip install pgadmin4-1.4-py2.py3-none-any.whl
+
+
+echo "SERVER_MODE = False" >> lib/python2.7/site-packages/pgadmin4/config_local.py
+
+www.postgresql.org/ftp/pgadmin3/pgadmin4/v1.0/pip/
+
+/ *************************************** */
+sudo apt-get install build-essential libssl-dev libffi-dev libgmp3-dev 
+virtualenv python-pip libpq-dev python-dev
+
+
+/* ************************************************************************ */
+/* ******************** DESINSTALAR: postgres pgadmin ********************* */
+/* ************************************************************************ */
+https://www.vidagnu.com/como-desinstalar-postgresql-en-linux-mint-o-en-ubuntu/
+
+/* ************************************************************************ */
+/* *********** INSTALAR: postgres pgadmin configurar cuenta afc *********** */
+/* ************************************************************************ */
+https://www.asanzdiego.com/2015/12/instalacion-y-configuracion-de-postgresql-y-pgadmin-en-ubuntu.html
+
+ubuntu@ubuntu:~$ dpkg -l | grep postgres
+ii  pgdg-keyring                                          2017.3                                              all          keyring for apt.postgresql.org
+ii  postgresql-9.6                                        9.6.10-1.pgdg14.04+1                                amd64        object-relational SQL database, version 9.6 server
+ii  postgresql-client-9.6                                 9.6.10-1.pgdg14.04+1                                amd64        front-end programs for PostgreSQL 9.6
+ii  postgresql-client-common                              192.pgdg14.04+1                                     all          manager for multiple PostgreSQL client versions
+ii  postgresql-common                                     192.pgdg14.04+1                                     all          PostgreSQL database-cluster manager
+ii  postgresql-contrib-9.6                                9.6.10-1.pgdg14.04+1                                amd64        additional facilities for PostgreSQL
+ii  postgresql-server-dev-9.6                             9.6.10-1.pgdg14.04+1                                amd64        development files for PostgreSQL 9.6 server-side programming
+
+sudo apt-get --purge remove pgdg-keyring postgresql-9.6 postgresql-client-9.6 postgresql-client-common postgresql-common postgresql-contrib-9.6 postgresql-server-dev-9.6
+sudo apt-get install pgdg-keyring postgresql-9.6 postgresql-client-9.6 postgresql-client-common postgresql-common postgresql-contrib-9.6 postgresql-server-dev-9.6
+
+
+/* ************************************************************************ */
+/* ******************** CONFIGURAR: postgres pgadmin ********************** */
+/* ************************************************************************ */
+https://e-mc2.net/es/configuracion-basica-de-postgresql
+
+
+/* ********************************************************* */
+/* ****************** Conexión Postgresql ****************** */
+/* ********************************************************* */
+https://www.evaristogz.com/instalacion-postgresql-acceso-remoto-externo/
+
+gedit /etc/postgresql/9.6/main/postgresql.conf
+
+gedit /etc/postgresql/9.6/main/pg_hba.conf
+
+
+/* ***************************************************************** */
+/* *********************** Postgres 9.6 jar: *********************** */
+/* ***************************************************************** */
+postgresql-9.4.1209.jar
+
+Cómo actualizar el archivo .JAR:
+http://doraprojects.net/blog/?p=3073
+
+Dónde descargar el archivo .JAR de postgres, versión (postgresql-42.2.5) al 15/10/2018:
+https://jdbc.postgresql.org/download.html
+
+The Java EE server classpath is not correctly set up - server home directory is missing.
+Either open the project in the IDE and assign the server or setup the server classpath manually.
+
+javax.persistence.EntityManager
+javax.persistence.metamodel doesnt exists
+
+
+
+Conexión JDBC Oracle:
+--------------------
+jdbc:oracle:thin:scott/@localhost:1521:orcl

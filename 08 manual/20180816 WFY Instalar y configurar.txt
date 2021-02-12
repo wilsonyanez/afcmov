@@ -1,0 +1,265 @@
+﻿+----------------------------------------------------------+
+| Se descarga la herramienta wildfly:                      |
++----------------------------------------------------------+
+Descarga de wildfly, utilizado para construir el Servicio WEB:
+http://www.wildfly.org/downloads/
+
+WildFly 14 es la última versión de una serie de ofertas de servidores de aplicaciones de fuente abierta de
+JBoss. WildFly 14 es una implementación excepcionalmente rápida, liviana y potente de las especificaciones
+de la plataforma Java Enterprise Edition 8. La arquitectura de vanguardia desarrollada en Modular Service
+Container (Contenedor modular de servicios) habilita los servicios bajo demanda cuando su aplicación lo
+requiera. La siguiente tabla enumera las tecnologías de Java Enterprise Edition 8 y las tecnologías
+disponibles en los perfiles de configuración del servidor WildFly 14.
+wildfly-14.0.1.Final
+
+
++-----------------------------+
+| WildFly Documentation       |
++-----------------------------+
+
+Administrator Guides for those wanting to understand how to install and configure the server
+Developer Guides for those wanting to understand how to develop applications for the server
+http://docs.wildfly.org/14/
+
+
++-----------------------------+
+| Getting Started Guide       |
++-----------------------------+
+WildFly team
+version 14.0.0.Final,
+2018-08-30T23:10:31Z
+http://docs.wildfly.org/14/Getting_Started_Guide.html
+
+
+Starting WildFly 14
+-------------------
+
+To start WildFly 14 using the default web profile configuration in " standalone" mode, change directory to $JBOSS_HOME/bin.
+Linux
+./standalone.sh 
+Windows
+.\standalone.bat
+
+To start the default web profile configuration using domain management capabilities,
+Linux
+./domain.sh
+Windows
+.\domain.bat
+
+Authentication
+--------------
+De forma predeterminada, WildFly 14 ahora se distribuye con la seguridad habilitada para las interfaces de
+administración, esto significa que antes de conectarse mediante la consola de administración o de forma remota
+con la CLI, deberá agregar un nuevo usuario, esto se puede lograr simplemente mediante el uso de add-user guión
+.sh en la carpeta bin.
+
+Linux
+./add-user.sh
+Windows
+.\add-user.bat
+What type of user do you wish to add?
+ a) Management User (mgmt-users.properties)
+ b) Application User (application-users.properties)
+(a):
+
+
+C:\App\wildfly>.\bin\add-user.bat
+C:\App\wildfly>.\bin\add-user.bat
+
+What type of user do you wish to add?
+ a) Management User (mgmt-users.properties)
+ b) Application User (application-users.properties)
+(a): a
+
+Enter the details of the new user to add.
+Using realm 'ManagementRealm' as discovered from the existing property files.
+Username : wilson
+Password recommendations are listed below. To modify these restrictions edit the
+ add-user.properties configuration file.
+ - The password should be different from the username
+ - The password should not be one of the following restricted values {root, admi
+n, administrator}
+ - The password should contain at least 8 characters, 1 alphabetic character(s),
+ 1 digit(s), 1 non-alphanumeric symbol(s)
+Password :
+WFLYDM0102: Password should have at least 1 non-alphanumeric symbol.
+Are you sure you want to use the password entered yes/no? yes
+Re-enter Password :
+What groups do you want this user to belong to? (Please enter a comma separated list, or leave blank for none)[  ]:
+About to add user 'wilson' for realm 'ManagementRealm'
+Is this correct yes/no? yes
+Added user 'wilson' to file 'C:\App\wildfly\standalone\configuration\mgmt-users.properties'
+Added user 'wilson' to file 'C:\App\wildfly\domain\configuration\mgmt-users.properties'
+Added user 'wilson' with groups  to file 'C:\App\wildfly\standalone\configuration\mgmt-groups.properties'
+Added user 'wilson' with groups  to file 'C:\App\wildfly\domain\configuration\mgmt-groups.properties'
+Is this new user going to be used for one AS process to connect to another AS process?
+e.g. for a slave host controller connecting to the master or for a Remoting connection for server to server EJB calls.
+yes/no? yes
+To represent the user add the following to the server-identities definition <secret value="d3R5amFzMjE=" />
+Presione una tecla para continuar . . .
+
+
+
++-----------------------------+
+| Guía de Administración:     |
++-----------------------------+
+http://docs.wildfly.org/14/Admin_Guide.html
+
+C:\Users\Wilson>cd \app\wildfly\bin
+C:\App\wildfly\bin>dir stand*
+C:\App\wildfly\bin>standalone.bat
+Calling "C:\App\wildfly\bin\standalone.conf.bat"
+
+C:\Desa\Ins\Web Service\wildfly-11.0.0.Final\wildfly-11.0.0.Final\domain\configuration
+Se cambia los archivos con una nueva licencia para [dguano]
+mgmt-groups.properties
+ #admin=PowerUser,BillingAdmin,
+ dguano=
+mgmt-users.properties
+  #admin=2a0923285184943425d1f53ddd58ec7a
+  dguano=d0e13a236597104772d4f9ffda53597c
+
+
+
+http://docs.wildfly.org/14/
+http://docs.wildfly.org/14/Getting_Started_Guide.html
+http://docs.wildfly.org/14/Admin_Guide.html
+https://developer.jboss.org/thread/277237
+
+
+jboss.server.base.dir 
+The base directory for server content. 
+jboss.home.dir/standalone 
+
+
+jboss.server.config.dir 
+The base configuration directory. 
+jboss.server.base.dir/configuration
+
++ -----------------------------------------+
+|https://developer.jboss.org/thread/266472 |
++ -----------------------------------------+
+jboss.home.dir/standalone /configuration
+%EAP_HOME%\standalone\configuration
+
+ ${EAP_HOME}/bin and excute ./standalone.sh --server-config=${server-profile}
+(1) cd %EAP_HOME%\bin y ejecutar .\standalone.bat --server-config=%EAP_HOME%\standalone\configuration
+
+%EAP_HOME%\bin\standalone.bat --server-config=standalone-ha.xml
+
+(2) %EAP_HOME%\bin, and execute jboss-cli
+
+
+(3) connect
+
+(4) module add --name=com.mysql.driver  --dependencies=javax.api,javax.transaction.api --resources="c:\App\wildfly\modules\system\layers\base\com\mysql\driver\main\mysql-connector-java-5.1.47.jar"
+
+(5) :reload
+[standalone@localhost:9990 /] :reload
+{
+    "outcome" => "success",
+    "result" => undefined
+}
+
+(6)
+
+[standalone@localhost:9990 /] /subsystem=datasources/jdbc-driver=mysql/:add(driv
+er-module-name=com.mysql.driver,driver-name=mysql,jdbc-compliant=false,driver-cl
+ass-name=com.mysql.jdbc.Driver)
+{"outcome" => "success"}
+
+
+(7)
+                <datasource jndi-name="java:jboss/datasources/afcrestDS" pool-name="afcrest-ds-pool" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:mysql://localhost:3306/sirusafc?characterEncoding=UTF-8&amp;characterSetResults=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull</connection-url>
+                    <driver-class>com.mysql.jdbc.Driver</driver-class>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>root</user-name>
+                        <password></password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="com.mysql.jdbc.integration.jboss.MysqlValidConnectionChecker"/>
+                        <background-validation>true</background-validation>
+                        <exception-sorter class-name="com.mysql.jdbc.integration.jboss.ExtendedMysqlExceptionSorter"/>
+                    </validation>
+                </datasource>
+
+
+21:23:43,779 WARN  [org.jboss.as.domain.management.security] (MSC service thread
+ 1-2) WFLYDM0111: Keystore C:\App\wildfly\standalone\configuration\application.k
+eystore not found, it will be auto generated on first use with a self signed cer
+tificate for host localhost
+
+
+/* ********************************************************* */
+/* ****************** Conexión wildFly  ******************** */
+/* ********************************************************* */
+Ejecutar el client:
+$ EAP_HOME/bin/jboss-cli.sh
+
+Conectarse al servidor: Por defecto (localhost:9990)
+connect
+
+Para desplegar una aplicación desde el wildfly:
+Deploy an Application to All Server Groups. 
+deploy /path/to/DEPLOYMENT.war --all-server-groups
+deploy /opt/wildfly-11.0.0.Final/standalone/deployments/afc-rest.war --force
+
+deploy C:\Desa\afc\afc-rest\dist c:\app\wildfly-11.0.0.Final\standalone\deployments\afc-rest.war --force
+
+[standalone@localhost:9990 /] deployment-info
+NAME         RUNTIME-NAME PERSISTENT ENABLED STATUS 
+afc-rest.war afc-rest.war false      true    OK     
+
+Para eliminar una aplicación desde el wildfly:
+undeploy afc-rest.war
+
+
+http://192.168.56.8:8080/afc-rest/webresources/entidades.formulario/postForm
+
+
+
++----------------------------------------------------------------+
+| Configurar Xmx en caso de mensajes de fuera de memoria         |
++----------------------------------------------------------------+
+If you experience java.lang.OutOfMemoryError when accessing Magnolia instances, try restarting WildFly with the JVM Xmx value in $WILDFLY_HOME/bin/standalone.conf set at least to 1024m:
+ANTES: JAVA_OPTS="-Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true"
+AHORA: JAVA_OPTS="-Xms64m -Xmx1024m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true"
+
+
+/* ***************************************************************** */
+/* ************** Configurar Librerías en NetBeans 8.2 ************* */
+/* ***************************************************************** */
+http://wiki.netbeans.org/FagRunningOnJre
+
+javaee-endorsed-api-7.0
+Solución: Para resolver, abra el Administrador de Librerías (Library Manager) y crea una nueva clse de librería
+llamada [javaee-endorsed-api-7.0]
+
+Al archivo JAR, se lo puede descargar desde:
+http://www.java2s.com/Code/Jar/j/Downloadjavaeeendorsedapi70jar.htm
+
+
+javax.persistence.EntityManager
+
+Luego de adicionar las librerías se debe generar el archivo WAR.
+
+/* ***************************************************************** */
+/* *********** Configurar WildFly y DataSource: ******************** */
+/* ***************************************************************** */
+http://javanatico.blogspot.com/2013/11/tutorial-instalar-jboss-7-en-netbeans-y.html
+
+
+/* ***************************************************************** */
+/* ********************* Configurar NetBeans: ********************** */
+/* ***************************************************************** */
+https://netbeans.org/kb/docs/websvc/rest.html
+
+/* ************************************************************** */
+/* *********** Configuración de RestFULL WEB SERVICES *********** */
+/* ************************************************************** */
+https://netbeans.org/kb/docs/websvc/rest.html
+
+Tipo de datos usado SMALLINT para orden
+INT4 para las claves primarias.

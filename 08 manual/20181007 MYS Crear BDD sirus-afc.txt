@@ -1,0 +1,108 @@
+﻿/* ******************************************************* */
+/* ************ Crear base de datos sirus-afc ************ */
+/* ******************************************************* */
+Hostname       :192.168.56.9
+Port           :3306
+Database name  :sirusafc
+
+CREATE DATABASE sirusafc DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci;
+
+mysql -h localhost -u root --default-character-set=utf8 sirusafc < C:\Desa\afc\db\mysql\sirus_pruebas_30082018.sql
+mysql -h localhost -u root --default-character-set=utf8 sirusafc < C:\Desa\afc\db\mysql\sirus_pruebas_30082018.sql
+
+cd c:\App\xampp\mysql\bin
+c:\App\xampp\mysql\bin>mysql -h localhost -u root --default-character-set=utf8 sirusafc < C:\Desa\afc\db\sirus_pruebas_30082018.sql
+mysql -h localhost -u root --default-character-set=utf8 sirusafc < /home/wilson/afc/db/BDD_SIRUSAFC.sql
+
+Conexión JDBC MySql:
+-------------------
+w7-64_sirus-afc_root@sirusafc
+mys_sirusafc@192.168.56.9/sirusafc
+root
+jdbc:mysql//192.168.1.115/respaldo
+com.mysql.jdbc.Driver
+jdbc:mysql://localhost/test?" + "user=minty&password=greatsqldb
+
+The server time zone value '' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specific t
+
+jdbc:mysql://localhost/db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+
+Localizar el archivo
+/com/mysql/jdbc/TimeZoneMapping.properties
+V
+jdbc:mysql://localhost:3306/<databasename>?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
+
+
+/* **************************************************************** */
+/* ****** Modificar la Zona Horario a MySql (local timezone) ****** */
+/* **************************************************************** */
+
+cd C:\App\xampp\mysql\bin
+mysql -u root -p
+
+Estado: Fallo:Fallo de la prueba: Access denied for user 'root'@'localhost' (using password: YES)
+The server time zone 'Hora est. Pacifico, Sudamerica' is unrecongnized or represent more than one time zone.
+You must configure either the server or JDBC driver
+
+Buscar en la página:
+http://qbit.com.mx/blog/2015/02/09/modificando-la-zona-horaria-a-mysql-local-timezone/
+
+DESCRIBE mysql.time_zone_name;
+
+MariaDB [(none)]> DESCRIBE mysql.time_zone_name;
++--------------+------------------+------+-----+---------+-------+
+| Field        | Type             | Null | Key | Default | Extra |
++--------------+------------------+------+-----+---------+-------+
+| Name         | char(64)         | NO   | PRI | NULL    |       |
+| Time_zone_id | int(10) unsigned | NO   |     | NULL    |       |
++--------------+------------------+------+-----+---------+-------+
+
+SELECT * FROM mysql.time_zone_name WHERE Name LIKE '%ecua%' ;
+
+mysql> SELECT NOW();
++---------------------+
+| NOW()               |
++---------------------+
+| 2015-02-09 11:32:39 |
++---------------------+
+1 row in set (0.00 sec)
+Si notan que la fecha y hora no coinciden con su hora local, entonces algo con el timezone está mal, nuevamente pueden hacer otra consulta para verificar que timezone se está utilizando:
+
+
+SELECT @@global.time_zone;
++--------------------+
+| @@global.time_zone |
++--------------------+
+| SYSTEM             |
++--------------------+
+1 row in set (0.00 sec)
+Sorpresa, dice que se está utilizando el timezone del sistema (ósea que debería estar bien porque lo acabo de configurar).. entonces ya para corregirlo lo que se necesita hacer es modificar el timezone de la tabla mysql y setear a mano el valor que desean, para nuestro caso lo definimos con la zona horaria de la Ciudad de México, entonces:
+
+SET GLOBAL time_zone = "America/Guayaquil";
+
+En esta se me indicó lo siguiente:
+https://community.oracle.com/thread/4144569
+From mysql workbench run the following sql statements:
+
+Si sale el error: 
+MariaDB [(none)]> SET GLOBAL time_zone = "America/New_York";
+ERROR 1298 (HY000): Unknown or incorrect time zone: 'America/New_York'
+Ejecutar el siguiente comando:
+
+mysql_tzinfo_to_sql /usr/share/zoneinfo/|mysql -u root mysql -p
+ 
+SET @@global.time_zone = '+00:00';
+SET @@session.time_zone = '+00:00';
+ 
+with the following sql statements check if the values were set:
+SELECT @@global.time_zone, @@session.time_zone;
+
+MariaDB [(none)]> SELECT @@global.time_zone, @@session.time_zone;
++--------------------+---------------------+
+| @@global.time_zone | @@session.time_zone |
++--------------------+---------------------+
+| +00:00             | +00:00              |
++--------------------+---------------------+
+1 row in set (0.00 sec)
+
+that solved the problem. 

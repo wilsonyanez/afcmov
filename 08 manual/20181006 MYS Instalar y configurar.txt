@@ -1,0 +1,162 @@
+﻿https://www.hostinger.es/tutoriales/instalar-mysql-centos-7/#gref
+Contenido:
+---------
+
+Introducción
+Lo que necesitarás
+Paso 1 – Descargar y preparar el repositorio MySQL
+Paso 2 – Instalar MySQL en tu servidor
+Paso 3 – Iniciar MySQL y comprobar si funciona
+Conclusión
+
+
+Introducción
+MySQL es uno de los sistemas de administración de bases de datos más populares entre las aplicaciones de sitios web/servidores. Le permite a los usuarios almacenar sus bases de datos y administrarlas usando comandos SQL en varias plataformas. En este tutorial en particular, 
+aprenderemos cómo instalar MySQL en un servidor Linux con sistema operativo CentOS 7 utilizando la línea de comandos de tu servidor.
+Lo que necesitarás
+Antes de comenzar con esta guía, necesitarás lo siguiente:
+Acceso raíz a tu servidor
+CentOS 7 en tu servidor Linux
+Paso 1 – Descargar y preparar el repositorio MySQL
+Antes de comenzar, deberías conectarte a tu servidor a través de SSH y prepararte para ingresar comandos en tu línea de comandos.
+Primero que todo, debemos verificar si nuestro sistema está actualizado y actualizarlo si no lo está. Escribe el comando:
+sudo yum update
+Espera a que el sistema se actualice. Ahora es necesario descargar los repositorios MySQL. La versión más reciente al final del año 2016 es el7-9, así que usaremos ésta. (Puedes consultar otras versiones aquí: https://dev.mysql.com/downloads/repo/yum/). Escribe el comando:
+wget http://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+Al final de la descarga, deberías ver que se guardó el archivo .rpm.
+Ahora tenemos que preparar el repositorio para que luego podamos instalar paquetes MySQL desde allí. Escribe lo siguiente:
+sudo rpm -Uvh mysql57-community-release-el7-9.noarch.rpm
+Deberías ver una respuesta similar a ésta:
+Cuando llegue al 100%, podrás instalar MySQL en tu servidor. Las instrucciones de cómo hacerlo están en el Paso 2.
+Paso 2 – Instalar MySQL en tu servidor
+Ya puedes proceder con la instalación de MySQL con el comando:
+sudo yum install mysql-server
+Recibirás una lista de paquetes y se te pedirá confirmación para descargarlos. Escribe y y presiona ENTER.
+Mientras que se descargan los paquetes, verás el avance:
+Cuando terminen de descargarse, el sistema te pedirá de nuevo la confirmación para instalarlos. Escribe y y presiona ENTER.
+Espera a que se complete la instalación.
+Si ves el mensaje “Complete!” al final de la instalación significa que MySQL se instaló correctamente en tu servidor.
+Paso 3 – Iniciar MySQL y comprobar si funciona
+MySQL no se inicia al finalizar la instalación, por lo que debes iniciarlo con este comando:
+sudo systemctl start mysqld
+Espera unos segundos. No obtendrás respuesta una vez que se inicie MySQL, pero para comprobar si se ha iniciado correctamente y está funcionando, usa el comando:
+sudo systemctl status mysqld
+Recibirás información sobre el estado de MySQL:
+Si ves que MySQL está activo y funcionando como en la captura de pantalla anterior, significa que has instalado e iniciado MySQL correctamente en tu servidor.
+Conclusión
+Hemos aprendido a instalar MySQL correctamente en tu servidor CentOS 7 para que puedas almacenar tus bases de datos y administrarlas con la ayuda de este excelente sistema de administración de bases de datos.
+
+
+
+https://fututel.com/es/tutoriales-guias-manuales-videotutoriales/2622-instalar-mysql-en-centos-7
+
+Instalar MySQL en CentOS 7 
+Actualizado el 20 Octubre 2017. Posteado en Tutoriales/VideoTutoriales. Visitado 2949 veces. 
+
+Introducción
+Instalar MySQL en CentOS 7.  MySQL es un sistema de gestión de bases de datos de código abierto, comúnmente instalado como parte popular del paquete LEMP (Linux, Nginx, MySQL / MariaDB, PHP / Python / Perl). Utiliza una base de datos relacional y SQL (lenguaje de consulta estructurado) para administrar sus datos.
+CentOS 7 prefiere MariaDB, un utensilio de MySQL administrado por los desarrolladores originales de MySQL y diseñado como un reemplazo para MySQL. Si ejecuta yum install mysql en CentOS 7, es MariaDB que está instalado en lugar de MySQL. Si se está preguntando sobre MySQL frente a MariaDB, MariaDB generalmente funcionará sin problemas en lugar de MySQL , así que a menos que tenga un caso de uso específico para MySQL, consulte la guía Cómo instalar MariaDB en Centos 7 .
+Este tutorial te explicará cómo instalar MySQL versión 5.7 en un servidor CentOS 7.
+Prerrequisistos
+Para seguir este tutorial, necesitará:
+Un CentOS 7 con un usuario no root con privilegios de sudo . Puede obtener más información sobre cómo configurar un usuario con estos privilegios en la configuración inicial del servidor con CentOS 7 .
+Paso 1: Instalar de MySQL
+Como se menciona en la introducción, el comando Yum para instalar MySQL de hecho instala MariaDB. Para instalar MySQL, necesitaremos visitar el repositorio Yum de la comunidad MySQL que proporciona paquetes para MySQL.
+En un navegador web, visite:
+https://dev.mysql.com/downloads/repo/yum/
+Tenga en cuenta que los enlaces de descarga destacados no conducen directamente a los archivos. En su lugar, conducen a una página posterior donde se le invita a iniciar sesión o registrarse en una cuenta. Si no desea crear una cuenta, puede localizar el texto "No, gracias, solo inicie mi descarga", luego haga clic derecho y copie la ubicación del enlace, o puede editar el número de versión en los siguientes comandos.
+Busque la versión deseada y actualícela según sea necesario en el siguiente enlace:
+
+ 
+wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+ 
+ 
+Una vez que se guarda el archivo rpm, verificaremos la integridad de la descarga ejecutando md5sum y comparándolo con el valor MD5 correspondiente listado en el sitio:
+ 
+md5sum mysql57-community-release-el7-9.noarch.rpm
+ 
+ 
+Output
+1a29601dc380ef2c7bc25e2a0e25d31e  mysql57-community-release-el7-9.noarch.rpm
+Compare esta salida con el valor MD5 apropiado en el sitio:
+
+Ahora que hemos verificado que el archivo no estaba dañado o cambiado, instalaremos el paquete:
+ 
+sudo rpm -ivh mysql57-community-release-el7-9.noarch.rpm
+ 
+ 
+Esto agrega dos nuevos repositorios de yum de MySQL, y ahora podemos usarlos para instalar el servidor MySQL:
+ 
+sudo yum install mysql-server
+ 
+ 
+Presione y para confirmar que desea continuar. Como acabamos de agregar el paquete, también se nos pedirá que acepte su clave GPG. Presione y para descargarlo y completar la instalación.
+Paso 2: Inicio de MySQL
+Comenzaremos el demonio con el siguiente comando:
+ 
+sudo systemctl start mysqld
+ 
+ 
+systemctl no muestra el resultado de todos los comandos de administración de servicios, por lo que para asegurarnos de que lo conseguimos, usaremos el siguiente comando:
+ 
+sudo systemctl status mysqld
+ 
+ 
+Si MySQL se ha iniciado satisfactoriamente, la salida debe contener Active: active (running) y la línea final debe ser similar a:
+ 
+Dec 01 19:02:20 centos-512mb-sfo2-02 systemd[1]: Started MySQL Server.
+ 
+ 
+Nota: MySQL está habilitado automáticamente para iniciarse en el arranque cuando está instalado. Puede cambiar ese comportamiento predeterminado con sudo systemctl disable mysqld
+Durante el proceso de instalación, se genera una contraseña temporal para el usuario raíz de MySQL. mysqld.log en mysqld.log con este comando:
+ 
+sudo grep 'temporary password' /var/log/mysqld.log
+ 
+ 
+Output
+2016-12-01T00:22:31.416107Z 1 [Note] A temporary password is generated for root@localhost: mqRfBU_3Xk>r 
+Anote la contraseña, que necesitará en el próximo paso para asegurar la instalación y donde se verá obligado a cambiarla. La política de contraseña predeterminada requiere 12 caracteres, con al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.
+Paso 3: Configuración de MySQL
+MySQL incluye un script de seguridad para cambiar algunas de las opciones predeterminadas menos seguras para cosas como inicios remotos de root y usuarios de muestra.
+Utilice este comando para ejecutar el script de seguridad.
+ 
+sudo mysql_secure_installation
+ 
+ 
+Esto le indicará la contraseña de root predeterminada. Tan pronto como ingrese, se le pedirá que lo cambie.
+Output
+The existing password for the user account root has expired. Please set a new password.
+New password:
+Ingrese una nueva contraseña de 12 caracteres que contenga al menos una letra mayúscula, una letra minúscula, un número y un carácter especial. Vuelva a ingresar cuando se le solicite.
+Recibirá comentarios sobre la fortaleza de su nueva contraseña, y luego se le solicitará que la cambie nuevamente. Como acabas de hacerlo, puedes decir confiadamente No :
+Output
+Estimated strength of the password: 100
+Change the password for root ? (Press y|Y for Yes, any other key for No) :
+Después de rechazar el mensaje para cambiar la contraseña nuevamente, pulsaremos Y y luego ENTER a todas las preguntas subsiguientes para eliminar a los usuarios anónimos, deshabilitar el inicio de sesión root remoto, eliminar la base de datos de prueba y acceder a ella, y volver a cargar las tablas de privilegios .
+Ahora que hemos asegurado la instalación, probémoslo.
+Paso 4: Prueba de MySQL
+Podemos verificar nuestra instalación y obtener información al respecto mediante la conexión con la herramienta mysqladmin , un cliente que le permite ejecutar comandos administrativos. Utilice el siguiente comando para conectarse a MySQL como raíz ( -u root ), solicitar una contraseña ( -p ) y devolver la versión.
+ 
+mysqladmin -u root -p version
+ 
+ 
+Debería ver resultados similares a esto:
+Output
+mysqladmin  Ver 8.42 Distrib 5.7.16, for Linux on x86_64
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Server version          5.7.16
+Protocol version        10
+Connection              Localhost via UNIX socket
+UNIX socket             /var/lib/mysql/mysql.sock
+Uptime:                 2 min 17 sec
+
+Threads: 1  Questions: 6  Slow queries: 0  Opens: 107  Flush tables: 1  Open tables: 100  Queries per second avg: 0.043
+Esto indica que su instalación ha sido exitosa.
+Conclusión
+En este tutorial, hemos instalado y asegurado MySQL en un servidor CentOS 7. Para obtener más información sobre el uso de MySQL, esta guía para aprender más sobre los comandos de MySQL puede ayudar. También podría considerar la implementación de algunas medidas de seguridad adicionales .
+Fuente. Artículo traducido y con muy ligeras modificaciones de: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-debian

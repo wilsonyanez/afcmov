@@ -1,0 +1,12 @@
+﻿+----------------------------------------------------------+
+| Se descargar la herramienta Sql Power Architect:         |
++----------------------------------------------------------+
+Funciona con Java 8 y Postgres 9.3+
+EL modelo se abre con "Sql Power Architect"
+Está de revisar: Descargar la herramienta citada.
+
+Descargar la Herramienta para modelar se abre con "Sql Power Architect"
+https://www.sqlpower.ca/architect/Copy%20of%20current.html
+
+Windows:
+SQL-Power-Architect-Setup-Windows-jdbc-1.0.8.msi

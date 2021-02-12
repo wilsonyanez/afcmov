@@ -1,0 +1,6 @@
+﻿first_name	last_name	address	box_number	postal_code	country
+John	Doe	123 Some St.	123	Q1A 1Q1	Canada
+Jane	Doe	456 Another St.	543	K0H 0Y2	Canada
+Santa	Claus	North Pole	1	H0H 0H0	North Pole
+Easter	Bunny1	Hole in the ground	987	U9S 2N9	Canada
+Tooth	Fairy	Don't Know	8237	M9S 2B9	

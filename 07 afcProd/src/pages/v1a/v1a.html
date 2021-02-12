@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar >
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onClickCancel()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>AGRICULTURA FAMILIAR CAMPESINA - VALIDACIÓN PRODUCTORES</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>Ubicacion Geografica</ion-list-header>
+    <ion-item><ion-label stacked>Codigo Registro AFC</ion-label><ion-input [(ngModel)]="v05_00"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Cuestionario N</ion-label><ion-input [(ngModel)]="v05_01"></ion-input></ion-item>
+
+    <ion-item class="item-divider">Coordenadas: X, Y</ion-item>
+    <ion-item>
+      <ion-label stacked>Coordenadas X</ion-label>
+      <ion-select [(ngModel)]="v05_02">
+        <ion-option value=1>ESTE</ion-option>
+        <ion-option value=2>OESTE</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Grados</ion-label>
+      <ion-input [(ngModel)]="v05_03"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Minutos</ion-label>
+      <ion-input [(ngModel)]="v05_04"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Segundos</ion-label>
+      <ion-input [(ngModel)]="v05_05"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Coordenadas Y</ion-label>
+      <ion-select [(ngModel)]="v05_06">
+        <ion-option value=1>NORTE</ion-option>
+        <ion-option value=2>SUR</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Grados</ion-label>
+      <ion-input [(ngModel)]="v05_07"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Minutos</ion-label>
+      <ion-input [(ngModel)]="v05_08"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Segundos</ion-label>
+      <ion-input [(ngModel)]="v05_09"></ion-input>
+    </ion-item>
+    <ion-item class="item-divider">Zona UTM</ion-item>
+    <ion-item>
+      <ion-label stacked>Norte</ion-label>
+      <ion-select [(ngModel)]="v05_10">
+        <ion-option value=1>15N</ion-option>
+        <ion-option value=2>16N</ion-option>
+        <ion-option value=3>17N</ion-option>
+        <ion-option value=4>18N</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Sur</ion-label>
+      <ion-select [(ngModel)]="v05_11">
+        <ion-option value=5>15S</ion-option>
+        <ion-option value=6>16S</ion-option>
+        <ion-option value=7>17S</ion-option>
+        <ion-option value=8>18S</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="guardarModuloV1a()">Guardar</button>
+</ion-content>
+

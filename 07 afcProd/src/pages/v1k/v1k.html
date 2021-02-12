@@ -1,0 +1,136 @@
+<!--
+  Generated template for the M10Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MODULO 10 INFRAESTRUCTURA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-label stacked text-wrap>¿A día de hoy con qué infraestructua cuenta la unidad productiva?</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Vivienda</ion-label>
+          <ion-checkbox [(ngModel)]="v11_01"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Bodega</ion-label>
+          <ion-checkbox [(ngModel)]="v11_02"></ion-checkbox>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Establo</ion-label>
+          <ion-checkbox [(ngModel)]="v11_03"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Corral</ion-label>
+          <ion-checkbox [(ngModel)]="v11_04"></ion-checkbox>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Silo</ion-label>
+          <ion-checkbox [(ngModel)]="v11_05"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Granero</ion-label>
+          <ion-checkbox [(ngModel)]="v11_06"></ion-checkbox>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Tendal</ion-label>
+          <ion-checkbox [(ngModel)]="v11_07"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Marquesina</ion-label>
+          <ion-checkbox [(ngModel)]="v11_08"></ion-checkbox>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Reservorio, cisterna o albarrada</ion-label>
+          <ion-checkbox [(ngModel)]="v11_09"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Vivero</ion-label>
+          <ion-checkbox [(ngModel)]="v11_10"></ion-checkbox>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Invernadero</ion-label>
+          <ion-checkbox [(ngModel)]="v11_11"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Otro</ion-label>
+          <ion-checkbox [(ngModel)]="v11_12"></ion-checkbox>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Vias de Acceso</ion-label>
+      <ion-select [(ngModel)]="v11_13">
+        <ion-option value=1>Asfaltada</ion-option>
+        <ion-option value=2>Lastrada</ion-option>
+        <ion-option value=3>Adoquinada</ion-option>
+        <ion-option value=4>De tierra</ion-option>
+        <ion-option value=5>Empedrada</ion-option>
+        <ion-option value=6>Otro</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Especifique</ion-label>
+      <ion-input [(ngModel)]="v11_14"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>¿Dispone de agua para riego?</ion-label>
+      <ion-select [(ngModel)]="v11_15">
+        <ion-option value=1>Si</ion-option>
+        <ion-option value=2>No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>¿De dónde obtiene el agua para el riego?</ion-label>
+      <ion-select [(ngModel)]="v11_16">
+        <ion-option value=1>Canal de riego / acequia</ion-option>
+        <ion-option value=2>Río, Estero, Quebrada</ion-option>
+        <ion-option value=3>Pozo de agua</ion-option>
+        <ion-option value=4>Otra fuente</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked text-wrap>¿Cuál es el nombre del canal de riego o junta de regantes?</ion-label>
+      <ion-input [(ngModel)]="v11_17"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>¿Qué métodos de riego utiliza?</ion-label>
+      <ion-select [(ngModel)]="v11_18">
+        <ion-option value=1>Aspersion</ion-option>
+        <ion-option value=2>Goteo</ion-option>
+        <ion-option value=3>Gravedad / surco / inundación</ion-option>
+        <ion-option value=4>Nebulizacion</ion-option>
+        <ion-option value=5>Otro</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Especifique</ion-label>
+      <ion-input [(ngModel)]="v11_19"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked text-wrap>¿Cuál es la superficie regada de la unidad productiva?</ion-label>
+      <ion-input [(ngModel)]="v11_20"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="guardarModuloV1k()">Guardar</button>
+</ion-content>

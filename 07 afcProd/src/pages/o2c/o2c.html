@@ -1,0 +1,48 @@
+<!--
+  Generated template for the M1dPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>LISTADO DE SOCIOS CON SELLO AFC</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>IDENTIFICACIÓN DE SOCIOS CON SELLO AFC</ion-list-header>
+    <ion-item>
+      <ion-label stacked>NÚMERO CÉDULA</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val01" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>NOMBRES</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val02" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>APELLIDOS</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val03" ></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="guardarModuloO2c()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>Organizaciones que pertenece el Productor</ion-list-header>
+    <ion-item *ngFor="let u of listaMiembroOrganizacion" text-wrap>
+      <ion-label>
+        Número Cédula: {{u.val01}}<br/>
+        Nombres: {{u.val02}}<br/>
+        Apellidos: {{u.val03}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+

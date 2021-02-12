@@ -1,0 +1,63 @@
+<!--
+  Generated template for the E3aPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MÓDULO 3 - DATOS GENERALES DE ESTABLECIMIENTO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header><h2 class="title">DATOS DEL ESTABLECIMIENTO</h2></ion-list-header>
+    <ion-item><ion-label stacked>NOMBRE DEL ESTABLECIMIENTO / RAZON SOCIAL</ion-label><ion-input [(ngModel)]="v00_01"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>NOMBRE COMERCIAL</ion-label><ion-input [(ngModel)]="v00_02"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>RUC/RISE</ion-label><ion-input [(ngModel)]="v00_03"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>TIPO DE OPERACIÓN</ion-label><ion-select [(ngModel)]="v00_04"  >
+      <ion-option value=1>HOTELES</ion-option>
+      <ion-option value=2>RESTAURANTES</ion-option>
+      <ion-option value=3>CATERING</ion-option>
+      <ion-option value=4>TIENDAS DE PRODUCTOS CAMPESINOS</ion-option>
+      <ion-option value=5>ENTIDADES PÚBLICAS</ion-option>
+      <ion-option value=6>ENTIDADES PRIVADAS COMO ESCUELAS</ion-option>
+      <ion-option value=7>HOSPITALES</ion-option>
+      <ion-option value=8>OTROS</ion-option>
+    </ion-select></ion-item>
+    <ion-item><ion-label stacked>ESPECIFICACIÒN OTRO TIPO OPERACIÓN</ion-label><ion-input [(ngModel)]="v00_05"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>NOMBRE DEL REPRESENTANTE LEGAL</ion-label><ion-input [(ngModel)]="v00_06"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>CONTACTO DEL REPRESENTANTE LEGAL</ion-label><ion-input [(ngModel)]="v00_07"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>TELÉFONOS</ion-label><ion-input [(ngModel)]="v00_08"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>CORREO ELECTRONICO</ion-label><ion-input [(ngModel)]="v00_09" (ngModelChange)="(v00_09!=null)?v00_09 = v00_09.toLowerCase():''"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>SITIO WEB (INCLUIDO SITIOS EN REDES SOCIALES)</ion-label><ion-input [(ngModel)]="v00_10" ></ion-input></ion-item>
+    <ion-item><ion-label stacked>MONTO DE COMPRA MENSUAL (EN USD)</ion-label><ion-input [(ngModel)]="v00_11" ></ion-input></ion-item>
+    <ion-list-header><h3 class="title">DIRECCIÓN DEL ESTABLECIMIENTO</h3></ion-list-header>
+    <ion-item>
+      <ion-label stacked>Provincia</ion-label>
+      <ion-select [(ngModel)]="v00_12" (ionChange)="cargarCantonesPorProvincia()">
+        <ion-option *ngFor="let prov of listaProvincias" [value]="prov.id_dpa">{{prov.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Canton</ion-label>
+      <ion-select [(ngModel)]="v00_13" (ionChange)="cargarParroquiasPorCanton()">
+        <ion-option *ngFor="let can of listaCantones" [value]="can.id_dpa">{{can.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Parroquia</ion-label>
+      <ion-select [(ngModel)]="v00_14"><ion-option *ngFor="let parr of listaParroquias" [value]="parr.id_dpa">{{parr.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item><ion-label stacked>DIRECCIÓN-SECTOR</ion-label><ion-input [(ngModel)]="v00_15"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>DIRECCIÓN-CALLE PRINCIPAL</ion-label><ion-input [(ngModel)]="v00_16"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>DIRECCIÓN-NUMERO</ion-label><ion-input [(ngModel)]="v00_17"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>DIRECCIÓN-CALLE SECUNDARIA</ion-label><ion-input [(ngModel)]="v00_18"  ></ion-input></ion-item>
+    <ion-item><ion-label stacked>DIRECCIÓN-REFERENCIA</ion-label><ion-input [(ngModel)]="v00_19"  ></ion-input></ion-item>
+  </ion-list>
+  <button ion-button full (click)="guardarModuloE3a()">Guardar</button>
+</ion-content>

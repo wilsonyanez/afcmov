@@ -1,0 +1,56 @@
+<!--
+  Generated template for the C4jPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>REGISTRO DE MONTOS DE VENTA Y PRECIOS DE PRODUCTOS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>REGISTRO DE MONTOS DE VENTA Y PRECIOS DE PRODUCTOS</ion-list-header>
+    <ion-item class="item-divider">REGISTRO DEL MONTO DE VENTA</ion-item>
+    <ion-item>
+      <ion-label stacked>AÑO</ion-label>
+      <ion-datetime displayFormat="YYYY" pickerFormat="YYYY" min="2010" max="2030"  [(ngModel)]="miembroMontoVenta.val01"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>MES</ion-label>
+      <ion-select [(ngModel)]="miembroMontoVenta.val02">
+        <ion-option value=1>Enero</ion-option>
+        <ion-option value=2>Febrero</ion-option>
+        <ion-option value=3>Marzo</ion-option>
+        <ion-option value=4>Abril</ion-option>
+        <ion-option value=5>Mayo</ion-option>
+        <ion-option value=6>Junio</ion-option>
+        <ion-option value=7>Julio</ion-option>
+        <ion-option value=8>Agosto</ion-option>
+        <ion-option value=9>Septiembre</ion-option>
+        <ion-option value=10>Octubre</ion-option>
+        <ion-option value=11>Noviembre</ion-option>
+        <ion-option value=12>Diciembre</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item><ion-label stacked>MONTO (USD)</ion-label><ion-input [(ngModel)]="miembroMontoVenta.val03"></ion-input></ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="guardarModuloC4j()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>REGISTRO DE MONTOS DE VENTA Y PRECIOS DE PRODUCTOS</ion-list-header>
+    <ion-item *ngFor="let u of listamiembroMontoVenta" text-wrap>
+      <ion-label>
+        MONTOS DE VENTA Y PRECIOS DE PRODUCTOS <br/>
+          Año: {{u.val01}} <br/>
+          Mes: {{u.val02}} <br/>
+          Monto: {{u.val03}} <br/>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

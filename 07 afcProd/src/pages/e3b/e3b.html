@@ -1,0 +1,58 @@
+<!--
+  Generated template for the E3bPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>CARACTERIZACIÓN DE ESTABLECIMIENTOS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label stacked text-wrap>PRODUCTOS Y SERVICIOS QUE OFRECE</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Venta de alimentos frescos</ion-label><ion-checkbox [(ngModel)]="v01_01"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Venta de alimentos procesados</ion-label><ion-checkbox [(ngModel)]="v01_02"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Servicio de comida preparada</ion-label><ion-checkbox [(ngModel)]="v01_03"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Hospedaje/alimentos</ion-label><ion-checkbox [(ngModel)]="v01_04"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Alimentación escolar</ion-label><ion-checkbox [(ngModel)]="v01_05"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Otro</ion-label><ion-checkbox [(ngModel)]="v01_06"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Especifique Otro Productos y servicios</ion-label><ion-input [(ngModel)]="v01_07"></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-label stacked text-wrap>FORMAS DE ABASTECIMIENTO</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Producción propia</ion-label><ion-checkbox [(ngModel)]="v01_08"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Proveedor productor</ion-label><ion-checkbox [(ngModel)]="v01_09"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Proveedor intermediario</ion-label><ion-checkbox [(ngModel)]="v01_10"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Mercados</ion-label><ion-checkbox [(ngModel)]="v01_11"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Tienda</ion-label><ion-checkbox [(ngModel)]="v01_12"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Supermercados</ion-label><ion-checkbox [(ngModel)]="v01_13"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Otro</ion-label><ion-checkbox [(ngModel)]="v01_14"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Especifique Otro Formas de abastecimiento</ion-label><ion-input [(ngModel)]="v01_15"></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button full (click)="guardarModuloE3b()">Guardar</button>
+
+</ion-content>

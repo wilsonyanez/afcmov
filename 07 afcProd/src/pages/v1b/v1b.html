@@ -1,0 +1,305 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      MODULO 1 DATOS GENERALES DEL PRODUCTOR
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	 <ion-list>
+     <ion-list-header><h2 class="title">DATOS PRODUCTOR</h2></ion-list-header>
+		    <ion-item><ion-label stacked>CC/CI</ion-label><ion-input [(ngModel)]="v06_01"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>NOMBRES</ion-label><ion-input [(ngModel)]="v06_02"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>APELLIDOS</ion-label><ion-input [(ngModel)]="v06_03"  ></ion-input></ion-item>
+        <ion-item>
+          <ion-label stacked>FECHA DE NACIMIENTO</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="1930" max="2030-12-31"  [(ngModel)]="v06_04"></ion-datetime>
+        </ion-item>
+        <ion-item><ion-label stacked>PAIS DE ORIGEN</ion-label><ion-select [(ngModel)]="v06_05"  >
+          <ion-option value=1>ECUADOR</ion-option>
+          <ion-option value=2>VENEZUELA</ion-option>
+          <ion-option value=3>COLOMBIA</ion-option>
+          <ion-option value=4>REPUBLICA ISLAMICA PRESIDENCIALISTA</ion-option>
+          <ion-option value=5>ALBANIA</ion-option>
+          <ion-option value=6>ALEMANIA</ion-option>
+          <ion-option value=7>ANDORRA</ion-option>
+          <ion-option value=8>ANGOLA</ion-option>
+          <ion-option value=9>ANTIGUA Y BARBUDA</ion-option>
+          <ion-option value=10>ARABIA SAUDI / ARABIA SAUDITA</ion-option>
+          <ion-option value=11>ARGELIA</ion-option>
+          <ion-option value=12>ARGENTINA</ion-option>
+          <ion-option value=13>ARMENIA</ion-option>
+          <ion-option value=14>AUSTRALIA</ion-option>
+          <ion-option value=15>AUSTRIA</ion-option>
+          <ion-option value=16>AZERBAIYAN</ion-option>
+          <ion-option value=17>BAHAMAS</ion-option>
+          <ion-option value=18>BAHREIN / BAREIN</ion-option>
+          <ion-option value=19>BANGLADES / BANGLADESH</ion-option>
+          <ion-option value=20>BARBADOS</ion-option>
+          <ion-option value=21>BELGICA</ion-option>
+          <ion-option value=22>BELICE</ion-option>
+          <ion-option value=23>BIELORRUSIA / BELARUS</ion-option>
+          <ion-option value=24>BENIN</ion-option>
+          <ion-option value=25>MYANMAR / BIRMANIA</ion-option>
+          <ion-option value=26>BOLIVIA</ion-option>
+          <ion-option value=27>BOSNIA-HERZEGOVINA / BOSNIA</ion-option>
+          <ion-option value=28>BOTSUANA</ion-option>
+          <ion-option value=29>BRASIL</ion-option>
+          <ion-option value=30>BRUNEI</ion-option>
+          <ion-option value=31>BULGARIA</ion-option>
+          <ion-option value=32>BURKINA FASO</ion-option>
+          <ion-option value=33>BURUNDI</ion-option>
+          <ion-option value=34>BUTAN</ion-option>
+          <ion-option value=35>CABO VERDE</ion-option>
+          <ion-option value=36>CAMBOYA</ion-option>
+          <ion-option value=37>CAMERUN</ion-option>
+          <ion-option value=38>CANADA</ion-option>
+          <ion-option value=39>CATAR / QATAR</ion-option>
+          <ion-option value=40>REPUBLICA CENTROAFRICANA</ion-option>
+          <ion-option value=41>CHAD</ion-option>
+          <ion-option value=42>CHEQUIA / REPUBLICA CHECA</ion-option>
+          <ion-option value=43>CHILE</ion-option>
+          <ion-option value=44>CHINA</ion-option>
+          <ion-option value=45>CHIPRE</ion-option>
+          <ion-option value=46>COMORAS</ion-option>
+          <ion-option value=47>REPUBLICA DEL CONGO / CONGO</ion-option>
+          <ion-option value=48>REPUBLICA DEMOCRATICA DEL CONGO</ion-option>
+          <ion-option value=49>COREA DEL NORTE</ion-option>
+          <ion-option value=50>COREA DEL SUR</ion-option>
+          <ion-option value=51>COSTA DE MARFIL / CÔTE D’IVOIRE</ion-option>
+          <ion-option value=52>COSTA RICA</ion-option>
+          <ion-option value=53>CROACIA</ion-option>
+          <ion-option value=54>CUBA</ion-option>
+          <ion-option value=55>DINAMARCA</ion-option>
+          <ion-option value=56>DOMINICA</ion-option>
+          <ion-option value=57>DOMINICANA / REPUBLICA DOMINICANA</ion-option>
+          <ion-option value=58>EGIPTO</ion-option>
+          <ion-option value=59>EL SALVADOR</ion-option>
+          <ion-option value=60>EMIRATOS ARABES UNIDOS</ion-option>
+          <ion-option value=61>ERITREA</ion-option>
+          <ion-option value=62>ESLOVAQUIA</ion-option>
+          <ion-option value=63>ESLOVENIA</ion-option>
+          <ion-option value=64>ESPAÑA</ion-option>
+          <ion-option value=65>ESTADOS UNIDOS</ion-option>
+          <ion-option value=66>ESTONIA</ion-option>
+          <ion-option value=67>ETIOPIA</ion-option>
+          <ion-option value=68>FILIPINAS</ion-option>
+          <ion-option value=69>FINLANDIA</ion-option>
+          <ion-option value=70>FIYI</ion-option>
+          <ion-option value=71>FRANCIA</ion-option>
+          <ion-option value=72>GABON</ion-option>
+          <ion-option value=73>GAMBIA</ion-option>
+          <ion-option value=74>GEORGIA</ion-option>
+          <ion-option value=75>GHANA</ion-option>
+          <ion-option value=76>GRANADA</ion-option>
+          <ion-option value=77>GRECIA</ion-option>
+          <ion-option value=78>GUATEMALA</ion-option>
+          <ion-option value=79>GUINEA</ion-option>
+          <ion-option value=80>GUINEA-BISAU</ion-option>
+          <ion-option value=81>GUINEA ECUATORIAL</ion-option>
+          <ion-option value=82>GUYANA</ion-option>
+          <ion-option value=83>HAITI</ion-option>
+          <ion-option value=84>HONDURAS</ion-option>
+          <ion-option value=85>HUNGRIA</ion-option>
+          <ion-option value=86>INDIA</ion-option>
+          <ion-option value=87>INDONESIA</ion-option>
+          <ion-option value=88>IRAK / IRAQ</ion-option>
+          <ion-option value=89>IRAN</ion-option>
+          <ion-option value=90>IRLANDA</ion-option>
+          <ion-option value=91>ISLANDIA</ion-option>
+          <ion-option value=92>ISRAEL</ion-option>
+          <ion-option value=93>ITALIA</ion-option>
+          <ion-option value=94>JAMAICA</ion-option>
+          <ion-option value=95>JAPON</ion-option>
+          <ion-option value=96>JORDANIA</ion-option>
+          <ion-option value=97>KAZAJISTAN</ion-option>
+          <ion-option value=98>KENIA</ion-option>
+          <ion-option value=99>KIRGUISTAN</ion-option>
+          <ion-option value=100>KIRIBATI</ion-option>
+          <ion-option value=101>KUWAIT</ion-option>
+          <ion-option value=102>LAOS</ion-option>
+          <ion-option value=103>LESOTO</ion-option>
+          <ion-option value=104>LETONIA</ion-option>
+          <ion-option value=105>LIBANO</ion-option>
+          <ion-option value=106>LIBERIA</ion-option>
+          <ion-option value=107>LIBIA</ion-option>
+          <ion-option value=108>LIECHTENSTEIN</ion-option>
+          <ion-option value=109>LITUANIA</ion-option>
+          <ion-option value=110>LUXEMBURGO</ion-option>
+          <ion-option value=111>MACEDONIA / EX REPUBLICA YUGOSLAVA DE MACEDONIA</ion-option>
+          <ion-option value=112>MADAGASCAR</ion-option>
+          <ion-option value=113>MALASIA</ion-option>
+          <ion-option value=114>MALAUI</ion-option>
+          <ion-option value=115>MALDIVAS</ion-option>
+          <ion-option value=116>MALI / MALI</ion-option>
+          <ion-option value=117>MALTA</ion-option>
+          <ion-option value=118>MARRUECOS</ion-option>
+          <ion-option value=119>ISLAS MARSHALL</ion-option>
+          <ion-option value=120>MAURICIO</ion-option>
+          <ion-option value=121>MAURITANIA</ion-option>
+          <ion-option value=122>MEXICO</ion-option>
+          <ion-option value=123>MICRONESIA</ion-option>
+          <ion-option value=124>MOLDAVIA</ion-option>
+          <ion-option value=125>MONACO</ion-option>
+          <ion-option value=126>MONGOLIA</ion-option>
+          <ion-option value=127>MONTENEGRO</ion-option>
+          <ion-option value=128>MOZAMBIQUE</ion-option>
+          <ion-option value=129>NAMIBIA</ion-option>
+          <ion-option value=130>NAURU</ion-option>
+          <ion-option value=131>NEPAL</ion-option>
+          <ion-option value=132>NICARAGUA</ion-option>
+          <ion-option value=133>NIGER</ion-option>
+          <ion-option value=134>NIGERIA</ion-option>
+          <ion-option value=135>NORUEGA</ion-option>
+          <ion-option value=136>NUEVA ZELANDA / NUEVA ZELANDIA</ion-option>
+          <ion-option value=137>OMAN</ion-option>
+          <ion-option value=138>PAISES BAJOS</ion-option>
+          <ion-option value=139>PAKISTAN</ion-option>
+          <ion-option value=140>PALAOS</ion-option>
+          <ion-option value=141>PALESTINA</ion-option>
+          <ion-option value=142>PANAMA</ion-option>
+          <ion-option value=143>PAPUA NUEVA GUINEA</ion-option>
+          <ion-option value=144>PARAGUAY</ion-option>
+          <ion-option value=145>PERU</ion-option>
+          <ion-option value=146>POLONIA</ion-option>
+          <ion-option value=147>PORTUGAL</ion-option>
+          <ion-option value=148>REINO UNIDO</ion-option>
+          <ion-option value=149>RUANDA</ion-option>
+          <ion-option value=150>RUMANIA / RUMANIA</ion-option>
+          <ion-option value=151>RUSIA</ion-option>
+          <ion-option value=152>ISLAS SALOMON</ion-option>
+          <ion-option value=153>SAMOA</ion-option>
+          <ion-option value=154>SAN CRISTOBAL Y NIEVES</ion-option>
+          <ion-option value=155>SAN MARINO</ion-option>
+          <ion-option value=156>SAN VICENTE Y LAS GRANADINAS</ion-option>
+          <ion-option value=157>SANTA LUCIA</ion-option>
+          <ion-option value=158>SANTO TOME Y PRINCIPE</ion-option>
+          <ion-option value=159>SENEGAL</ion-option>
+          <ion-option value=160>SERBIA</ion-option>
+          <ion-option value=161>SEYCHELLES</ion-option>
+          <ion-option value=162>SIERRA LEONA</ion-option>
+          <ion-option value=163>SINGAPUR</ion-option>
+          <ion-option value=164>SIRIA</ion-option>
+          <ion-option value=165>SOMALIA</ion-option>
+          <ion-option value=166>SRI LANKA</ion-option>
+          <ion-option value=167>SUAZILANDIA</ion-option>
+          <ion-option value=168>SUDAFRICA</ion-option>
+          <ion-option value=169>SUDAN</ion-option>
+          <ion-option value=170>SUDAN DEL SUR</ion-option>
+          <ion-option value=171>SUECIA</ion-option>
+          <ion-option value=172>SUIZA</ion-option>
+          <ion-option value=173>SURINAM</ion-option>
+          <ion-option value=174>TAILANDIA</ion-option>
+          <ion-option value=175>TANZANIA</ion-option>
+          <ion-option value=176>TAYIKISTAN</ion-option>
+          <ion-option value=177>TIMOR ORIENTAL</ion-option>
+          <ion-option value=178>TOGO</ion-option>
+          <ion-option value=179>TONGA</ion-option>
+          <ion-option value=180>TRINIDAD Y TOBAGO</ion-option>
+          <ion-option value=181>TUNEZ</ion-option>
+          <ion-option value=182>TURKMENISTAN</ion-option>
+          <ion-option value=183>TURQUIA</ion-option>
+          <ion-option value=184>TUVALU</ion-option>
+          <ion-option value=185>UCRANIA</ion-option>
+          <ion-option value=186>UGANDA</ion-option>
+          <ion-option value=187>URUGUAY</ion-option>
+          <ion-option value=188>UZBEKISTAN</ion-option>
+          <ion-option value=189>VANUATU</ion-option>
+          <ion-option value=190>VATICANO / CIUDAD DEL VATICANO</ion-option>
+          <ion-option value=191>VIETNAM</ion-option>
+          <ion-option value=192>YEMEN</ion-option>
+          <ion-option value=193>YIBUTI</ion-option>
+          <ion-option value=194>ZAMBIA</ion-option>
+          <ion-option value=195>ZIMBABUE</ion-option>
+        </ion-select></ion-item>
+        <ion-item><ion-label stacked>GENERO</ion-label><ion-select [(ngModel)]="v06_06"  >
+        <ion-option value=1>MASCULINO</ion-option>
+        <ion-option value=2>FEMENINO</ion-option>
+      </ion-select></ion-item>
+
+        <ion-item><ion-label stacked>TELEFONO DE CONTACTO</ion-label><ion-input [(ngModel)]="v06_07"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>OTRO TELEFONO DE CONTACTO</ion-label><ion-input [(ngModel)]="v06_08"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>CELULAR</ion-label><ion-input [(ngModel)]="v06_09"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>CORREO ELECTRONICO</ion-label><ion-input [(ngModel)]="v06_10" (ngModelChange)="(v06_10!=null)?v06_10 = v06_10.toLowerCase():''"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>AUTOIDENTIFICACION</ion-label><ion-select [(ngModel)]="v06_11"  >
+          <ion-option value=1>NINGUNO</ion-option>
+          <ion-option value=2>INDIGENA</ion-option>
+          <ion-option value=3>AFROECUATORIANO/A AFRODESCENDIENTE</ion-option>
+          <ion-option value=4>NEGRO/A</ion-option>
+          <ion-option value=5>MULATO/A</ion-option>
+          <ion-option value=6>MONTUBIO/A</ion-option>
+          <ion-option value=7>MESTIZO/A</ion-option>
+          <ion-option value=8>BLANCO/A</ion-option>
+        </ion-select></ion-item>
+
+        <ion-item><ion-label stacked>PUEBLO O NACIONALIDAD INDIGENA</ion-label><ion-select [(ngModel)]="v06_12"  >
+          <ion-option value=1>NINGUNO</ion-option>
+          <ion-option value=2>IMBABURA</ion-option>
+          <ion-option value=3>CHACHI</ion-option>
+          <ion-option value=4>EPERA</ion-option>
+          <ion-option value=5>TSÁCHILA</ion-option>
+          <ion-option value=6>MANTA - HUANCAVILCA - PUNA</ion-option>
+          <ion-option value=7>AICOFAN</ion-option>
+          <ion-option value=8>SECOYA</ion-option>
+          <ion-option value=9>SIONA</ion-option>
+          <ion-option value=10>HUAORANI</ion-option>
+          <ion-option value=11>NAPO</ion-option>
+          <ion-option value=12>SHIWIAR</ion-option>
+          <ion-option value=13>ZÁPARA</ion-option>
+          <ion-option value=14>ACHUAR</ion-option>
+          <ion-option value=15>SHUAR</ion-option>
+          <ion-option value=16>KICHWA AMAZONIA</ion-option>
+          <ion-option value=17>ANDOA</ion-option>
+          <ion-option value=18>KARANKI</ion-option>
+          <ion-option value=19>NATABUELA</ion-option>
+          <ion-option value=20>OTAVALO</ion-option>
+          <ion-option value=21>KAYAMBI</ion-option>
+          <ion-option value=22>KITUKARA</ion-option>
+          <ion-option value=23>PANZALEO</ion-option>
+          <ion-option value=24>CHIBULEO</ion-option>
+          <ion-option value=25>KISAPINCHA</ion-option>
+          <ion-option value=26>SALASAKA</ion-option>
+          <ion-option value=27>KICHWA TUNGURAHUA</ion-option>
+          <ion-option value=28>WARANCA</ion-option>
+          <ion-option value=29>PURUHÁ</ion-option>
+          <ion-option value=30>KAÑARI</ion-option>
+          <ion-option value=31>SARAGURO</ion-option>
+          <ion-option value=32>AWÁ</ion-option>
+        </ion-select></ion-item>
+
+        <ion-item>
+          <ion-label stacked>Provincia</ion-label>
+          <ion-select [(ngModel)]="v06_13" (ionChange)="cargarCantonesPorProvincia()">
+            <ion-option *ngFor="let prov of listaProvincias" [value]="prov.id_dpa">{{prov.texto}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Canton</ion-label>
+          <ion-select [(ngModel)]="v06_14" (ionChange)="cargarParroquiasPorCanton()">
+            <ion-option *ngFor="let can of listaCantones" [value]="can.id_dpa">{{can.texto}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+         <ion-label stacked>Parroquia</ion-label>
+         <ion-select [(ngModel)]="v06_15"><ion-option *ngFor="let parr of listaParroquias" [value]="parr.id_dpa">{{parr.texto}}</ion-option>
+         </ion-select>
+        </ion-item>
+
+        <ion-item><ion-label stacked>DIRECCIÓN-SECTOR</ion-label><ion-input [(ngModel)]="v06_16"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>DIRECCIÓN-CALLE PRINCIPAL</ion-label><ion-input [(ngModel)]="v06_17"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>DIRECCIÓN-NUMERO</ion-label><ion-input [(ngModel)]="v06_18"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>DIRECCIÓN-CALLE SECUNDARIA</ion-label><ion-input [(ngModel)]="v06_19"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>DIRECCIÓN-REFERENCIA</ion-label><ion-input [(ngModel)]="v06_20"  ></ion-input></ion-item>
+
+        <ion-list-header><h2 class="title">En caso que no se encuentre el representante del Grupo Familiar Campesino, ingrese los datos del informante.</h2></ion-list-header>
+        <ion-item><ion-label stacked>CC/CI</ion-label><ion-input [(ngModel)]="v06_21"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>NOMBRES</ion-label><ion-input [(ngModel)]="v06_22"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>APELLIDOS</ion-label><ion-input [(ngModel)]="v06_23"  ></ion-input></ion-item>
+        <ion-item><ion-label stacked>¿De cuántos terrenos dispone para las actividades agroproductivas? (incluyendo este terreno)</ion-label><ion-input [(ngModel)]="v06_24"  ></ion-input></ion-item>
+
+      </ion-list>
+    <button ion-button full (click)="guardarModuloV1b()">Guardar</button>
+</ion-content>

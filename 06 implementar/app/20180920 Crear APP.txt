@@ -1,0 +1,278 @@
+﻿cordova clean
+npm cache verify
+npm cache clean --force
+
+ionic cordova platform rm android
+ionic cordova platform rm ios
+
+ionic cordova platform add android
+ionic cordova platform add ios
+
+cordova platform add ios --save
+ionic-app-scripts build --target cordova --platform ios
+
+Cambiar los iconos y splash de inicio de aplicación
+ionic cordova resources
+
+ionic cordova build android
+
+adb disconnect
+adb connect 192.168.56.5
+adb devices
+ionic cordova run android
+ionic cordova run android --verbose
+
++-------------------------+
+| Instalar paquetes:      |
++-------------------------+
+
+npm install -g npm@5.6.0
+npm i npm@latest -g
+
+npm install -g cordova@8.0.1
+npm install -g ionic@4.1.1
+
+npm install -g bower
+npm install -g karma
+npm install -g sass
+npm install -g grunt
+npm install -g gulp
+
+npm install -g xcodebuild
+
+Para instalar librerias, ej: app-scripts, ng2-validation, validate.js:
+npm install app-scripts --save 
+npm install ng2-validation --save
+-- No instalar ya está ng2 npm install validate.js --save
+npm install cordova-android@7.1.1
+
+npm install socks@1.1.10
+npm install browserslist@2.11.3
+npm install hoek@2.16.3
+npm install hoek@5.0.3
+npm install typescript@>=2.4.2
+npm install typescript@>=2.7.2
+npm install rxjs@^5.0.1
+npm install rxjs@^5.5.11
+npm install rxjs@^6.0.0
+npm install rxjs@^6.3.3
+npm install fsevents@1.2.4
+
+npm install @ionic-native/core@^4.11.0
+npm install @angular/core@*
+
+npm update
+npm i hoek
+
++-------------------------+
+| Revisar errores:        |
++-------------------------+
+cordova plugin add cordova-plugin-console
+ionic cordova build android --verbose
+
++-------------------------+
+| Actualizar con comando: |
++-------------------------+
+Actualizar node_modules desde: 
+npm i -g node_modules to update
+
+Actualizar npm desde: 5.6.0 a 6.4.1 a 6.5.0
+npm --version
+npm i -g npm to update
+
+Actualizar Cordova-res desde: cordova-res@0.6.0
+npm i -g cordova-res
+ionic cordova resources android --force
+
+sharp@0.22.1
+
+
+Actualizar Cordova desde: 8.0.0 a 8.1.1 a 8.1.2
+cordova --version
+npm i -g cordova to update
+
+Actualizar cordova-android desde: 7.1.1 a 7.1.2 a 7.1.4
+cordova-android --version
+npm i -g cordova-android to update
+
+Actualizar cordova-ios desde: 4.5.4 a 4.5.5
+cordova-ios --version
+npm i -g cordova-ios to update
+
+Actualizar ionic desde: 4.1.1 a 4.1.2 a 4.2.1 a 4.3.0 a 4.3.1 a 4.4.0 a 4.5.0 a 4.12.0 a 5.2.1
+ionic --version
+npm i -g ionic to update
+
+Actualizar bower desde: 1.8.4 a borrar este porque ha sido deprecado
+bower --version
+npm i -g bower to update
+
+Actualizar karma desde: 
+karma --version
+npm i -g karma to update
+
+Actualizar sass desde: 
+sass --version
+npm i -g sass to update
+
+Actualizar grunt-cli desde: 1.2.0 a 1.0.3
+grunt --version
+npm i -g grunt to update
+
+Actualizar gulp desde: 3.9.1 a 
+gulp --version
+npm i -g gulp to update
+
+Actualizar @angular:  7.2.15
+npm i -g @angular/core@* to update
+npm i -g @angular/compiler to update
+
+npm ls gulp-util
+
+npm i -g node-gyp@3.8.0
+
+Actualizar fsevents desde:  a 
+fsevents --version
+npm i -g fsevents to update
+
+npm i -g browserslist to update
+npm i -g hoek to update
+npm i -g node-gyp to update
+npm i -g rxjs to update
+
+Actualizar socks desde: 2.2.2 a 
+npm i -g socks to update
+
+Actualizar typescript desde: 2.4.2 a 2.7.2 a 3.1.6 a 3.4.5
+npm i -g typescript to update
+
+Actualizar xcodebuild desde: 1.0.2
+xcodebuild --version
+npm i -g xcodebuild to update
+
+ionic start C:\Desa\afc\pro
+
+
+npm i -g native-run
+C:\Users\Wilson\AppData\Roaming\npm\native-run -> C:\Users\Wilson\AppData\Roaming\npm\node_modules\native-run\bin\native-run
++ native-run@0.2.7
+added 30 packages from 33 contributors in 9.266s
+
+
+
++-------------------------+
+| Instalar con comando:   |
++-------------------------+
+
+npm rebuild node-sass --force
+npm install module_name --save /* Se ejecuta cuando instalo un módulo. Por ej. un cliente de base de datos */
+
+Si se borra el node_modules, se debe ejecutar el siguiente comando.
+npm list -g --depth=0
+
+
++--------------------------+
+| Actualizar packages.json |
++--------------------------+
+npm install i -g npm-check-updates
+npm install -g npm-check-updates
+ncu -u
+npm install
+
+npm install i -g typescript-check-updates
+
+npm install i -g fsevents-check-updates
+
+Luego de instalar una librerias, se debe ejecutar la sentencia fix, para identificar vulnerabilidad en el código:
+npm audit fix
+npm audit
+
+
+
+@ionic/app-scripts@3.2.4
+
+npm i -D -E @ionic/app-scripts
+npm install @ionic/app-scripts@latest --save --dev
+npm uninstall @ionic/app-scripts
+
+
+npm rebuild node-sass
+
++-------------------------+
+|Instalar sqlite:         |
++-------------------------+
+ionic cordova plugin add https://github.com/litehelpers/Cordova-sqlite-storage.git
+
++-------------------------+
+|Actualizar estas páginas:|
++-------------------------+
+app.module.ts
+database.ts
+tabs.ts
+tabs.html
+
++-------------------------+
+|Módulos: Productor - Val |
++-------------------------+
+ionic g tabs tabs
+ionic g page m1a
+ionic g page m1b
+ionic g page m1c
+ionic g page m1e
+ionic g page m1f
+ionic g page m1g
+ionic g page m1h
+
++-------------------------+
+|Módulos: Organización    |
++-------------------------+
+ionic g tabs tabs-o
+ionic g page o2a
+ionic g page o2b
+ionic g page o2c
+ionic g page o2d
+ionic g page o2e
+ionic g page o2f
+
++-------------------------+
+|Módulos: Establecimiento |
++-------------------------+
+ionic g tabs tabs-e
+ionic g page e3a
+ionic g page e3b
+ionic g page e3c
+ionic g page e3d
+ionic g page e3e
+ionic g page e3f
+ionic g page e3f
+ionic g page e3g
+
++-------------------------+
+|Módulos: CIALCO          |
++-------------------------+
+ionic g tabs tabs-c
+ionic g page c4a
+ionic g page c4b
+ionic g page c4c
+ionic g page c4d
+ionic g page c4e
+ionic g page c4f
+ionic g page c4g
+ionic g page c4h
+ionic g page c4i
+ionic g page c4j
+ionic g page c4k
+
+/home/ubuntu/afc/afcProd/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+
+
+C:\Users\Wilson\AppData\Roaming\npm\ionic -> C:\Users\Wilson\AppData\Roaming\npm\node_modules\ionic\bin\ionic
++ ionic@4.12.0
+added 20 packages from 29 contributors, removed 9 packages, updated 39 packages and moved 1 package in 44.507s
+
+
++ to@0.2.9
++ update@0.7.4
++ ionic@5.2.1
+added 13 packages from 11 contributors, removed 57 packages and updated 69 packages in 99.193s
+

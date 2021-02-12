@@ -1,0 +1,51 @@
+<!--
+  Generated template for the O2dPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SERVICIOS OFRECIDOS A LOS SOCIOS DE UNA ORGANIZACIÓN</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label stacked text-wrap>SERVICIOS EQUIPOS</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Tractor</ion-label><ion-checkbox [(ngModel)]="v02_01"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Motocultor</ion-label><ion-checkbox [(ngModel)]="v02_02"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Ensiladora</ion-label><ion-checkbox [(ngModel)]="v02_03"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Desgranadora, trilladora</ion-label><ion-checkbox [(ngModel)]="v2_04"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Picadora de pasto</ion-label><ion-checkbox [(ngModel)]="v02_05"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Secadora</ion-label><ion-checkbox [(ngModel)]="v02_06"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Molino</ion-label><ion-checkbox [(ngModel)]="v02_07"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Ordeño mecánico</ion-label><ion-checkbox [(ngModel)]="v02_08"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Tanque enfriador</ion-label><ion-checkbox [(ngModel)]="v02_09"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Equipos de cosecha</ion-label><ion-checkbox [(ngModel)]="v02_10"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Transporte</ion-label><ion-checkbox [(ngModel)]="v02_11"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Maquinaria y equipamiento poscosecha</ion-label><ion-checkbox [(ngModel)]="v02_12"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Otro</ion-label><ion-checkbox [(ngModel)]="v02_13"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Equipos Otro Especificación</ion-label><ion-input [(ngModel)]="v02_14"></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button full (click)="guardarModuloO2e()">Guardar</button>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "afcProd",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

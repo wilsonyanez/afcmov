@@ -1,0 +1,200 @@
+<!--
+  Generated template for the M3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MODULO 3 PECUARIO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-label text-wrap>¿Qué especies de animales tiene a día de hoy en la unidad productiva familiar? (vacuno, caprino, avícola,
+    piscícola, etc.)</ion-label>
+  <ion-list class="fondoForm">
+    <ion-list-header></ion-list-header>
+    <ion-item>
+      <ion-label stacked>Número</ion-label>
+      <ion-input [(ngModel)]="especie.val01" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Especie animal</ion-label>
+      <ion-select [(ngModel)]="especie.val02">
+        <ion-option value=1>OVINOS</ion-option>
+        <ion-option value=2>ASNAL</ion-option>
+        <ion-option value=3>CABALLAR</ion-option>
+        <ion-option value=4>MULAR</ion-option>
+        <ion-option value=5>CAPRINO</ion-option>
+        <ion-option value=6>ALPACA</ion-option>
+        <ion-option value=7>LLAMAS</ion-option>
+        <ion-option value=8>CONEJOS</ion-option>
+        <ion-option value=9>CUYES</ion-option>
+        <ion-option value=10>PAVOS</ion-option>
+        <ion-option value=11>PATOS</ion-option>
+        <ion-option value=12>AVESTRUCES</ion-option>
+        <ion-option value=13>CODORNICES</ion-option>
+        <ion-option value=14>COLMENAS</ion-option>
+        <ion-option value=15>OVINO/CAPRINO</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Numero total de especies</ion-label>
+      <ion-input [(ngModel)]="especie.val03"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Forma de produccion</ion-label>
+      <ion-select [(ngModel)]="especie.val04">
+        <ion-option value=1>Campo Abierto</ion-option>
+        <ion-option value=2>Establo o corral</ion-option>
+        <ion-option value=3>Piscinas</ion-option>
+        <ion-option value=4>Otro</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Proposito</ion-label>
+      <ion-select [(ngModel)]="especie.val05">
+        <ion-option value=1>Carne</ion-option>
+        <ion-option value=2>Huevos</ion-option>
+        <ion-option value=3>Leche</ion-option>
+        <ion-option value=4>Valor Agregado</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Frecuencia de Produccion</ion-label>
+      <ion-select [(ngModel)]="especie.val06">
+        <ion-option value=1>Diario</ion-option>
+        <ion-option value=2>Semanal</ion-option>
+        <ion-option value=3>Mensual</ion-option>
+        <ion-option value=4>Anual</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Cantidad de produccion</ion-label>
+      <ion-input [(ngModel)]="especie.val07"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Medida</ion-label>
+      <ion-select [(ngModel)]="especie.val08">
+        <ion-option value=1>Kilos </ion-option>
+        <ion-option value=2>Numero</ion-option>
+        <ion-option value=3>Libras</ion-option>
+        <ion-option value=4>Litros</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Destino</ion-label>
+      <ion-select [(ngModel)]="especie.val09">
+        <ion-option value=1>Consumo</ion-option>
+        <ion-option value=2>Venta</ion-option>
+        <ion-option value=3>Consumo y Venta</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Forma de Venta</ion-label>
+      <ion-select [(ngModel)]="especie.val10">
+        <ion-option value=1>Directa</ion-option>
+        <ion-option value=2>Intermediario</ion-option>
+        <ion-option value=3>Ambas</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Tipo de Mercado</ion-label>
+      <ion-select [(ngModel)]="especie.val11">
+        <ion-option value=1>Centro de Acopio / Agroindustria</ion-option>
+        <ion-option value=2>Canasta</ion-option>
+        <ion-option value=3>Compra publica</ion-option>
+        <ion-option value=4>Feria</ion-option>
+        <ion-option value=5>Hotel , Restaurante</ion-option>
+        <ion-option value=6>Mercado Local</ion-option>
+        <ion-option value=7>Mercado Minorista</ion-option>
+        <ion-option value=8>Mercado Mayorista</ion-option>
+        <ion-option value=9>Supermercado</ion-option>
+        <ion-option value=10>Venta en Finca</ion-option>
+        <ion-option value=11>Otros</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Provincia</ion-label>
+      <ion-select [(ngModel)]="especie.val12" (ionChange)="cargarCantonesPorProvincia()">
+        <ion-option *ngFor="let prov of listaProvincias" [value]="prov.id_dpa">{{prov.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Canton</ion-label>
+      <ion-select [(ngModel)]="especie.val13" (ionChange)="cargarParroquiasPorCanton()">
+        <ion-option *ngFor="let can of listaCantones" [value]="can.id_dpa">{{can.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Parroquia</ion-label>
+      <ion-select [(ngModel)]="especie.val14">
+        <ion-option *ngFor="let parr of listaParroquias" [value]="parr.id_dpa">{{parr.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>>
+      <ion-label stacked>Espacio</ion-label>
+      <ion-input [(ngModel)]="especie.val15"></ion-input>
+    </ion-item>
+    <ion-item>>
+      <ion-label stacked>Observaciones</ion-label>
+      <ion-input [(ngModel)]="especie.val16"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="guardarEspecie()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>Especies</ion-list-header>
+    <ion-item *ngFor="let c of listaEspecies" text-wrap>
+      <ion-label>
+        Numero:{{c.val01}}<br/>
+        Especie:{{c.val02}}<br/>
+        Numero de especies:{{c.val03}}<br/>
+        Forma de prod.:{{c.val04==="1"?"Campo Abierto":""}}
+        {{c.val04==="2"?"Establo o corral":""}}
+        {{c.val04==="3"?"Piscinas":""}}
+        {{c.val04==="4"?"Otro":""}}<br/>
+        Proposito:{{c.val05==="1"?"Carne":""}}
+        {{c.val05==="2"?"Huevos":""}}
+        {{c.val05==="3"?"Leche":""}}
+        {{c.val05==="4"?"Valor Agregado":""}}<br/>
+        Frecuencia de prod.:{{c.val06==="1"?"Diario":""}}
+        {{c.val06==="2"?"Semanal":""}}
+        {{c.val06==="3"?"Mensual":""}}
+        {{c.val06==="4"?"Anual":""}}<br/>
+        Cantidad:{{c.val07}} <br/>
+        Medida:{{c.val08==="1"?"Kilos ":""}}
+              {{c.val08==="2"?"Numero":""}}
+              {{c.val08==="3"?"Libras":""}}
+              {{c.val08==="4"?"Litros":""}}<br/>
+        Destino:{{c.val09==="1"?"Consumo":""}}
+              {{c.val09==="2"?"Venta":""}}
+              {{c.val09==="3"?"Consumo y Venta":""}}<br/>
+        Forma de Venta:{{c.val10==="1"?"Directa":""}}
+              {{c.val10==="2"?"Intermediario":""}}
+              {{c.val10==="3"?"Ambas":""}}<br/>
+        Tipo de Mercado:{{c.val11==="1"?"Centro de Acopio / Agroindustria":""}}
+              {{c.val11==="2"?"Canasta":""}}
+              {{c.val11==="3"?"Compra publica":""}}
+              {{c.val11==="4"?"Feria":""}}
+              {{c.val11==="5"?"Hotel , Restaurante":""}}
+              {{c.val11==="6"?"Mercado Local":""}}
+              {{c.val11==="7"?"Mercado Minorista":""}}
+              {{c.val11==="8"?"Mercado Mayorista":""}}
+              {{c.val11==="9"?"Supermercado":""}}
+              {{c.val11==="10"?"Venta en Finca":""}}
+              {{c.val11==="11"?"Otros":""}}<br/>
+        Provincia Canton Parroquia: {{c.pro}} - {{c.can}} - {{c.par}}<br/>
+        Espacio:{{c.val15}}<br/>
+        Observaciones:{{c.val16}}<br/>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,49 @@
+<!--
+  Generated template for the M4Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MODULO 4 TIPOS DE PRODUCCION</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+<ion-list-header></ion-list-header>
+  <ion-item><ion-label stacked>¿Cómo define su sistema productivo?</ion-label>
+    <ion-select [(ngModel)]="v07_01"  >
+        <ion-option value=1>Convencional</ion-option>
+        <ion-option value=2>Organico</ion-option>
+        <ion-option value=3>Agroecologico</ion-option>
+        <ion-option value=4>En transicion</ion-option>
+        <ion-option value=5>Otros</ion-option>
+    </ion-select></ion-item>
+<ion-item><ion-label stacked>Especifique</ion-label><ion-input [(ngModel)]="v07_02"  ></ion-input></ion-item>
+<ion-item><ion-label stacked text-wrap>¿Algún terreno o alguno de los productos tiene certificación, sello o sistema participativo de garantía?</ion-label>
+  <ion-select [(ngModel)]="v07_03"  >
+      <ion-option value=1>Si</ion-option>
+      <ion-option value=2>No</ion-option>
+  </ion-select></ion-item>
+<ion-item><ion-label stacked>¿Qué tipo de certificación o sello?</ion-label><ion-select [(ngModel)]="v07_04"  >
+    <ion-option value=1>Producción orgánica (USDA, BCS, CERES, etc.)</ion-option>
+    <ion-option value=2>Buenas prácticas ambientales (Punto verde,etc.)</ion-option>
+    <ion-option value=3>Buenas prácticas agropecuarias (Global Gap, etc.)</ion-option>
+    <ion-option value=4>Agricultura sostenible (Rainforest Alliance, UTZ)</ion-option>
+    <ion-option value=5>Turismo sostenible (Rainforest Alliance, etc.)</ion-option>
+    <ion-option value=6>Producción forestal o silvicultura sostenible (FSC, etc.)</ion-option>
+    <ion-option value=7>Comercio Justo (FLO,WFTO, etc.)</ion-option>
+    <ion-option value=8>Certificación religiosa (Kosher, Halal, etc.)</ion-option>
+    <ion-option value=9>Sistema participativo de garantía (SPG)</ion-option>
+    <ion-option value=10>Buenas Prácticas de Manufactura (BPM)</ion-option>
+    <ion-option value=11>Otros</ion-option>
+</ion-select></ion-item>
+<ion-item><ion-label stacked>Cuales</ion-label><ion-input [(ngModel)]="v07_05"  ></ion-input></ion-item>
+  </ion-list>
+  <button ion-button full (click)="guardarModuloV1e()">Guardar</button>
+</ion-content>

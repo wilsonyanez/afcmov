@@ -1,0 +1,281 @@
+<!--
+  Generated template for the C4gPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>REGISTRO DE PRODUCTORES VINCULADOS AL CIALCO</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-item class="item-divider">IDENTIFICACIÓN PERTENENCIA DEL PRODUCTOR</ion-item>
+    <ion-item>
+      <ion-label stacked>¿Dispone de Sello AFC?</ion-label><ion-select [(ngModel)]="miembroProductor.val01"  >
+      <ion-option value=1>Si</ion-option>
+      <ion-option value=2>No</ion-option>
+    </ion-select>
+    </ion-item>
+    <ion-item><ion-label stacked>CÓDIGO DE IDENTIFICACIÓN</ion-label><ion-input [(ngModel)]="miembroProductor.val02"></ion-input></ion-item>
+    <ion-item class="item-divider">IDENTIFICACIÓN DEL PRODUCTOR</ion-item>
+    <ion-item><ion-label stacked>CEDULA</ion-label><ion-input [(ngModel)]="miembroProductor.val03"></ion-input></ion-item>
+    <ion-item><ion-label stacked>NOMBRES</ion-label><ion-input [(ngModel)]="miembroProductor.val04"></ion-input></ion-item>
+    <ion-item><ion-label stacked>APELLIDOS</ion-label><ion-input [(ngModel)]="miembroProductor.val05"></ion-input></ion-item>
+    <ion-item>
+      <ion-label stacked>GENERO</ion-label>
+      <ion-select [(ngModel)]="miembroProductor.val06">
+        <ion-option value=1>Masculino</ion-option>
+        <ion-option value=2>Femenino</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>FECHA DE NACIMIENTO</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="1930" max="2030-12-31"  [(ngModel)]="miembroProductor.val07"></ion-datetime>
+    </ion-item>
+    <ion-item><ion-label stacked>PAIS DE ORIGEN</ion-label><ion-select [(ngModel)]="miembroProductor.val08"  >
+      <ion-option value=1>ECUADOR</ion-option>
+      <ion-option value=2>VENEZUELA</ion-option>
+      <ion-option value=3>COLOMBIA</ion-option>
+      <ion-option value=4>REPUBLICA ISLAMICA PRESIDENCIALISTA</ion-option>
+      <ion-option value=5>ALBANIA</ion-option>
+      <ion-option value=6>ALEMANIA</ion-option>
+      <ion-option value=7>ANDORRA</ion-option>
+      <ion-option value=8>ANGOLA</ion-option>
+      <ion-option value=9>ANTIGUA Y BARBUDA</ion-option>
+      <ion-option value=10>ARABIA SAUDI / ARABIA SAUDITA</ion-option>
+      <ion-option value=11>ARGELIA</ion-option>
+      <ion-option value=12>ARGENTINA</ion-option>
+      <ion-option value=13>ARMENIA</ion-option>
+      <ion-option value=14>AUSTRALIA</ion-option>
+      <ion-option value=15>AUSTRIA</ion-option>
+      <ion-option value=16>AZERBAIYAN</ion-option>
+      <ion-option value=17>BAHAMAS</ion-option>
+      <ion-option value=18>BAHREIN / BAREIN</ion-option>
+      <ion-option value=19>BANGLADES / BANGLADESH</ion-option>
+      <ion-option value=20>BARBADOS</ion-option>
+      <ion-option value=21>BELGICA</ion-option>
+      <ion-option value=22>BELICE</ion-option>
+      <ion-option value=23>BIELORRUSIA / BELARUS</ion-option>
+      <ion-option value=24>BENIN</ion-option>
+      <ion-option value=25>MYANMAR / BIRMANIA</ion-option>
+      <ion-option value=26>BOLIVIA</ion-option>
+      <ion-option value=27>BOSNIA-HERZEGOVINA / BOSNIA</ion-option>
+      <ion-option value=28>BOTSUANA</ion-option>
+      <ion-option value=29>BRASIL</ion-option>
+      <ion-option value=30>BRUNEI</ion-option>
+      <ion-option value=31>BULGARIA</ion-option>
+      <ion-option value=32>BURKINA FASO</ion-option>
+      <ion-option value=33>BURUNDI</ion-option>
+      <ion-option value=34>BUTAN</ion-option>
+      <ion-option value=35>CABO VERDE</ion-option>
+      <ion-option value=36>CAMBOYA</ion-option>
+      <ion-option value=37>CAMERUN</ion-option>
+      <ion-option value=38>CANADA</ion-option>
+      <ion-option value=39>CATAR / QATAR</ion-option>
+      <ion-option value=40>REPUBLICA CENTROAFRICANA</ion-option>
+      <ion-option value=41>CHAD</ion-option>
+      <ion-option value=42>CHEQUIA / REPUBLICA CHECA</ion-option>
+      <ion-option value=43>CHILE</ion-option>
+      <ion-option value=44>CHINA</ion-option>
+      <ion-option value=45>CHIPRE</ion-option>
+      <ion-option value=46>COMORAS</ion-option>
+      <ion-option value=47>REPUBLICA DEL CONGO / CONGO</ion-option>
+      <ion-option value=48>REPUBLICA DEMOCRATICA DEL CONGO</ion-option>
+      <ion-option value=49>COREA DEL NORTE</ion-option>
+      <ion-option value=50>COREA DEL SUR</ion-option>
+      <ion-option value=51>COSTA DE MARFIL / CÔTE D’IVOIRE</ion-option>
+      <ion-option value=52>COSTA RICA</ion-option>
+      <ion-option value=53>CROACIA</ion-option>
+      <ion-option value=54>CUBA</ion-option>
+      <ion-option value=55>DINAMARCA</ion-option>
+      <ion-option value=56>DOMINICA</ion-option>
+      <ion-option value=57>DOMINICANA / REPUBLICA DOMINICANA</ion-option>
+      <ion-option value=58>EGIPTO</ion-option>
+      <ion-option value=59>EL SALVADOR</ion-option>
+      <ion-option value=60>EMIRATOS ARABES UNIDOS</ion-option>
+      <ion-option value=61>ERITREA</ion-option>
+      <ion-option value=62>ESLOVAQUIA</ion-option>
+      <ion-option value=63>ESLOVENIA</ion-option>
+      <ion-option value=64>ESPAÑA</ion-option>
+      <ion-option value=65>ESTADOS UNIDOS</ion-option>
+      <ion-option value=66>ESTONIA</ion-option>
+      <ion-option value=67>ETIOPIA</ion-option>
+      <ion-option value=68>FILIPINAS</ion-option>
+      <ion-option value=69>FINLANDIA</ion-option>
+      <ion-option value=70>FIYI</ion-option>
+      <ion-option value=71>FRANCIA</ion-option>
+      <ion-option value=72>GABON</ion-option>
+      <ion-option value=73>GAMBIA</ion-option>
+      <ion-option value=74>GEORGIA</ion-option>
+      <ion-option value=75>GHANA</ion-option>
+      <ion-option value=76>GRANADA</ion-option>
+      <ion-option value=77>GRECIA</ion-option>
+      <ion-option value=78>GUATEMALA</ion-option>
+      <ion-option value=79>GUINEA</ion-option>
+      <ion-option value=80>GUINEA-BISAU</ion-option>
+      <ion-option value=81>GUINEA ECUATORIAL</ion-option>
+      <ion-option value=82>GUYANA</ion-option>
+      <ion-option value=83>HAITI</ion-option>
+      <ion-option value=84>HONDURAS</ion-option>
+      <ion-option value=85>HUNGRIA</ion-option>
+      <ion-option value=86>INDIA</ion-option>
+      <ion-option value=87>INDONESIA</ion-option>
+      <ion-option value=88>IRAK / IRAQ</ion-option>
+      <ion-option value=89>IRAN</ion-option>
+      <ion-option value=90>IRLANDA</ion-option>
+      <ion-option value=91>ISLANDIA</ion-option>
+      <ion-option value=92>ISRAEL</ion-option>
+      <ion-option value=93>ITALIA</ion-option>
+      <ion-option value=94>JAMAICA</ion-option>
+      <ion-option value=95>JAPON</ion-option>
+      <ion-option value=96>JORDANIA</ion-option>
+      <ion-option value=97>KAZAJISTAN</ion-option>
+      <ion-option value=98>KENIA</ion-option>
+      <ion-option value=99>KIRGUISTAN</ion-option>
+      <ion-option value=100>KIRIBATI</ion-option>
+      <ion-option value=101>KUWAIT</ion-option>
+      <ion-option value=102>LAOS</ion-option>
+      <ion-option value=103>LESOTO</ion-option>
+      <ion-option value=104>LETONIA</ion-option>
+      <ion-option value=105>LIBANO</ion-option>
+      <ion-option value=106>LIBERIA</ion-option>
+      <ion-option value=107>LIBIA</ion-option>
+      <ion-option value=108>LIECHTENSTEIN</ion-option>
+      <ion-option value=109>LITUANIA</ion-option>
+      <ion-option value=110>LUXEMBURGO</ion-option>
+      <ion-option value=111>MACEDONIA / EX REPUBLICA YUGOSLAVA DE MACEDONIA</ion-option>
+      <ion-option value=112>MADAGASCAR</ion-option>
+      <ion-option value=113>MALASIA</ion-option>
+      <ion-option value=114>MALAUI</ion-option>
+      <ion-option value=115>MALDIVAS</ion-option>
+      <ion-option value=116>MALI / MALI</ion-option>
+      <ion-option value=117>MALTA</ion-option>
+      <ion-option value=118>MARRUECOS</ion-option>
+      <ion-option value=119>ISLAS MARSHALL</ion-option>
+      <ion-option value=120>MAURICIO</ion-option>
+      <ion-option value=121>MAURITANIA</ion-option>
+      <ion-option value=122>MEXICO</ion-option>
+      <ion-option value=123>MICRONESIA</ion-option>
+      <ion-option value=124>MOLDAVIA</ion-option>
+      <ion-option value=125>MONACO</ion-option>
+      <ion-option value=126>MONGOLIA</ion-option>
+      <ion-option value=127>MONTENEGRO</ion-option>
+      <ion-option value=128>MOZAMBIQUE</ion-option>
+      <ion-option value=129>NAMIBIA</ion-option>
+      <ion-option value=130>NAURU</ion-option>
+      <ion-option value=131>NEPAL</ion-option>
+      <ion-option value=132>NICARAGUA</ion-option>
+      <ion-option value=133>NIGER</ion-option>
+      <ion-option value=134>NIGERIA</ion-option>
+      <ion-option value=135>NORUEGA</ion-option>
+      <ion-option value=136>NUEVA ZELANDA / NUEVA ZELANDIA</ion-option>
+      <ion-option value=137>OMAN</ion-option>
+      <ion-option value=138>PAISES BAJOS</ion-option>
+      <ion-option value=139>PAKISTAN</ion-option>
+      <ion-option value=140>PALAOS</ion-option>
+      <ion-option value=141>PALESTINA</ion-option>
+      <ion-option value=142>PANAMA</ion-option>
+      <ion-option value=143>PAPUA NUEVA GUINEA</ion-option>
+      <ion-option value=144>PARAGUAY</ion-option>
+      <ion-option value=145>PERU</ion-option>
+      <ion-option value=146>POLONIA</ion-option>
+      <ion-option value=147>PORTUGAL</ion-option>
+      <ion-option value=148>REINO UNIDO</ion-option>
+      <ion-option value=149>RUANDA</ion-option>
+      <ion-option value=150>RUMANIA / RUMANIA</ion-option>
+      <ion-option value=151>RUSIA</ion-option>
+      <ion-option value=152>ISLAS SALOMON</ion-option>
+      <ion-option value=153>SAMOA</ion-option>
+      <ion-option value=154>SAN CRISTOBAL Y NIEVES</ion-option>
+      <ion-option value=155>SAN MARINO</ion-option>
+      <ion-option value=156>SAN VICENTE Y LAS GRANADINAS</ion-option>
+      <ion-option value=157>SANTA LUCIA</ion-option>
+      <ion-option value=158>SANTO TOME Y PRINCIPE</ion-option>
+      <ion-option value=159>SENEGAL</ion-option>
+      <ion-option value=160>SERBIA</ion-option>
+      <ion-option value=161>SEYCHELLES</ion-option>
+      <ion-option value=162>SIERRA LEONA</ion-option>
+      <ion-option value=163>SINGAPUR</ion-option>
+      <ion-option value=164>SIRIA</ion-option>
+      <ion-option value=165>SOMALIA</ion-option>
+      <ion-option value=166>SRI LANKA</ion-option>
+      <ion-option value=167>SUAZILANDIA</ion-option>
+      <ion-option value=168>SUDAFRICA</ion-option>
+      <ion-option value=169>SUDAN</ion-option>
+      <ion-option value=170>SUDAN DEL SUR</ion-option>
+      <ion-option value=171>SUECIA</ion-option>
+      <ion-option value=172>SUIZA</ion-option>
+      <ion-option value=173>SURINAM</ion-option>
+      <ion-option value=174>TAILANDIA</ion-option>
+      <ion-option value=175>TANZANIA</ion-option>
+      <ion-option value=176>TAYIKISTAN</ion-option>
+      <ion-option value=177>TIMOR ORIENTAL</ion-option>
+      <ion-option value=178>TOGO</ion-option>
+      <ion-option value=179>TONGA</ion-option>
+      <ion-option value=180>TRINIDAD Y TOBAGO</ion-option>
+      <ion-option value=181>TUNEZ</ion-option>
+      <ion-option value=182>TURKMENISTAN</ion-option>
+      <ion-option value=183>TURQUIA</ion-option>
+      <ion-option value=184>TUVALU</ion-option>
+      <ion-option value=185>UCRANIA</ion-option>
+      <ion-option value=186>UGANDA</ion-option>
+      <ion-option value=187>URUGUAY</ion-option>
+      <ion-option value=188>UZBEKISTAN</ion-option>
+      <ion-option value=189>VANUATU</ion-option>
+      <ion-option value=190>VATICANO / CIUDAD DEL VATICANO</ion-option>
+      <ion-option value=191>VIETNAM</ion-option>
+      <ion-option value=192>YEMEN</ion-option>
+      <ion-option value=193>YIBUTI</ion-option>
+      <ion-option value=194>ZAMBIA</ion-option>
+      <ion-option value=195>ZIMBABUE</ion-option>
+    </ion-select></ion-item>
+    <ion-item class="item-divider">FECHA DE VINCULACIÓN AL CIALCO</ion-item>
+    <ion-item>
+      <ion-label stacked>FECHA INICIO</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010-01-01" max="2030-12-31" [(ngModel)]="miembroProductor.val09"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>FECHA FIN</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010-01-01" max="2030-12-31" [(ngModel)]="miembroProductor.val10"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>ESTADO</ion-label>
+      <ion-select [(ngModel)]="miembroProductor.val11" >
+        <ion-option value=1>Activo</ion-option>
+        <ion-option value=2>Inactivo</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button full (click)="guardarModuloC4g()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>DATOS DEL REGISTRO DE PRODUCTORES VINCULADOS AL CIALCO</ion-list-header>
+    <ion-item *ngFor="let u of listamiembroProductor" text-wrap>
+      <ion-label>
+        IDENTIFICACIÓN PERTENENCIA DEL PRODUCTOR<br/>
+          ¿Dispone de Sello AFC?: {{u.val01==="1"?"SI":""}}  {{u.val01==="2"?"NO":""}}<br/>
+          Código de identificación: {{u.val02}}<br/>
+        IDENTIFICACIÓN DEL PRODUCTOR<br/>
+          Cédula: {{u.val03}}<br/>
+          Nombres: {{u.val04}}<br/>
+          Apellidos: {{u.val05}}<br/>
+          Género: {{u.val06==="1"?"Masculino":""}}  {{u.val06==="2"?"Femenino":""}}<br/>
+          Fecha de nacimiento: {{u.val07}}<br/>
+          País de origen: {{u.val08}}<br/>
+        FECHA DE VINCULACIÓN AL CIALCO<br/>
+          Fecha inicio: {{u.val09}}<br/>
+          Fecha fin: {{u.val10}}<br/>
+          Estado:
+            {{u.val11==="1"?"Activo":""}}
+            {{u.val11==="2"?"Inactivo":""}}<br/>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,196 @@
+<!--
+  Generated template for the M7Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MODULO 7 APICULTURA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+          <ion-label stacked>¿A día de hoy realiza alguna práctica apícola?</ion-label>
+          <ion-select [(ngModel)]="v08_01">
+            <ion-option value=1>Si</ion-option>
+            <ion-option value=2>No</ion-option>
+          </ion-select>
+        </ion-item>
+    <ion-item>
+      <ion-label stacked>¿En este predio tiene colmenas?</ion-label>
+      <ion-select [(ngModel)]="v08_02">
+        <ion-option value=1>Si</ion-option>
+        <ion-option value=2>No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>¿Cuántas colmenas tiene a día de hoy en su unidad productiva?</ion-label>
+        <ion-input [(ngModel)]="v08_03"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label stacked text-wrap>Que proceso de extraccion y decantacion de la miel realiza?</ion-label>
+      <ion-select [(ngModel)]="v08_04">
+        <ion-option value=1>Centrifuga industrial, automatico acero inoxidable</ion-option>
+        <ion-option value=2>Centriguga manual de acero inoxidable</ion-option>
+        <ion-option value=3>Centrifuga artesanal</ion-option>
+        <ion-option value=4>Decantador acero inoxidable para apicultura</ion-option>
+        <ion-option value=5>Decantador domestico</ion-option>
+        <ion-option value=6>Decantador artesanal</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button full (click)="guardarModuloV1h()">Guardar</button>
+  <ion-list class="fondoForm">
+    <ion-item>
+      <ion-label stacked>Numero</ion-label>
+      <ion-input [(ngModel)]="apiproducto.val00"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Producto</ion-label>
+      <ion-select [(ngModel)]="apiproducto.val01">
+        <ion-option value=1>Miel</ion-option>
+        <ion-option value=2>Turron</ion-option>
+        <ion-option value=3>Polen</ion-option>
+        <ion-option value=4>Propoleo</ion-option>
+        <ion-option value=5>Cera</ion-option>
+        <ion-option value=6>Jalea real</ion-option>
+        <ion-option value=7>Otros</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Frecuencia de Produccion</ion-label>
+        <ion-select [(ngModel)]="apiproducto.val02">
+            <ion-option value=1>Diario</ion-option>
+            <ion-option value=2>Semanal</ion-option>
+            <ion-option value=3>Mensual</ion-option>
+            <ion-option value=4>Anual</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Cantidad de produccion</ion-label>
+          <ion-input [(ngModel)]="apiproducto.val03"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Medida</ion-label>
+            <ion-select [(ngModel)]="apiproducto.val04">
+
+              <ion-option value=1>Kilos </ion-option>
+              <ion-option value=2>Numero</ion-option>
+              <ion-option value=3>Libras</ion-option>
+              <ion-option value=4>Litros</ion-option>
+            </ion-select>
+          </ion-item>
+    <ion-item>
+      <ion-label stacked>Destino</ion-label>
+      <ion-select [(ngModel)]="apiproducto.val05">
+          <ion-option value=1>Consumo</ion-option>
+          <ion-option value=2>Venta</ion-option>
+          <ion-option value=3>Consumo y Venta</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Forma de Venta</ion-label>
+      <ion-select [(ngModel)]="apiproducto.val06">
+          <ion-option value=1>Directa</ion-option>
+          <ion-option value=2>Intermediario</ion-option>
+          <ion-option value=3>Ambas</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Tipo de Mercado</ion-label>
+      <ion-select [(ngModel)]="apiproducto.val07">
+          <ion-option value=1>Centro de Acopio / Agroindustria</ion-option>
+          <ion-option value=2>Canasta</ion-option>
+          <ion-option value=3>Compra publica</ion-option>
+          <ion-option value=4>Feria</ion-option>
+          <ion-option value=5>Hotel , Restaurante</ion-option>
+          <ion-option value=6>Mercado Local</ion-option>
+          <ion-option value=7>Mercado Minorista</ion-option>
+          <ion-option value=8>Mercado Mayorista</ion-option>
+          <ion-option value=9>Supermercado</ion-option>
+          <ion-option value=10>Venta en Finca</ion-option>
+          <ion-option value=11>Otros</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Provincia</ion-label>
+      <ion-select [(ngModel)]="apiproducto.val08" (ionChange)="cargarCantonesPorProvincia()">
+        <ion-option *ngFor="let prov of listaProvincias" [value]="prov.id_dpa">{{prov.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Canton</ion-label>
+      <ion-select [(ngModel)]="apiproducto.val09" (ionChange)="cargarParroquiasPorCanton()">
+        <ion-option *ngFor="let can of listaCantones" [value]="can.id_dpa">{{can.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Parroquia</ion-label>
+      <ion-select [(ngModel)]="apiproducto.val10">
+        <ion-option *ngFor="let parr of listaParroquias" [value]="parr.id_dpa">{{parr.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Espacio</ion-label>
+      <ion-input [(ngModel)]="apiproducto.val11"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Tiene Notificacion Sanitaria</ion-label>
+      <ion-select [(ngModel)]="apiproducto.val12">
+          <ion-option value=1>SI(NS)</ion-option>
+          <ion-option value=2>SI(RS)</ion-option>
+          <ion-option value=3>No</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="guardarApiProducto()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+      <ion-list-header>Productos Apicultura</ion-list-header>
+      <ion-item *ngFor="let c of listaApiproducto" text-wrap>
+          <ion-label>
+              Producto:{{c.val01}}<br/>
+              Frecuencia de prod.:{{c.val02==="1"?"Diario":""}}
+        {{c.val02==="2"?"Semanal":""}}
+        {{c.val02==="3"?"Mensual":""}}
+        {{c.val02==="4"?"Anual":""}}<br/>
+              Cantidad:{{c.val03}}<br/>
+              Medida:{{c.val04==="1"?"Kilos ":""}}
+              {{c.val04==="2"?"Numero":""}}
+              {{c.val04==="3"?"Libras":""}}
+              {{c.val04==="4"?"Litros":""}}<br/>
+              Destino:{{c.val05==="1"?"Consumo":""}}
+              {{c.val05==="2"?"Venta":""}}
+              {{c.val05==="3"?"Consumo y Venta":""}}<br/>
+              Forma de Venta:{{c.val06==="1"?"Directa":""}}
+              {{c.val06==="2"?"Intermediario":""}}
+              {{c.val06==="3"?"Ambas":""}}<br/>
+              Tipo de Mercado:{{c.val07==="1"?"Centro de Acopio / Agroindustria":""}}
+              {{c.val07==="2"?"Canasta":""}}
+              {{c.val07==="3"?"Compra publica":""}}
+              {{c.val07==="4"?"Feria":""}}
+              {{c.val07==="5"?"Hotel , Restaurante":""}}
+              {{c.val07==="6"?"Mercado Local":""}}
+              {{c.val07==="7"?"Mercado Minorista":""}}
+              {{c.val07==="8"?"Mercado Mayorista":""}}
+              {{c.val07==="9"?"Supermercado":""}}
+              {{c.val07==="10"?"Venta en Finca":""}}
+              {{c.val07==="11"?"Otros":""}}<br/>
+              Provincia Canton Parroquia:{{c.pro}} - {{c.can}} - {{c.par}}<br/>
+              Espacio:{{c.val11}}<br/>
+              Tiene Notificacion:{{c.val12==="1"?"Si(NS)":""}}
+              {{c.val12==="2"?"Si(RS)":""}}
+              {{c.val12==="3"?"No":""}}<br/>
+            </ion-label>
+
+      </ion-item>
+
+    </ion-list>
+</ion-content>

@@ -1,0 +1,68 @@
+<!--
+  Generated template for the M13Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MÓDULO 13 INGRESOS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid>
+<ion-row>
+<ion-col col-4>
+    <ion-label stacked text-wrap>¿De dónde provienen la mayor parte de ingresos del grupo familiar?</ion-label>
+
+</ion-col>
+<ion-col col-8>
+    <ion-select [(ngModel)]="v14_01" class="anchoSelect">
+        <ion-option value=1>Actividades de la UPA</ion-option>
+        <ion-option value=2>Actividades fuera de la UPA</ion-option>
+        <ion-option value=3>Ambas</ion-option>
+    </ion-select>
+  </ion-col>
+</ion-row>
+<ion-row>
+    <ion-col col-4>
+        <ion-label stacked text-wrap>¿Cuántos ingresos genera de la venta de productos de la unidad productiva?</ion-label>
+
+      </ion-col>
+      <ion-col col-4>
+          <ion-input [(ngModel)]="v14_02" placeholder="En dólares (USD)" class="fondoInput"></ion-input>
+        </ion-col>
+        <ion-col col-4>
+            <ion-select [(ngModel)]="v14_03"  class="anchoSelect">
+                <ion-option value=1>Semanal</ion-option>
+                <ion-option value=2>Mensual</ion-option>
+                <ion-option value=3>Anual</ion-option>
+            </ion-select>
+          </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col col-4>
+          <ion-label stacked text-wrap>¿Cuántos ingresos genera el trabajo fuera de la unidad productiva?</ion-label>
+
+        </ion-col>
+        <ion-col col-4>
+            <ion-input [(ngModel)]="v14_04" placeholder="En dólares (USD)" class="fondoInput"></ion-input>
+          </ion-col>
+          <ion-col col-4>
+              <ion-select [(ngModel)]="v14_05"  class="anchoSelect">
+                  <ion-option value=1>Semanal</ion-option>
+                  <ion-option value=2>Mensual</ion-option>
+                  <ion-option value=3>Anual</ion-option>
+              </ion-select>
+            </ion-col>
+    </ion-row>
+
+</ion-grid>
+
+
+  <button ion-button full (click)="guardarModuloV1n()">Guardar</button>
+</ion-content>

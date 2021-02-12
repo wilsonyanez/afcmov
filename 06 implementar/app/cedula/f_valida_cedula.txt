@@ -1,0 +1,45 @@
+
+// ****************************************************************************
+//  SISTEMA         :	SIATCE
+//  MODULO          :   RUC
+//  PROCESO         :	FUNCION
+//  DESCRIPCION     :	Cálcula el digito verificador del RUC para ver si es válido
+//  PROGRAMADOR     :	Wilson T. Yánez
+//  FECHA CREACION  :	Sabado 23, de mayo de 1999
+//
+// ****************************************************************************
+/*
+f_valida_cedula
+return	integer
+value	long	avl_NumCed[10]
+*/
+
+
+long ll_Cnt, ll_multi, ll_sum, ll_cociente, ll_decena, ll_verificador
+
+ll_sum = 0
+for ll_Cnt = 1 to 9 step 2
+	ll_multi = avl_NumCed[ll_Cnt] * 2
+	if (ll_multi >= 10) then
+		ll_multi = 1 + mod(ll_multi,10)
+	end if 
+	ll_sum = ll_sum + ll_multi
+next
+
+for ll_Cnt = 2 to 9 step 2
+	ll_sum = ll_sum + avl_NumCed[ll_Cnt]
+next 
+
+ll_cociente = int(ll_sum/10)
+ll_decena  = (ll_cociente+1)*10
+ll_verificador	 = ll_decena - ll_sum
+
+if (ll_verificador = 10) then
+	ll_verificador = 0
+end if
+	
+if (ll_verificador = avl_NumCed[10]) then
+	return 1
+else
+	return 0
+end if 

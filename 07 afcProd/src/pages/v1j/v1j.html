@@ -1,0 +1,130 @@
+<!--
+  Generated template for the M9Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MODULO 9 ACCESO A CREDITO Y ASISTENCIA TECNICA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header></ion-list-header>
+    <ion-item>
+      <ion-label stacked text-wrap>¿En los últimos 6 meses ha accedido a algún crédito para la producción o comercialicación?</ion-label>
+      <ion-select [(ngModel)]="v10_01">
+        <ion-option value=1>Si</ion-option>
+        <ion-option value=2>No</ion-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Tipo de Credito</ion-label>
+      <ion-select [(ngModel)]="v10_02">
+        <ion-option value=1>Crédito de BANECUADOR</ion-option>
+        <ion-option value=2>Crédito de prestamista</ion-option>
+        <ion-option value=3>Crédito de otro banco</ion-option>
+        <ion-option value=4>Crédito de familiar</ion-option>
+        <ion-option value=5>Cooperativa de ahorro y crédito</ion-option>
+        <ion-option value=6>Coja comunal o comunitaria</ion-option>
+        <ion-option value=7>Otra</ion-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Especifique</ion-label>
+      <ion-input [(ngModel)]="v10_03"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>¿Cómo paga el crédito?</ion-label>
+      <ion-select [(ngModel)]="v10_04">
+        <ion-option value=1>Con la venta de los productos de la unidad productiva</ion-option>
+        <ion-option value=2>Con ingresos de fuera de la unidad productiva</ion-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked text-wrap>En los últimos 6 meses ¿ha recibido asistencia técnica para el manejo de la unidad productiva?</ion-label>
+      <ion-select [(ngModel)]="v10_05">
+        <ion-option value=1>Si</ion-option>
+        <ion-option value=2>No</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>Seleccione la fuente principal de la asistencia técnica:</ion-col>
+      <ion-col col-6>¿En qué temas recibió la asistencia técnica?</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-label stacked>MAG</ion-label>
+      <ion-checkbox [(ngModel)]="v10_06"></ion-checkbox>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input [(ngModel)]="v10_07" class="fondoInput"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-label stacked text-wrap>ONGs o EMPRESA PRIVADA</ion-label>
+      <ion-checkbox [(ngModel)]="v10_08"></ion-checkbox>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input [(ngModel)]="v10_09" class="fondoInput"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-label stacked>Casas comerciales</ion-label>
+      <ion-checkbox [(ngModel)]="v10_10"></ion-checkbox>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input [(ngModel)]="v10_11"  class="fondoInput"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-label stacked text-wrap>GAD (Gobierno Provincial, Municipio, etc.)</ion-label>
+      <ion-checkbox [(ngModel)]="v10_12"></ion-checkbox>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input [(ngModel)]="v10_13"  class="fondoInput"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-label stacked>Universidades</ion-label>
+      <ion-checkbox [(ngModel)]="v10_14"></ion-checkbox>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input [(ngModel)]="v10_15"  class="fondoInput"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-label stacked>Empresas privadas</ion-label>
+      <ion-checkbox [(ngModel)]="v10_16"></ion-checkbox>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input [(ngModel)]="v10_17"  class="fondoInput"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-label stacked>Otros</ion-label>
+      <ion-checkbox [(ngModel)]="v10_18"></ion-checkbox>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input [(ngModel)]="v10_19"  class="fondoInput"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <button ion-button full (click)="guardarModuloV1j()">Guardar</button>
+</ion-content>

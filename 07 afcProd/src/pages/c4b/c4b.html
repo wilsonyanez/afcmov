@@ -1,0 +1,127 @@
+<!--
+  Generated template for the C4bPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>DIRECCIÓN CIALCO</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>DIRECCIÓN DEL CIALCO</ion-list-header>
+    <ion-item class="item-divider">UBICACIÓN GEOGRÁFICA DIRECCIÓN</ion-item>
+      <ion-item>
+        <ion-label stacked>Provincia</ion-label>
+        <ion-select [(ngModel)]="miembroDireccion.val01" (ionChange)="cargarCantonesPorProvincia()">
+          <ion-option *ngFor="let prov of listaProvincias" [value]="prov.id_dpa">{{prov.texto}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Canton</ion-label>
+        <ion-select [(ngModel)]="miembroDireccion.val02" (ionChange)="cargarParroquiasPorCanton()">
+          <ion-option *ngFor="let can of listaCantones" [value]="can.id_dpa">{{can.texto}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Parroquia</ion-label>
+        <ion-select [(ngModel)]="miembroDireccion.val03"><ion-option *ngFor="let parr of listaParroquias" [value]="parr.id_dpa">{{parr.texto}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+    <ion-item class="item-divider">UBICACIÓN COORDENADAS GEOGRÁFICAS</ion-item>
+    <ion-item><ion-label stacked>X</ion-label><ion-input [(ngModel)]="miembroDireccion.val04"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Y</ion-label><ion-input [(ngModel)]="miembroDireccion.val05"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Z</ion-label><ion-input [(ngModel)]="miembroDireccion.val06"></ion-input></ion-item>
+
+    <ion-item class="item-divider">UBICACIÓN COORDENADAS UTM</ion-item>
+    <ion-item>
+      <ion-label stacked>Coordenadas UTM</ion-label>
+      <ion-select [(ngModel)]="miembroDireccion.val07">
+        <ion-option value=1>15N</ion-option>
+        <ion-option value=2>16N</ion-option>
+        <ion-option value=3>17N</ion-option>
+        <ion-option value=4>18N</ion-option>
+        <ion-option value=5>15S</ion-option>
+        <ion-option value=6>16S</ion-option>
+        <ion-option value=7>17S</ion-option>
+        <ion-option value=8>18S</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="item-divider">UBICACIÓN DISTRITO DIRECCIÓN</ion-item>
+    <ion-item><ion-label stacked>Sector</ion-label><ion-input [(ngModel)]="miembroDireccion.val08" ></ion-input></ion-item>
+    <ion-item><ion-label stacked>Calle principal</ion-label><ion-input [(ngModel)]="miembroDireccion.val09" ></ion-input></ion-item>
+    <ion-item><ion-label stacked>Número</ion-label><ion-input [(ngModel)]="miembroDireccion.val10" ></ion-input></ion-item>
+    <ion-item><ion-label stacked>Calle secundaria</ion-label><ion-input [(ngModel)]="miembroDireccion.val11" ></ion-input></ion-item>
+    <ion-item><ion-label stacked>Referencia</ion-label><ion-input [(ngModel)]="miembroDireccion.val12" ></ion-input></ion-item>
+    <ion-item class="item-divider">No. ESTIMADO DE CONSUMIDORES VINCULADOS</ion-item>
+    <ion-item><ion-label stacked>No. ESTIMADO DE CONSUMIDORES VINCULADOS</ion-label><ion-input [(ngModel)]="miembroDireccion.val13" ></ion-input></ion-item>
+
+    <ion-item class="item-divider">VIGENCIA DE LA DIRECCIÓN</ion-item>
+    <ion-item>
+      <ion-label stacked>FECHA INICIO</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010-01-01" max="2030-12-31"  [(ngModel)]="miembroDireccion.val14"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>FECHA FIN</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010-01-01" max="2030-12-31"  [(ngModel)]="miembroDireccion.val15"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>ESTADO</ion-label>
+      <ion-select [(ngModel)]="miembroDireccion.val16" >
+        <ion-option value=1>Activo</ion-option>
+        <ion-option value=2>Inactivo</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button full (click)="guardarModuloC4b()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>Direcciones que ubican al CIALCO</ion-list-header>
+    <ion-item *ngFor="let u of listaMiembroDireccion" text-wrap>
+      <ion-label>
+        UBICACIÓN GEOGRÁFICA DIRECCIÓN<br/>
+          Provincia Cantón Parroquia: {{u.pro}} - {{u.can}} - {{u.par}}<br/>
+        UBICACIÓN COORDENADAS GEOGRÁFICAS<br/>
+          X: {{u.val04}}<br/>
+          Y: {{u.val05}}<br/>
+          Z: {{u.val06}}<br/>
+        UBICACIÓN COORDENADAS UTM<br/>
+          Zona:
+          {{u.val07==="1"?"15N":""}}
+          {{u.val07==="2"?"16N":""}}
+          {{u.val07==="3"?"17N":""}}
+          {{u.val07==="4"?"18N":""}}
+          {{u.val07==="5"?"15S":""}}
+          {{u.val07==="6"?"16S":""}}
+          {{u.val07==="7"?"17S":""}}
+          {{u.val07==="8"?"18S":""}}<br/>
+        UBICACIÓN DISTRITO DIRECCIÓN<br/>
+          Sector: {{u.val08}}<br/>
+          Calle Principal: {{u.val09}}<br/>
+          Número: {{u.val10}}<br/>
+          Calle Secundaria: {{u.val11}}<br/>
+          Referencia: {{u.val12}}<br/>
+        No. ESTIMADO DE CONSUMIDORES VINCULADOS<br/>
+          No. estimado: {{u.val13}}<br/>
+        FECHA DE RESIDENCIA<br/>
+          FECHA INICIO: {{u.val14}}<br/>
+          FECHA FIN: {{u.val15}}<br/>
+          ESTADO DEL CIALCO:
+          {{u.val16==="1"?"Activo":""}}
+          {{u.val16==="2"?"Inactivo":""}}<br/>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

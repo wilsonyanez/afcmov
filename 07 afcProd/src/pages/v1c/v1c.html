@@ -1,0 +1,135 @@
+<!--
+  Generated template for the M2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MODULO 2 AGRICOLA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-label text-wrap>¿Qué cultivos dispone a día de hoy en éste y en los otros terrenos de la UPA?</ion-label>
+    <ion-list class="fondoForm">
+      <ion-list-header></ion-list-header>
+      <ion-item><ion-label stacked>Número</ion-label><ion-input [(ngModel)]="cultivo.val01" ></ion-input></ion-item>
+	    <ion-item><ion-label stacked text-wrap>Nombre de los Cultivos (detallar los cultivos,pastos,forestales,hongos,cultivados,etc. primero del terreno que visita, luego de los otros terrenos)</ion-label><ion-textarea [(ngModel)]="cultivo.val02"  ></ion-textarea></ion-item>
+      <ion-item>
+        <ion-label stacked>Tipo de Cultivo</ion-label>
+        <ion-select [(ngModel)]="cultivo.val03"  >
+          <ion-option value=1>Asociado</ion-option>
+          <ion-option value=2>Solo</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item><ion-label stacked>Lugar de Cultivo</ion-label>
+        <ion-select [(ngModel)]="cultivo.val04"  >
+          <ion-option value=1>Invernadero</ion-option>
+          <ion-option value=2>Campo Abierto</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item><ion-label stacked>Meses de cosecha (estacionalidad marcar)</ion-label><ion-input [(ngModel)]="cultivo.val05"  ></ion-input></ion-item>
+      <ion-item><ion-label stacked>Cantidad estimada de cosecha</ion-label><ion-input [(ngModel)]="cultivo.val06"  ></ion-input></ion-item>
+      <ion-item><ion-label stacked>Medida</ion-label>
+        <ion-select [(ngModel)]="cultivo.val07"  >
+          <ion-option value=1>Kilos </ion-option>
+          <ion-option value=2>Numero</ion-option>
+          <ion-option value=3>Libras</ion-option>
+          <ion-option value=4>Litros</ion-option>
+        </ion-select></ion-item>
+      <ion-item><ion-label stacked>Destino</ion-label>
+        <ion-select [(ngModel)]="cultivo.val08"  >
+          <ion-option value=1>Consumo</ion-option>
+          <ion-option value=2>Venta</ion-option>
+          <ion-option value=3>Consumo y Venta</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item><ion-label stacked>Forma de Venta</ion-label>
+        <ion-select [(ngModel)]="cultivo.val09"  >
+          <ion-option value=1>Directa</ion-option>
+          <ion-option value=2>Intermediario</ion-option>
+          <ion-option value=3>Ambas</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Tipo de Mercado</ion-label>
+        <ion-select [(ngModel)]="cultivo.val10"  >
+          <ion-option value=1>Centro de Acopio / Agroindustria</ion-option>
+          <ion-option value=2>Canasta</ion-option>
+          <ion-option value=3>Compra publica</ion-option>
+          <ion-option value=4>Feria</ion-option>
+          <ion-option value=5>Hotel , Restaurante</ion-option>
+          <ion-option value=6>Mercado Local</ion-option>
+          <ion-option value=7>Mercado Minorista</ion-option>
+          <ion-option value=8>Mercado Mayorista</ion-option>
+          <ion-option value=9>Supermercado</ion-option>
+          <ion-option value=10>Venta en Finca</ion-option>
+          <ion-option value=11>Otros</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Provincia</ion-label>
+          <ion-select [(ngModel)]="cultivo.val11" (ionChange)="cargarCantonesPorProvincia()">
+          <ion-option *ngFor="let prov of listaProvincias" [value]="prov.id_dpa">{{prov.texto}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Canton</ion-label>
+          <ion-select [(ngModel)]="cultivo.val12"  (ionChange)="cargarParroquiasPorCanton()">
+            <ion-option *ngFor="let can of listaCantones" [value]="can.id_dpa">{{can.texto}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Parroquia</ion-label>
+          <ion-select [(ngModel)]="cultivo.val13">
+          <ion-option *ngFor="let parr of listaParroquias" [value]="parr.id_dpa">{{parr.texto}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Espacio</ion-label>
+          <ion-input [(ngModel)]="cultivo.val14"  ></ion-input>
+      </ion-item>
+    </ion-list>
+  <button ion-button full (click)="guardarCultivo()" class="fondoForm">Guardar</button>
+  <ion-list>
+    <ion-list-header>Cultivos</ion-list-header>
+      <ion-item *ngFor="let c of listaCultivos" text-wrap>
+        <ion-label>
+          Número:{{c.val01}}<br/>
+          Cultivo:{{c.val02}}<br/>
+          Tipo:{{c.val03==="1"?"Asociado":""}}
+              {{c.val03==="2"?"Solo":""}}<br/>
+          Lugar:{{c.val04==="1"?"Invernadero":""}}
+              {{c.val04==="2"?"Campo Abierto":""}}<br/>
+          Meses:{{c.val05}}<br/>
+          Cantidad:{{c.val06}}<br/>
+          Medida:{{c.val07==="1"?"Kilos ":""}}
+              {{c.val07==="2"?"Numero":""}}
+              {{c.val07==="3"?"Libras":""}}
+              {{c.val07==="4"?"Litros":""}}<br/>
+          Destino:{{c.val08==="1"?"Consumo":""}}
+              {{c.val08==="2"?"Venta":""}}
+              {{c.val08==="3"?"Consumo y Venta":""}}<br/>
+          Forma de Venta:{{c.val09==="1"?"Directa":""}}
+              {{c.val09==="2"?"Intermediario":""}}
+              {{c.val09==="3"?"Ambas":""}}<br/>
+          Tipo de Mercado:{{c.val10==="1"?"Centro de Acopio / Agroindustria":""}}
+              {{c.val10==="2"?"Canasta":""}}
+              {{c.val10==="3"?"Compra publica":""}}
+              {{c.val10==="4"?"Feria":""}}
+              {{c.val10==="5"?"Hotel , Restaurante":""}}
+              {{c.val10==="6"?"Mercado Local":""}}
+              {{c.val10==="7"?"Mercado Minorista":""}}
+              {{c.val10==="8"?"Mercado Mayorista":""}}
+              {{c.val10==="9"?"Supermercado":""}}
+              {{c.val10==="10"?"Venta en Finca":""}}
+              {{c.val10==="11"?"Otros":""}}<br/>
+          Provincia Canton Parroquia:{{c.pro}} - {{c.can}} - {{c.par}}<br/>
+          Espacio:{{c.val14}}<br/>
+            </ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,27 @@
++------------------------------------------------------------+
+| Llenar datos a la tabla, que hemos creado:                 |
+| php artisan db:seed --class=UsuariosSeeder                 |
+| php artisan db:seed --class=ModalidadSeeder                |
+| php artisan db:seed --class=PermanenciaSeeder              |
+| php artisan db:seed --class=UtmSeeder                      |
+| php artisan db:seed --class=FrecuenciaSeeder               |
+| php artisan db:seed --class=OfertaAgropecuariaSeeder       | Ya ingresé y se duplicó el catálogo.
+| php artisan db:seed --class=CialcoSeeder                   |
+| php artisan db:seed --class=DireccionSeeder                |
+| php artisan db:seed --class=RepresentanteSeeder            |
+| php artisan db:seed --class=CoordenadaSeeder               |
+| php artisan db:seed --class=CialcoFrecuenciaSeeder         |
+| php artisan db:seed --class=CialcoOfertaAgropecuariaSeeder |
+| php artisan db:seed --class=UbicacionGeograficaSeeder      |
+*| php artisan db:seed --class=UbicacionSeeder               |
+| php artisan db:seed --class=OrganizacionSeeder             |
+| php artisan db:seed --class=ProductorSeeder                |
+| php artisan db:seed --class=AccionFortalecimientoSeeder    |
+| php artisan db:seed --class=CialcoInterinstitucionalSeeder |
+| php artisan db:seed --class=ProductoSeeder                 |
+| php artisan db:seed --class=CialcoProductoSeeder           |
+| php artisan db:seed --class=CialcoMontoVentaSeeder         |
+
+| php artisan db:seed --class=DatabaseSeeder                 |
+| php artisan db:seed --class=UsuariosFakeSeeder             |
++------------------------------------------------------------+

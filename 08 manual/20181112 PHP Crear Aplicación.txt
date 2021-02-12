@@ -1,0 +1,380 @@
+﻿+-----------------------------------------------------------------+
+| Abrir primera sesión cmd para ejecución de comandos de vagrant: |
++-----------------------------------------------------------------+
+cd C:\Desa\Homestead
+C:\Desa\Homestead>vagrant up
+C:\Desa\Homestead>vagrant up --provision
+C:\Desa\Homestead>vagrant provision
+C:\Desa\Homestead>ping cialco.test
+
+-- Para actualizar el vagrant.
+vagrant box update
+
+-- Me conecto de forma remota a VAGRANT, para ingresar los comandos de PHP de LARAVEL
+C:\Desa\Homestead>vagrant ssh
+
+-- Desde el directorio vagrant@homestead:~/code/cialco$ 
+vagrant@homestead:~$ cd code/cialco
+vagrant@homestead:~/code/cialco$ chmod -R 777 bootstrap/
+vagrant@homestead:~/code/cialco$ chmod -R 777 bootstrap/
+vagrant@homestead:~/code/cialco$ chmod -R 777 bootstrap/cache
+chmod: cannot access 'bootstrap/cache': No such file or directory
+vagrant@homestead:~/code/cialco$ mkdir bootstrap/cache
+vagrant@homestead:~/code/cialco$ chmod -R 777 bootstrap/cache
+vagrant@homestead:~/code/cialco$ php artisan key:generate
+Application key set successfully.
+vagrant@homestead:~/code/cialco$ php artisan
+Laravel Framework 5.7.9
+...
+
+php artisan route:cache
+php artisan route:clear
+php artisan view:clear
+
++---------------------------------------------------------------------+
+| Abrir segunda sesión cmd para ejecución de comandos en BDD Postgres |
++---------------------------------------------------------------------+
+-- Conectarse de forma remota a la base de datos CIALCO
+psql -h 192.168.10.10 -U homestead -d cialco
+-- Se solicita credenciales y se debe escribir: 
+usuario: homestead
+clave: secret
+
+
+Resumen de instrucciones de psql
+Tarea				Función psql
+Cerrar conexión			\q		
+Cambiar de Base de datos	\c __base_datos__
+Listar Bases de datos		\l
+Ver Definiciones		\d __table__
+Listar Schemas			\dn
+Listar funciones		\df
+Listar Tablas			\dt
+Listar Vistas			\dv
+Ver código SLQ de función	\df+ __function
+Pretty-format			\x
+
+
++-------------------------------------------------------+
+| Ejecución de comandos para crear nuevas páginas PHP:  |
++-------------------------------------------------------+
+-- Vamos a la raíz de nuestro proyecto y ejecutamos este comando, que lo que hará será crearnos el modelo y su archivo de migración. Si no queremos el archivo de migración quitamos -m:
+php artisan make:model Catalogs\\ofertaAgropecuaria -m
+
+-- comando que permite la creación de una tabla de migración.
+php artisan migrate:install
+
+-- comando que permite la creación de una tabla o varias tablas pendientes de ejecución.
+php artisan migrate
+
+Migration table created successfully.
+
+-- comando que permite la realizar un reverso de una migración de una tabla
+php artisan migrate:rollback
+
+-- Crear la generación de clave
+php artisan key:generate
+
+-- Para crear un controlador.
+php artisan make:controller Catalogs\\OfertaAgropecuariaController
+
+-- Para crear datos de prueba.
+php artisan make:seeder OfertaAgropecuariaSeeder
+
+-- Llenar datos a la tabla que hemos creado.
+php artisan db:seed --class=UsuariosSeeder
+php artisan db:seed --class=OfertaAgropecuariaSeeder
+
+-- Para registrar archivos que fueron cargados de forma manual.
+composer dump-autoload
+
+-- Para hacer validación.
+StoreOfertaAgropecuariaRequest
+php artisan make:request StoreOfertaAgropecuariaRequest
+
+-- Configurar C:\Desa\Homestead\cialco\routes\web.php para conexiones remotas
+-- Añadir la nueva ruta.
+Route::get('/Catalogs/OfertaAgropecuaria', 'OfertaAgropecuariaController@index');
+Route::get('/Catalogs/OfertaAgropecuaria', 'OfertaAgropecuariaController@create');
+Route::get('/Catalogs/OfertaAgropecuaria', 'OfertaAgropecuariaController@store');
+Route::get('/Catalogs/OfertaAgropecuaria/{ofa_oferta_agropecuaria_id}', 'OfertaAgropecuariaController@show');    1712071990
+
+-- Configurar pg_hba.conf para conexiones remotas
+sudo vi /etc/postgresql/10/main/pg_hba.conf
+
+-- Permite reiniciar el servicio de Tomcat
+sudo systemctl restart nginx
+
+Host del Bitbucket
+https://bitbucket.org/
+git@bitbucket.org:cladian/cialco.git
+https://wilsonyanez@bitbucket.org/cladian/cialco.git
+https://cladian@bitbucket.org/cladian/cialco.git
+
+Para validar el código:
+php artisan make:request StoreCialcoRequest
+
+
+git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks -c credential.helper= -c credential.helper="C:/Users/WILSO_~1/AppData/Local/ATLASS~1/SOURCE~1/GIT_EX~1/GIT-CR~1.EXE" push -v --tags origin staging:staging
+remote: Forbidden
+fatal: unable to access 'https://wilsonyanez@bitbucket.org/cladian/cialco.git/': The requested URL returned error: 403
+
+Pushing to https://wilsonyanez@bitbucket.org/cladian/cialco.git
+Completed with errors, see above.
+
+
+C:\Desa\Homestead\cialco
+.env
+
++---------------------------------------------------------+
+| Vamos a la raíz de nuestro proyecto y ejecutamos este   |
+| comando, que creará el modelo y su archivo de migración.|
+| Si no queremos el archivo de migración quitamos -m:     |
+|                                                         |
+| php artisan make:model Catalogs\\ofertaAgropecuaria -m  |
++---------------------------------------------------------+
+Resultado:
+C:\Desa\Homestead\cialco\database\migrations
+2018_12_06_163226_create_oferta_agropecuaria_table.php
+
+C:\Desa\Homestead\cialco\app\Catalogs
+ofertaAgropecuaria.php
+
++---------------------------------------------------------------------+
+| Para crear un controlador:                                          |
+|                                                                     |
+| php artisan make:controller Catalogs\\OfertaAgropecuariaController  |
++---------------------------------------------------------------------+
+Resultado:
+C:\Desa\Homestead\cialco\app\Http\Controllers\Catalogs
+OfertaAgropecuariaController.php
+
++---------------------------------------------------------+
+| Para crear datos de prueba:                             |
+|                                                         |
+| php artisan make:seeder OfertaAgropecuariaSeeder        |
++---------------------------------------------------------+
+C:\Desa\Homestead\cialco\database\seeds
+OfertaAgropecuariaSeeder.php
+
++---------------------------------------------------------+
+| Llenar datos a la tabla que hemos creado:               |
+| php artisan db:seed --class=UsuariosSeeder              |
+| php artisan db:seed --class=OfertaAgropecuariaSeeder    |
++---------------------------------------------------------+
+Resultado:
+C:\Desa\Homestead\cialco\resources\views\ofertaagropecuaria
+create.blade.php
+edit.blade.php
+index.blade.php
+view.blade.php
+
++---------------------------------------------------------+
+| Para hacer validación.                                  |
+|                                                         |
+| php artisan make:request StoreOfertaAgropecuariaRequest |
++---------------------------------------------------------+
+Resultado:
+C:\Desa\Homestead\cialco\app\Http\Requests
+StoreOfertaAgropecuariaRequest.php
+
++------------------------------------------------------------------------------------+
+| Para Configurar y Añadir la nueva ruta.                                            |
+| Configurar C:\Desa\Homestead\cialco\routes\web.php para                            |
+| conexiones remotas                                                                 |
+|                                                                                    |
+| Modificar el archivo dónde se requiera.                                            |
+| Route::get('/Catalogs/OfertaAgropecuaria', 'OfertaAgropecuariaController@index');  |
+| Route::get('/Catalogs/OfertaAgropecuaria', 'OfertaAgropecuariaController@create'); |
+| Route::get('/Catalogs/OfertaAgropecuaria', 'OfertaAgropecuariaController@store');  | 
+| Route::get('/Catalogs/OfertaAgropecuaria/{ofa_oferta_agropecuaria_id}', 'OfertaAgropecuariaController@show');
++------------------------------------------------------------------------------------+
+Resultado:
+C:\Desa\Homestead\cialco\routes
+web.php
+
++---------------------------------------------------------+
+| Para publicar y Añadir al menú  de contexto Catálogo:   |
+| Configurar C:\Desa\Homestead\cialco\config\adminlte.php |
+| para publicar la nueva opción                           |
+|                                                         |
+| php artisan make:request StoreOfertaAgropecuariaRequest |
++---------------------------------------------------------+
+C:\Desa\Homestead\cialco\config
+adminlte.php
+
+https://wilsonyanez@bitbucket.org/cladian/cialco.git
+https://bitbucket.org/cladian/cialco/src/master/
+https://wilsonyanez@bitbucket.org/wilsonyanez/repo
+https://cladian@bitbucket.org/cladian/cialco.git
+
+
+vagrant@homestead:~/code/cialco$ ssh-keygen -t rsa -b 4096 -C "wilson.yanez.jimenez@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/vagrant/.ssh/id_rsa):
+/home/vagrant/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/vagrant/.ssh/id_rsa.
+Your public key has been saved in /home/vagrant/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:40aN0MLpW8IMP7W18xEh4kd0KcR0UlfsMT3rnn90+2w wilson.yanez.jimenez@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|        .=B.=..oo|
+|     . + oo=.o +o|
+|    . = + o..  .=|
+|     * + * . . ..|
+|      B S + . .  |
+|       B . o . .o|
+|      . o   . ..+|
+|       .       =E|
+|               .B|
++----[SHA256]-----+
+vagrant@homestead:~/code/cialco$ eval
+vagrant@homestead:~/code/cialco$ ssh-agent -s
+SSH_AUTH_SOCK=/tmp/ssh-Y58LauXdnEJG/agent.5813; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=5814; export SSH_AGENT_PID;
+echo Agent pid 5814;
+vagrant@homestead:~/code/cialco$ ssh-add ~/.ssh/id_rsa
+
+
+wilso_000@HPPAVILION MINGW64 ~
+$ eval $(ssh-agent)
+Agent pid 13928
+
+wilso_000@HPPAVILION MINGW64 ~
+$ ssh-add ~/.ssh/id_rsa
+Enter passphrase for /c/Users/wilso_000/.ssh/id_rsa:
+
+wilso_000@HPPAVILION MINGW64 ~
+$ ssh -T git@bitbucket.org
+The authenticity of host 'bitbucket.org (18.205.93.0)' can't be established.
+RSA key fingerprint is SHA256:zzXQOXSRBEiUtuE8AikJYKwbHaxvSc0ojez9YXaGp1A.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'bitbucket.org,18.205.93.0' (RSA) to the list of known hosts.
+Enter passphrase for key '/c/Users/wilso_000/.ssh/id_rsa':
+git@bitbucket.org: Permission denied (publickey).
+
+wilso_000@HPPAVILION MINGW64 ~
+
+
+
+ssh-add ~/.ssh/id_rsa
+
+
+
+C:\Users\Wilson\.ssh\git
+
+
+Enter file in which to save the key (/c/Users/Wilson/.ssh/id_rsa): C:\Users\Wilson\.ssh\git
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\Wilson\.ssh\git.
+Your public key has been saved in C:\Users\Wilson\.ssh\git.pub.
+The key fingerprint is:
+SHA256:ZCDuvHJdrXWICaj2eHX5lHzSHkyCuqDoE9THm7ZLr/0 Wilson@W7-64-AFC
+The key's randomart image is:
++---[RSA 2048]----+
+|    . .          |
+|   . o . .       |
+|  . + . + . .    |
+| . = o = * B     |
+|. o = = S O *    |
+| + + O + = = .   |
+|. = *.+ . . .    |
+|.. +..o          |
+| ..  ooo.E       |
++----[SHA256]-----+
+
+Ejecutar el siguiente comando para habilitar el Agente de GIT con ssh
+-------------
+$ eval $(ssh-agent)
+Agent pid 3016
+
+
+Ingresar ssh-add seguido de la ruta y el archivo key privado:
+$ ssh-add ~/.ssh/git
+Identity added: /c/Users/Wilson/.ssh/git (/c/Users/Wilson/.ssh/git)
+
+Para validar que la Key está correcta:
+ssh -T git@bitbucket.org
+
+$ ssh -T git@bitbucket.org
+The authenticity of host 'bitbucket.org (18.205.93.1)' can't be established.
+RSA key fingerprint is SHA256:zzXQOXSRBEiUtuE8AikJYKwbHaxvSc0ojez9YXaGp1A.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'bitbucket.org,18.205.93.1' (RSA) to the list of known hosts.
+logged in as wilsonyanez.
+
+You can use git or hg to connect to Bitbucket. Shell access is disabled.
+
+
+
+ssh-add ~/.ssh/id_rsa
+
+C:\Users\wilso_000\.ssh\git
+C:\Users\Wilson\.ssh\git
+
+
+
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/wilso_000/.ssh/id_rsa): C:\Users\wilso_000\.ssh\git
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\wilso_000\.ssh\git.
+Your public key has been saved in C:\Users\wilso_000\.ssh\git.pub.
+The key fingerprint is:
+SHA256:4bFKYjGrKOwHCNR9Gf76yzHmxHyg856ZlpQRsfzkO7Y wilso_000@HPPAVILION
+The key's randomart image is:
++---[RSA 2048]----+
+|  . .  .o..      |
+| . . ..o...      |
+|.   o ..oo..     |
+|.    + ..=+      |
+|o   + . Sooo     |
+|oo o o .=o. .    |
+|o.o   .+.B.=     |
+|o  .    OoO o    |
+| ..     o@.E     |
++----[SHA256]-----+
+
+wilso_000@HPPAVILION MINGW64 ~
+$ eval $(ssh-agent)
+Agent pid 17576
+
+wilso_000@HPPAVILION MINGW64 ~
+$ ssh-add ~/.ssh/git
+Identity added: /c/Users/wilso_000/.ssh/git (wilso_000@HPPAVILION)
+
+wilso_000@HPPAVILION MINGW64 ~
+$ ssh -T git@bitbucket.org
+Warning: Permanently added the RSA host key for IP address '18.205.93.2' to the list of known hosts.
+logged in as wilsonyanez.
+
+You can use git or hg to connect to Bitbucket. Shell access is disabled.
+
+
+git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks -c credential.helper= -c credential.helper="C:/Users/WILSO_~1/AppData/Local/ATLASS~1/SOURCE~1/GIT_EX~1/GIT-CR~1.EXE" push -v --tags origin staging:staging
+Pushing to git@bitbucket.org:cladian/cialco.git
+The server's host key is not cached in the registry. You
+have no guarantee that the server is the computer you
+think it is.
+The server's rsa2 key fingerprint is:
+ssh-rsa 2048 97:8c:1b:f2:6f:14:6b:5c:3b:ec:aa:46:46:74:7c:40
+If you trust this host, enter "y" to add the key to
+
+
+Edison (10:38):
+ssh-add ~/.ssh/git
+https://confluence.atlassian.com/bbkb/permission-denied-publickey-302811860.html
+
+1713281861
+MARCELO LOBATO
+
+1708978018
+ALEX AGUIRRE
+
+SANTIAGO ENCALADA

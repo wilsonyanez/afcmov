@@ -1,0 +1,57 @@
+﻿En la siguiente dirección, se podrá descargar máquinas virtuales para emular el código, según el dispositivo.
+
+https://www.osboxes.org/virtualbox-images/
+
+/* ****************************************************** */
+/* ******** https://www.osboxes.org/android-x86/ ******** */
+/* ****************************************************** */
+Android x86
+Android is a mobile operating system (OS) based on the Linux kernel and currently developed by Google. Android-x86 is a project to port Android open source project to x86 platform, formerly known as “patch hosting for android x86 support”. The Android-x86 team created their own code base to provide support on different x86 platforms, and set up a git server to host it. it is an open source project licensed under Apache Public License 2.0
+The ISO image downloaded from Android-x86 sourceforge page.
+Features are available in the latest release (Most of the following features are for hardware):
+Kernel 3.10.40, KMS enable
+Wifi support with GUI
+Better disk installer
+Power Suspend/resume (S3 mode)
+Battery Status
+Software mouse cursor
+Mouse wheel
+Support netbook native resolution
+Audio (ALSA)
+V4l2 Camera support
+External monitor support
+External storage auto mount support
+Support external keyboard
+Debug mode with busybox
+Bluetooth
+G-sensor
+
+https://www.osboxes.org/virtualbox-images/
+https://www.osboxes.org/guide/
+
+
+This is a project to port Android open source project to x86 platform, formerly known as "patch hosting for
+android x86 support". http://www.android-x86.org/
+________________________________________
+Para descargar una imagen iso de android-x86
+https://sourceforge.net/projects/android-x86/files/latest/download
+
+
+Android-x86 Project - Run Android on Your PC
+___________________________
+http://www.android-x86.org/
+
+Para descargar una imagen iso de android-x86 para PC
+http://www.android-x86.org/releases/releasenote-8-1-rc1
+
+
+https://osdn.net/projects/android-x86/downloads/69704/android-x86_64-8.1-rc1.iso/
+
+
+How to Install macOS Sierra 10.12 on VirtualBox?
+_______________________________________________________________
+Desde esta dirección, se puede encontrar el manual de instalación de Sierra 10.12, para virtual box
+https://www.wikigain.com/install-macos-sierra-10-12-virtualbox/
+
+Desde esta dirección, se puede encontrar al Sierra 10.12, para virtual box
+https://drive.google.com/drive/folders/0B-PSijxodhB1OUZlLURhLUYwS2s

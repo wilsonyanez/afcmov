@@ -1,0 +1,13 @@
+﻿ant -f C:\\Desa\\afc\\afc-rest run
+C:\Desa\afc\afc-rest\nbproject\build-impl.xml:258: The Java EE server classpath is not correctly set up - server home directory is missing.
+Either open the project in the IDE and assign the server or setup the server classpath manually.
+For example like this:
+   ant -Dj2ee.server.home=<app_server_installation_directory>
+BUILD FAILED (total time: 0 seconds)
+
+
+Clean builds did not help me, either. I took a look at project.properties and found that j2ee.server.home was not set anywhere, although j2ee.platform.classpath depends on it.
+I do have Weblogic Server set up under /home (on a Linux machine).
+So, I closed the project and added a line to project.properties:
+j2ee.server.home=/home/blister/wls/wlserver
+(where wlserver = the server name)

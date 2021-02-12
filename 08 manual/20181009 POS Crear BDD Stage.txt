@@ -1,0 +1,59 @@
+﻿/* ******************************************************* */
+/* ************** Crear base de datos Stage ************** */
+/* ******************************************************* */
+Nombre Tablespace: afc-stg
+Owner: posgres
+Area de paso para informacion de replica de las bases de datos Sqlite proveniente de los telefonos celulares.
+
+Script:
+CREATE TABLESPACE "afc-stg"
+  OWNER postgres
+  LOCATION '/home/ubuntu/afc/data';
+
+COMMENT ON TABLESPACE "afc-stg"
+  IS 'Area de paso para informacion de replica de las bases de datos Sqlite proveniente de los telefonos celulares.';
+
+Nombre DataBase: afc-stg
+Owner: afc
+Repositorio de informacion de datos proveniente de los telefonos celulares (Base de Datos: Sqlite).
+
+Script:
+CREATE DATABASE "afc-stg"
+  WITH ENCODING='UTF8'
+       OWNER=afc
+       TEMPLATE=postgres
+       LC_COLLATE='en_US.UTF-8'
+       LC_CTYPE='en_US.UTF-8'
+       CONNECTION LIMIT=-1
+       TABLESPACE="afc-stg";
+
+COMMENT ON DATABASE "afc-stg"
+  IS 'Repositorio de informacion de datos proveniente de los telefonos celulares (Base de Datos: Sqlite).';
+
+
++------------------------------------------------------------+
+| Comando de conexión a la BDD con uso de JDBC:              |
++------------------------------------------------------------+
+jdbc:postgresql://localhost:5432/afc
+
++------------------------------------------------------------+
+| Usuario propietario de la base de Datos AFC-STG            |
++------------------------------------------------------------+
+CREATE ROLE "afc-stg" LOGIN ENCRYPTED PASSWORD 'md5b2420a286c6b79dd587226ae2fb26630'
+  SUPERUSER CREATEDB CREATEROLE
+   VALID UNTIL 'infinity';
+COMMENT ON ROLE "afc-stg"
+  IS 'Usuario propietario de la base de Datos AFC-STG';
+
+/* Permite apropiarse de los objetos de la base de datos AFC-STG */
+ALTER DATABASE "afc-stg"
+  OWNER TO "afc-stg";
+
+Conexión JDBC Postgresql:
+------------------------
+jdbc:postgres:thin:postgres@192.168.56.9:5432:sirusafc
+
+jdbc:postgresql:database
+jdbc:postgresql://host/database
+jdbc:postgresql://host:port/database
+

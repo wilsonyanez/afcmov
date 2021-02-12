@@ -1,0 +1,54 @@
+<!--
+  Generated template for the C4iPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>ACCIONES DESDE EL MAG PARA FORTALECIMIENTO DEL CIALCO</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>REGISTRO DE ACCIONES DESDE EL MAG PARA FORTALECIMIENTO DEL CIALCO</ion-list-header>
+    <ion-item class="item-divider">ACCIONES DESDE EL MAG</ion-item>
+    <ion-item>
+      <ion-label stacked>Acciones desde el MAG para fortalecimiento del CIALCO</ion-label>
+      <ion-select [(ngModel)]="miembroInstitucion.val01">
+        <ion-option value=1>Fortalecimiento de Capacidades</ion-option>
+        <ion-option value=2>Asistencia técnica</ion-option>
+        <ion-option value=3>Gestión de Ordenazas, convenios y acuerdos</ion-option>
+        <ion-option value=4>Estrategias de Promoción y Difusión</ion-option>
+        <ion-option value=5>Gestión de recursos</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item><ion-label stacked>DESCRIPCIÓN DEL APOYO</ion-label><ion-input [(ngModel)]="miembroInstitucion.val02"></ion-input></ion-item>
+    <ion-item>
+      <ion-label stacked>FECHA DE APOYO</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010" max="2030-12-31"  [(ngModel)]="miembroInstitucion.val03"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="guardarModuloC4i()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>REGISTRO DE ACCIONES DESDE EL MAG PARA FORTALECIMIENTO DEL CIALCO</ion-list-header>
+    <ion-item *ngFor="let u of listamiembroInstitucion" text-wrap>
+      <ion-label>
+        <p>ACCIONES INTERINSTITUCIONALES<br/>
+          Acción:
+          {{u.val01==="1"?"Fortalecimiento de Capacidades":""}}
+          {{u.val01==="2"?"Asistencia técnica":""}}
+          {{u.val01==="3"?"Gestión de Ordenazas, convenios y acuerdos":""}}
+          {{u.val01==="4"?"Estrategias de Promoción y Difusión":""}}
+          {{u.val01==="5"?"Gestión de recursos":""}} <br/>
+          Descripción de apoyo: {{u.val02}}<br/>
+          Fecha de apoyo: {{u.val03}}<br/> </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,122 @@
+<!--
+  Generated template for the M1cPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>UNIDAD DE PRODUCCION</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list class="fondoForm">
+    <ion-list-header>UNIDAD DE PRODUCCION</ion-list-header>
+    <ion-item>
+      <ion-label stacked>PROVINCIA</ion-label>
+      <ion-select [(ngModel)]="unidadProd.val01" (ionChange)="cargarCantonesPorProvincia()">
+          <ion-option *ngFor="let prov of listaProvincias" [value]="prov.id_dpa">{{prov.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>CANTON</ion-label>
+      <ion-select [(ngModel)]="unidadProd.val02"  (ionChange)="cargarParroquiasPorCanton()">
+          <ion-option *ngFor="let can of listaCantones" [value]="can.id_dpa">{{can.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>PARROQUIA</ion-label>
+      <ion-select [(ngModel)]="unidadProd.val03">
+          <ion-option *ngFor="let parr of listaParroquias" [value]="parr.id_dpa">{{parr.texto}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Sector (barrio, comunidad,etc)</ion-label>
+      <ion-input [(ngModel)]="unidadProd.val04"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Número Predio</ion-label>
+      <ion-input [(ngModel)]="unidadProd.val05"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>DIRECCION - Calle Principal</ion-label>
+      <ion-input [(ngModel)]="unidadProd.val06"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>DIRECCION - Número</ion-label>
+      <ion-input [(ngModel)]="unidadProd.val07"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>DIRECCION - Calle Secundaria</ion-label>
+      <ion-input [(ngModel)]="unidadProd.val08"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>DIRECCION - Referencia</ion-label>
+      <ion-input [(ngModel)]="unidadProd.val09"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>EXTENSION</ion-label>
+      <ion-input [(ngModel)]="unidadProd.val10"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>UNIDAD DE MEDIDA</ion-label>
+      <ion-select [(ngModel)]="unidadProd.val11">
+        <ion-option value=1>HECTAREAS (ha)</ion-option>
+        <ion-option value=2>METROS CUADRADOS (m2)</ion-option>
+        <ion-option value=3>SOLAR</ion-option>
+        <ion-option value=4>CUADRA</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>TENENCIA</ion-label>
+      <ion-select [(ngModel)]="unidadProd.val12">
+        <ion-option value=1>PROPIA CON TITULO</ion-option>
+        <ion-option value=2>PROPIA SIN TITULO</ion-option>
+        <ion-option value=3>TOMADA EN ARRIENDO</ion-option>
+        <ion-option value=4>APARCERÍA O AL PARTIR</ion-option>
+        <ion-option value=5>COMUNERO O COOPERADO</ion-option>
+        <ion-option value=6>OTRA</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>¿Se encuentra la vivienda del grupo familiar en este terreno?</ion-label>
+      <ion-checkbox [(ngModel)]="unidadProd.val13"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button full (click)="guardarUnidadProduccion()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+      <ion-list-header>Unidades de Produccion</ion-list-header>
+      <ion-item *ngFor="let u of listaUnidadesProd" text-wrap>
+          <ion-label>
+              Provincia Canton Parroquia: {{u.pro}} - {{u.can}} - {{u.par}}<br/>
+              Sector: {{u.val04}}<br/>
+              Número de Predio: {{u.val05}}<br/>
+              Direccion - Calle Principal: {{u.val06}}<br/>
+              Direccion - Número: {{u.val07}}<br/>
+              Direccion - Calle Secundaria: {{u.val08}}<br/>
+
+              Direccion - Referencia: {{u.val09}}<br/>
+              Extension: {{u.val10}}<br/>
+              Unidad de Medida: {{u.val11==="1"?"HECTAREAS (has)":""}}
+              {{u.val11==="2"?"METROS CUADRADOS (m2)":""}}
+              {{u.val11==="3"?"SOLAR":""}}
+              {{u.val11==="4"?"CUADRA":""}}<br/>
+              Tenencia: {{u.val12==="1"?"PROPIA CON TITULO":""}}
+              {{u.val12==="2"?"PROPIA SIN TITULO":""}}
+              {{u.val12==="3"?"TOMADA EN ARRIENDO":""}}
+              {{u.val12==="4"?"APARCERÍA O AL PARTIR":""}}
+              {{u.val12==="5"?"COMUNERO O COOPERADO":""}}
+              {{u.val12==="6"?"OTRA":""}}<br/>
+              vivienda en terreno: {{u.val13==="1"?"Si":"No"}}
+            </ion-label>
+
+      </ion-item>
+
+    </ion-list>
+</ion-content>

@@ -1,0 +1,128 @@
+<!--
+  Generated template for the C4hPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>ACCIONES INTERINSTITUCIONALES PARA FORTALECIMIENTO DEL CIALCO</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>REGISTRO DE ACCIONES INTERINSTITUCIONALES PARA FORTALECIMIENTO DEL CIALCO</ion-list-header>
+    <ion-item class="item-divider">ACCIONES INTERINSTITUCIONALES</ion-item>
+    <ion-item>
+      <ion-label stacked>Acciones interinstitucionales para fortalecimiento</ion-label>
+        <ion-select [(ngModel)]="miembroInstitucion.val01">
+          <ion-option value=1>Fortalecimiento de Capacidades</ion-option>
+          <ion-option value=2>Asistencia técnica</ion-option>
+          <ion-option value=3>Gestión de Ordenazas, convenios y acuerdos</ion-option>
+          <ion-option value=4>Estrategias de Promoción y Difusión</ion-option>
+          <ion-option value=5>Gestión de recursos</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item class="item-divider">INSTITUCIONES DE APOYO</ion-item>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Gad Provincial</ion-label>
+          <ion-checkbox [(ngModel)]="miembroInstitucion.val02"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Provincia</ion-label>
+          <ion-select [(ngModel)]="miembroInstitucion.val03" (ionChange)="cargarCantonesPorProvincia()">
+            <ion-option *ngFor="let prov of listaProvincias" [value]="prov.id_dpa">{{prov.texto}}</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Gad Cantonal</ion-label>
+          <ion-checkbox [(ngModel)]="miembroInstitucion.val04"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Cantón</ion-label>
+          <ion-select [(ngModel)]="miembroInstitucion.val05" (ionChange)="cargarParroquiasPorCanton()">
+            <ion-option *ngFor="let can of listaCantones" [value]="can.id_dpa">{{can.texto}}</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-label stacked>Gad Parroquial</ion-label>
+          <ion-checkbox [(ngModel)]="miembroInstitucion.val06"></ion-checkbox>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Parroquia</ion-label>
+          <ion-select [(ngModel)]="miembroInstitucion.val07"><ion-option *ngFor="let parr of listaParroquias" [value]="parr.id_dpa">{{parr.texto}}</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6><ion-label stacked>1. ONG</ion-label><ion-checkbox [(ngModel)]="miembroInstitucion.val08"></ion-checkbox></ion-col>
+        <ion-col col-6><ion-label stacked>Apoyo de ONG:</ion-label><ion-input [(ngModel)]="miembroInstitucion.val09"></ion-input></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6><ion-label stacked>2. Cooperación Internacional</ion-label><ion-checkbox [(ngModel)]="miembroInstitucion.val10"></ion-checkbox></ion-col>
+        <ion-col col-6><ion-label stacked>Apoyo de Cooperación de:</ion-label><ion-input [(ngModel)]="miembroInstitucion.val11"></ion-input></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6><ion-label stacked>3. Institutos o Universidades</ion-label><ion-checkbox [(ngModel)]="miembroInstitucion.val12"></ion-checkbox></ion-col>
+        <ion-col col-6><ion-label stacked>Apoyo del Institutos o Universidad:</ion-label><ion-input [(ngModel)]="miembroInstitucion.val13"></ion-input></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6><ion-label stacked>4. Colectivos</ion-label><ion-checkbox [(ngModel)]="miembroInstitucion.val14"></ion-checkbox></ion-col>
+        <ion-col col-6><ion-label stacked>Apoyo del Colectivo:</ion-label><ion-input [(ngModel)]="miembroInstitucion.val15"></ion-input></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6><ion-label stacked>5. Empresa privadas </ion-label><ion-checkbox [(ngModel)]="miembroInstitucion.val16"></ion-checkbox></ion-col>
+        <ion-col col-6><ion-label stacked>Apoyo de Empresa:</ion-label><ion-input [(ngModel)]="miembroInstitucion.val17"></ion-input></ion-col>
+      </ion-row>
+      <ion-item><ion-label stacked>DESCRIPCIÓN DEL APOYO</ion-label><ion-input [(ngModel)]="miembroInstitucion.val18"></ion-input></ion-item>
+      <ion-item>
+        <ion-label stacked>FECHA DE APOYO</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010" max="2030-12-31"  [(ngModel)]="miembroInstitucion.val19"></ion-datetime>
+      </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="guardarModuloC4h()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>REGISTRO DE ACCIONES INTERINSTITUCIONALES PARA FORTALECIMIENTO DEL CIALCO</ion-list-header>
+    <ion-item *ngFor="let u of listamiembroInstitucion" text-wrap>
+      <ion-label>
+        <p>ACCIONES INTERINSTITUCIONALES<br/>
+        Acción:
+          {{u.val01==="1"?"Fortalecimiento de Capacidades":""}}
+          {{u.val01==="2"?"Asistencia técnica":""}}
+          {{u.val01==="3"?"Gestión de Ordenazas, convenios y acuerdos":""}}
+          {{u.val01==="4"?"Estrategias de Promoción y Difusión":""}}
+          {{u.val01==="5"?"Gestión de recursos":""}} <br/>
+        </p>
+        <p>INSTITUCIONES DE APOYO <br/>
+          Gad Provincia: {{u.val02==="1"?"Activo":"Inactivo"}} {{u.pro}}<br/>
+            Provincia: {{u.pro}}<br/>
+          Gad Canton: {{u.val04==="1"?"Activo":"Inactivo"}} {{u.can}}<br/>
+            Cantón: {{u.can}}<br/>
+          Gad Parroquia: {{u.val06==="1"?"Activo":"Inactivo"}} {{u.par}}<br/>
+            Parroquia: {{u.par}}<br/>
+          ONG: {{u.val08==="1"?"Activo":"Inactivo"}} <br/>
+            Apoyo de ONG: {{u.val09}}<br/>
+          Cooperación Internacional: {{u.val10==="1"?"Activo":"Inactivo"}} <br/>
+            Apoyo de Cooperación: {{u.val11}}<br/>
+          Institutos o Universidades: {{u.val12==="1"?"Activo":"Inactivo"}} <br/>
+            Apoyo de Instituto: {{u.val13}}<br/>
+          Colectivos: {{u.val14==="1"?"Activo":"Inactivo"}} <br/>
+            Apoyo de Colectivo: {{u.val15}}<br/>
+          Empresa privadas: {{u.val16==="1"?"Activo":"Inactivo"}} <br/>
+            Apoyo de Empresa: {{u.val17}}<br/>
+        Descripción de apoyo: {{u.val18}}<br/>
+        Fecha de apoyo: {{u.val19}}<br/> </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

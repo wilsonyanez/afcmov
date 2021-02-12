@@ -1,0 +1,26 @@
+/* 
+return integer
+value	long	vl_ruc_seis[10]
+*/
+// Valida RUC Tercer digito 6,8
+long ll_sum, ll_dverr2
+
+ll_sum =vl_ruc_seis[1] * 3 +	vl_ruc_seis[2] * 2 +vl_ruc_seis[3] * 7 +vl_ruc_seis[4] * 6 +vl_ruc_seis[5] * 5 +vl_ruc_seis[6] * 4 + vl_ruc_seis[7] * 3 +vl_ruc_seis[8] * 2 
+
+do while ll_sum > 11
+	ll_sum = ll_sum - 11
+loop
+	
+ll_dverr2 = 11 - ll_sum	
+
+if (ll_dverr2 = 10) then
+	ll_dverr2 = 0
+	return 0
+else
+	if (ll_dverr2 <> vl_ruc_seis[9]) then
+		return 0
+	else
+		return 1
+	end if
+end if
+// fin valida RUC 2

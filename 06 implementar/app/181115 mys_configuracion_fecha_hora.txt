@@ -1,0 +1,74 @@
+/* **************************************************************** */
+/* ****** Modificar la Zona Horario a MySql (local timezone) ****** */
+/* **************************************************************** */
+Estado: Fallo:Fallo de la prueba: Access denied for user 'root'@'localhost' (using password: YES)
+The server time zone 'Hora est. Pacifico, Sudamerica' is unrecongnized or represent more than one time zone.
+You must configure either the server or JDBC driver
+
+Buscar en la página:
+http://qbit.com.mx/blog/2015/02/09/modificando-la-zona-horaria-a-mysql-local-timezone/
+--------------------------------------------------------------------------------------
+
+DESCRIBE mysql.time_zone_name;
+SELECT * FROM mysql.time_zone_name WHERE Name LIKE '%ecua%' ;
+
+mysql> SELECT NOW();
++---------------------+
+| NOW()               |
++---------------------+
+| 2015-02-09 11:32:39 |
++---------------------+
+1 row in set (0.00 sec)
+Si notan que la fecha y hora no coinciden con su hora local, entonces algo con el timezone está mal, nuevamente pueden hacer otra consulta para verificar que timezone se está utilizando:
+
+
+SELECT @@global.time_zone;
++--------------------+
+| @@global.time_zone |
++--------------------+
+| SYSTEM             |
++--------------------+
+1 row in set (0.00 sec)
+Sorpresa, dice que se está utilizando el timezone del sistema (ósea que debería estar bien porque lo acabo de configurar).. entonces ya para corregirlo lo que se necesita hacer es modificar el timezone de la tabla mysql y setear a mano el valor que desean, para nuestro caso lo definimos con la zona horaria de la Ciudad de México, entonces:
+
+SET GLOBAL time_zone = "America/New_York";
+SET time_zone = 'America/New_York';
+
+En esta se me indicó lo siguiente:
+https://community.oracle.com/thread/4144569
+From mysql workbench run the following sql statements:
+ 
+SET @@global.time_zone = '+00:00';
+SET @@session.time_zone = '+00:00';
+ 
+with the following sql statements check if the values were set:
+SELECT @@global.time_zone, @@session.time_zone;
+
+that solved the problem. 
+
+
+
+https://stackoverflow.com/questions/41144591/utc-to-america-new-york-time-zone-using-mysql
+------------------------------------------------------------------------------------------
+You have to load the timezone table.
+mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p password
+If you do not have superuser access, you can skip friendly timezone names and specify the hours.
+CONVERT_TZ(date,'+00:00','-07:00')
+
+
+
+https://stackoverflow.com/questions/2523286/mysql-convert-tz
+------------------------------------------------------------
+
+I found this thread helpful and decided to share the doc page for importing this information. I did exactly as instructed below in CentOS and in RHEL and it worked flawlessly. I am now able to use the CONVERT_TZ function with arguments like "GMT" and "US/Eastern".
+From the MySQL documentation this is how to import the MySQL time zone table information:
+http://dev.mysql.com/tech-resources/articles/4.1/time.html
+
+For all users running MySQL 4.1.3 or later on a Unix-based system (recall this doesn't work on Windows systems yet):
+Populate the time zone tables.
+To do so, run the mysql_tzinfo_to_sql program, provided with the MySQL distribution. mysql_tzinfo_to_sql reads the operating system time zone files and generates SQL statements from them. The SQL statements are then processed by mysql, to load the time zone tables.
+To run mysql_tzinfo_to_sql successfully, one needs to know where the server machine's operating system time zone files are stored; check for a directory with a name similar to /usr/share/zoneinfo. Pass the directory name on the command line to mysql_tzinfo_to_sql, and send the output into the mysql program. Here's an example.
+shell> mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
+Note: The above command assumes that "mysql_tzinfo_to_sql" and "mysql" are in your path. If they're not, you'll need to supply the full path to both when running the command, or switch into the mysql bin folder and use a command like so:
+shell> ./mysql_tzinfo_to_sql /usr/share/zoneinfo | ./mysql -u root mysql
+

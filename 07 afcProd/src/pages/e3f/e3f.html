@@ -1,0 +1,45 @@
+<!--
+  Generated template for the E3fPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>INSTALACIONES Y EQUIPAMIENTO PARA RECEPCIÓN DE PRODUCTOS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label stacked text-wrap>INSTALACIONES Y EQUIPAMIENTO PARA RECEPCIÓN DE PRODUCTOS</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Balanza</ion-label><ion-checkbox [(ngModel)]="v03_01"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Gavetas</ion-label><ion-checkbox [(ngModel)]="v03_02"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Estanterías</ion-label><ion-checkbox [(ngModel)]="v03_03"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Frigorífico</ion-label><ion-checkbox [(ngModel)]="v03_04"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Congelador</ion-label><ion-checkbox [(ngModel)]="v03_05"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Bodega</ion-label><ion-checkbox [(ngModel)]="v03_06"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Sala de recepción</ion-label><ion-checkbox [(ngModel)]="v03_07"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Sala de acondicionamiento, empaquetado</ion-label><ion-checkbox [(ngModel)]="v03_08"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Otro</ion-label><ion-checkbox [(ngModel)]="v03_09"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Especifique Otro Instalaciones y equipamiento</ion-label><ion-input [(ngModel)]="v03_10"></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button full (click)="guardarModuloE3f()">Guardar</button>
+
+</ion-content>

@@ -1,0 +1,27 @@
+/* 
+return integer
+value	long	vl_ruc_seis[10]
+*/
+// Válida RUC Tercer digito 9
+long ll_sum,ll_dverr1
+
+ll_sum = 0
+ll_sum =  vl_ruc_nueve[1] * 4 + vl_ruc_nueve[2] * 3 +vl_ruc_nueve[3] * 2 +vl_ruc_nueve[4] * 7 +vl_ruc_nueve[5] * 6+vl_ruc_nueve[6] * 5 +vl_ruc_nueve[7] * 4 +vl_ruc_nueve[8] * 3 +vl_ruc_nueve[9] * 2 
+
+do while ll_sum > 11
+	ll_sum = ll_sum - 11
+loop
+	
+ll_dverr1 = 11 - ll_sum	
+
+if (ll_dverr1 = 10) then
+	ll_dverr1 = 0
+	return 0
+else
+	if (ll_dverr1 <> vl_ruc_nueve[10]) then
+		return 0
+	else
+		return 1
+	end if
+end if
+// fin valida RUC 1

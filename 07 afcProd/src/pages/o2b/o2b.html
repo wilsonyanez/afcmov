@@ -1,0 +1,123 @@
+<!--
+  Generated template for the O2bPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ORGANIZACIONES A LAS QUE PERTENECE UN PRODUCTOR</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>IDENTIFICACIÓN DE PERTENENCIA A ORGANIZACIONES POR EL PRODUCTOR</ion-list-header>
+
+    <ion-list-header>DATOS DE ORGANIZACIONES QUE PERTENECE EL PRODUCTOR</ion-list-header>
+    <ion-item>
+      <ion-label stacked>TIPO ORGANIZACION</ion-label>
+      <ion-select [(ngModel)]="miembroOrganizacion.val01">
+        <ion-option value=1>De Hecho</ion-option>
+        <ion-option value=2>De Derecho</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>FIGURA ORGANIZATIVA</ion-label>
+      <ion-select [(ngModel)]="miembroOrganizacion.val02">
+        <ion-option value=1>Asociación</ion-option>
+        <ion-option value=2>Cooperativa</ion-option>
+        <ion-option value=3>Comuna</ion-option>
+        <ion-option value=4>Comunidad</ion-option>
+        <ion-option value=5>Otras (especifique)</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Figura Organizativa Otros</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val03"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>FINES SOCIALES</ion-label>
+      <ion-select [(ngModel)]="miembroOrganizacion.val04">
+        <ion-option value=1>Producción</ion-option>
+        <ion-option value=2>Comercialización</ion-option>
+        <ion-option value=3>Riego</ion-option>
+        <ion-option value=4>Gestión colectiva</ion-option>
+        <ion-option value=5>Otros (especifique)</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Fines sociales Otros</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val05"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>CUENTA BANCARIA</ion-label>
+      <ion-select [(ngModel)]="miembroOrganizacion.val06">
+        <ion-option value=1>SI</ion-option>
+        <ion-option value=2>NO</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Número de cuenta bancaria</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val07"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>NÚMERO DE SOCIOS</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val08"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>NÚMERO DE SOCIOS EN EL REGISTRO AFC</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val09"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>REGISTRO SEPS</ion-label>
+      <ion-select [(ngModel)]="miembroOrganizacion.val10">
+        <ion-option value=1>SI</ion-option>
+        <ion-option value=2>NO</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Número de Registro SEPS</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val11"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Número de Cédula Productor</ion-label>
+      <ion-input [(ngModel)]="miembroOrganizacion.val12"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="guardarModuloO2b()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>Organizaciones que pertenece el Productor</ion-list-header>
+    <ion-item *ngFor="let u of listaMiembroOrganizacion" text-wrap>
+      <ion-label>
+        Tipo Organizacion:{{u.val01==="1"?"De Hecho":""}} {{u.val01==="2"?"De Derecho":""}}<br/>
+        Figura Organizativa:{{u.val02==="1"?"Asociación":""}}
+        {{u.val02==="2"?"Cooperativa":""}}
+        {{u.val02==="3"?"Comuna":""}}
+        {{u.val02==="4"?"Comunidad":""}}
+        {{u.val02==="5"?"Otras (especifique)":""}}<br/>
+        Especificación Figura Organizativa:{{u.val03}}<br/>
+        Fines sociales:{{u.val04==="1"?"Producción":""}}
+        {{u.val04==="2"?"Comercialización":""}}
+        {{u.val04==="3"?"Riego":""}}
+        {{u.val04==="4"?"Gestión colectiva":""}}
+        {{u.val04==="5"?"Otro":""}}<br/>
+        Especificación Fines sociales:{{u.val05}}<br/>
+        Cuenta bancaria:{{u.val06==="1"?"Si":"No"}}<br/>
+        Número de cuenta bancaria:{{u.val07}}<br/>
+        Número Socios:{{u.val08}}<br/>
+        Número Socios en el registro AFC:{{u.val09}}<br/>
+        Registro SEPS:{{u.val10}}<br/>
+        Número registro SEPS:{{u.val11}}<br/>
+        Número cédula productor:{{u.val12}}<br/>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

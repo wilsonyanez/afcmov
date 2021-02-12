@@ -1,0 +1,76 @@
+<!--
+  Generated template for the O2bPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>REPRESENTANTE LEGAL DEL CIALCO</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>DATOS DEL REPRESENTANTE LEGAL</ion-list-header>
+    <ion-item class="item-divider">IDENTIFICACIÓN DEL REPRESENTANTE LEGAL</ion-item>
+    <ion-item>
+      <ion-label stacked>NÚMERO DE CÉDULA/RUC</ion-label>
+      <ion-input [(ngModel)]="miembroRepresentanteLegal.val01" (ionBlur)="valida_cedula(miembroRepresentanteLegal.val01)"></ion-input>
+    </ion-item>
+
+      <ion-item>
+        <ion-label stacked>NOMBRE O RAZÓN SOCIAL</ion-label>
+        <ion-input [(ngModel)]="miembroRepresentanteLegal.val02"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>NÚMERO DE CONTACTO</ion-label>
+        <ion-input [(ngModel)]="miembroRepresentanteLegal.val03"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>CORREO ELECTRÓNICO</ion-label>
+        <ion-input [(ngModel)]="miembroRepresentanteLegal.val04"></ion-input>
+      </ion-item>
+      <ion-item class="item-divider">VIGENCIA DEL REPRESENTANTE LEGAL</ion-item>
+      <ion-item>
+        <ion-label stacked>FECHA INICIO DE GESTIÓN</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010-01-01" max="2030-12-31"  [(ngModel)]="miembroRepresentanteLegal.val05"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>FECHA FIN DE GESTIÓN</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010-01-01" max="2030-12-31"  [(ngModel)]="miembroRepresentanteLegal.val06"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>ESTADO</ion-label>
+        <ion-select [(ngModel)]="miembroRepresentanteLegal.val07" >
+          <ion-option value=1>Activo</ion-option>
+          <ion-option value=2>Inactivo</ion-option>
+        </ion-select>
+      </ion-item>
+
+  </ion-list>
+
+  <button ion-button full (click)="guardarModuloC4c()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>DATOS DE REPRESENTANTE LEGAL</ion-list-header>
+    <ion-item *ngFor="let u of listamiembroRepresentanteLegal" text-wrap>
+      <ion-label>
+        IDENTIFICACIÓN DEL REPRESENTANTE LEGAL<br/>
+            Número de cédula/RUC: {{u.val01}}<br/>
+            <p>Nombre: {{u.val02}}</p>
+            Número de contacto: {{u.val03}}<br/>
+            Correo electrónico: {{u.val04}}<br/>
+        VIGENCIA DEL REPRESENTANTE LEGAL<br/>
+            Fecha inicio de gestión: {{u.val05}}<br/>
+            Fecha fin de gestión: {{u.val06}}<br/>
+            Estado:
+             {{u.val07==="1"?"Activo":""}}
+             {{u.val07==="2"?"Inactivo":""}}<br/>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

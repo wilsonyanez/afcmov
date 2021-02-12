@@ -1,0 +1,40 @@
+<!--
+  Generated template for the E3cPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>REQUERIMIENTOS DE ABASTECIMIENTO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>Requerimientos de abastecimiento</ion-list-header>
+    <ion-item><ion-label stacked>PRODUCTO (DESCRIPCIÓN DE PESO O VOLUMEN)</ion-label><ion-input [(ngModel)]="miembroGrupo.val01"></ion-input></ion-item>
+    <ion-item><ion-label stacked>PRESENTACIÓN (DESCRIPCIÓN DE PESO O VOLUMEN)</ion-label><ion-input [(ngModel)]="miembroGrupo.val02"></ion-input></ion-item>
+    <ion-item><ion-label stacked>CANTIDAD</ion-label><ion-input [(ngModel)]="miembroGrupo.val03"></ion-input></ion-item>
+    <ion-item><ion-label stacked>FRECUENCIA (OPCIÓN SEMANAL Y MENSUAL)</ion-label><ion-input [(ngModel)]="miembroGrupo.val04"></ion-input></ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="guardarMiembroGrupoProducto()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>Datos de productos requeridos para abastecimiento</ion-list-header>
+    <ion-item *ngFor="let m of listaMiembrosGrupo" text-wrap>
+      <ion-label>
+        Producto: {{m.val01}}<br/>
+        Presentación: {{m.val02}}<br/>
+        Cantidad: {{m.val03}}<br/>
+        Frecuencia: {{m.val04}}<br/>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

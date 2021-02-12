@@ -1,0 +1,37 @@
+/* f_valida_ruc*/
+/* 
+return	boolean
+value	string	as_ruc
+*/
+
+long ll_vec1[10],ll_i,ll_resp
+string ls_cedula
+
+if double(as_ruc) <= 0 then
+  return TRUE
+end if
+
+ls_cedula = mid(as_ruc,1,10)
+if double(ls_cedula) = 0 or (len(as_ruc) <> 13) then
+	return TRUE
+end if
+
+FOR ll_i = 1 TO 10
+	ll_vec1[ll_i] = asc(mid(as_ruc,ll_i,1)) - asc('0')
+NEXT
+
+CHOOSE CASE ll_vec1[3]
+CASE 0 to 5
+	ll_resp = f_valida_cedula (ll_vec1 )
+CASE 6
+	ll_resp = f_valida_tercero_6 (ll_vec1 )
+CASE 9
+	ll_resp = f_verifica_tercero_9  (ll_vec1 )
+END CHOOSE
+
+if ll_resp = 0 then
+	return TRUE
+else
+	return FALSE
+end if
+

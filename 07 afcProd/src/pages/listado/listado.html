@@ -1,0 +1,97 @@
+<!--
+  Generated template for the ListadoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <ion-title>Formularios</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list-header><h2 class="title">DATOS DEL FORMULARIO</h2></ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6><button ion-button full (click)="crearFormulario()">Nuevo Productor</button></ion-col>
+      <ion-col col-6><button ion-button full (click)="crearFormularioVerificacion()">Nueva Verificación</button></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-list-header><h2 class="title">FORMULARIO</h2></ion-list-header>
+    <button ion-item *ngFor="let f of formularios" (click)="verFormularioDetalle(f.id_formulario,f.tipo)">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>  <h2>{{f.id_formulario}}</h2>  </ion-col>
+          <ion-col col-6>  <h2>{{f.tipo==="R"?"REGISTRO":"VERIFICACION"}}</h2>  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>  <p>{{f.cod_usuario}}</p>  </ion-col>
+          <ion-col col-6>  <p>{{f.fecha}}</p>  </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+  </ion-list>
+
+  <ion-list-header><h2 class="title">DATOS DE ORGANIZACIÓN</h2></ion-list-header>
+  <button ion-button full (click)="crearOrganizacion()">Nueva Organización Sello AFC</button>
+  <ion-list>
+    <ion-list-header>ORGANIZACIÓN</ion-list-header>
+    <button ion-item *ngFor="let o of organizaciones" (click)="verEntidadDetalle(o.id_organizacion, o.tipo)">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>  <h2>{{o.id_organizacion}}</h2>  </ion-col>
+          <ion-col col-6>  <h2>{{o.tipo==="A"?"AFC":"CIALCO"}}</h2>  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>  <p>{{o.cod_usuario}}</p>  </ion-col>
+          <ion-col col-6>  <p>{{o.fecha}}</p>  </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+
+  </ion-list>
+
+  <button ion-button full (click)="crearEstablecimiento()">Nuevo Establecimiento</button>
+  <ion-list>
+    <ion-list-header>ESTABLECIMIENTO</ion-list-header>
+    <button ion-item *ngFor="let e of establecimientos" (click)="verEstablecimientoDetalle(e.id_establecimiento, e.tipo)">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>  <h2>{{e.id_establecimiento}}</h2>  </ion-col>
+          <ion-col col-6>  <h2>{{e.tipo==="M"?"MATRIZ":"ALMACEN"}}</h2>  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>  <p>{{e.cod_usuario}}</p>  </ion-col>
+          <ion-col col-6>  <p>{{e.fecha}}</p>  </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+
+  </ion-list>
+
+  <button ion-button full (click)="crearCialco()">Nuevo CIALCO</button>
+  <ion-list>
+    <ion-list-header>CIALCO</ion-list-header>
+    <button ion-item *ngFor="let e of cialcos" (click)="verEntidadDetalle(e.id_cialco, e.tipo)">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>  <h2>{{e.id_cialco}}</h2>  </ion-col>
+          <ion-col col-6>  <h2>{{e.tipo==="C"?"CIALCO":""}}</h2>  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>  <p>{{e.cod_usuario}}</p>  </ion-col>
+          <ion-col col-6>  <p>{{e.fecha}}</p>  </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+
+  </ion-list>
+
+  <button ion-button full (click)="irEnvioInfo()">Enviar Informacion</button>
+  <button ion-button full (click)="cerrarSesion()">Cerrar Sesion</button>
+
+</ion-content>

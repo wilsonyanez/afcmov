@@ -1,0 +1,110 @@
+<!--
+  Generated template for the M1dPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>ORGANIZACIONES QUE PERTENECE PRODUCTOR</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list class="fondoForm">
+    <ion-list-header>IDENTIFICACIÓN DE PERTENENCIA A ORGANIZACIONES POR EL PRODUCTOR</ion-list-header>
+    <ion-item>
+      <ion-label stacked>¿El representante del grupo familiar campesino pertenece a alguna organización del sector agropecuario? (si/no)</ion-label>
+      <ion-select [(ngModel)]="miembroOrganizacion.val01" (ionChange)="validarVar01()" >
+        <ion-option value=1>SI</ion-option>
+        <ion-option value=2>NO</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf="!gb_var01Habilitada">
+      <ion-item>
+        <ion-label stacked>¿Tiene personería jurídica la organización a la que pertenece? (si/no)</ion-label>
+        <ion-select [(ngModel)]="miembroOrganizacion.val02" (ionChange)="validarVar02()" >
+          <ion-option value=1>SI</ion-option>
+          <ion-option value=2>NO</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Organización con personería jurídica </ion-label>
+        <ion-checkbox [(ngModel)]="miembroOrganizacion.val03" color=“primary” value="!gb_var03Habilitada" [disabled]="!gb_var03Habilitada" ></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Organización de hecho</ion-label>
+        <ion-checkbox [(ngModel)]="miembroOrganizacion.val04" color=“primary” value="!gb_var04Habilitada" [disabled]="!gb_var04Habilitada" ></ion-checkbox>
+      </ion-item>
+      <ion-list-header>DATOS DE ORGANIZACIONES QUE PERTENECE EL PRODUCTOR</ion-list-header>
+      <div *ngIf="!gb_var02Habilitada">
+        <ion-item>
+          <ion-label stacked>REGISTRO UNICO DE CONTRIBUYENTE (RUC)</ion-label>
+          <ion-input [(ngModel)]="miembroOrganizacion.val05" color=“primary” value="!gb_var05Habilitada" [disabled]="!gb_var05Habilitada" ></ion-input>
+        </ion-item>
+      </div>
+      <ion-item>
+        <ion-label stacked>RAZÓN SOCIAL</ion-label>
+        <ion-input [(ngModel)]="miembroOrganizacion.val06" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>FIGURA ORGANIZATIVA</ion-label>
+        <ion-select [(ngModel)]="miembroOrganizacion.val07" >
+          <ion-option value=1>Asociación</ion-option>
+          <ion-option value=2>Cooperativa</ion-option>
+          <ion-option value=3>Comuna, comunidad</ion-option>
+          <ion-option value=4>Otras (especifique)</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Especificacion otra figura organizativa</ion-label>
+        <ion-input [(ngModel)]="miembroOrganizacion.val08" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>NÚMERO DE SOCIOS</ion-label>
+        <ion-input [(ngModel)]="miembroOrganizacion.val09" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>NOMBRE DEL REPRESENTANTE LEGAL</ion-label>
+        <ion-input [(ngModel)]="miembroOrganizacion.val10" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>TELÉFONO DE CONTACTO</ion-label>
+        <ion-input [(ngModel)]="miembroOrganizacion.val11" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>CORREO ELECTRÓNICO DE CONTACTO</ion-label>
+        <ion-input [(ngModel)]="miembroOrganizacion.val12" (ngModelChange)="(miembroOrganizacion.val12!=null)?miembroOrganizacion.val12 = miembroOrganizacion.val12.toLowerCase():''" ></ion-input>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <button ion-button full (click)="guardarModulo1d()" class="fondoForm">Guardar</button>
+
+  <ion-list>
+    <ion-list-header>Organizaciones que pertenece el Productor</ion-list-header>
+    <ion-item *ngFor="let u of listaMiembroOrganizacion" text-wrap>
+      <ion-label>
+        Representante pertenece a organización:{{u.val01==="1"?"Si":"No"}}<br/>
+        Personería Jurídica:{{u.val02==="1"?"Si":"No"}}<br/>
+        Organización Jurídica:{{u.val03==="1"?"Si":"No"}}<br/>
+        Organización de Hecho:{{u.val04==="1"?"Si":"No"}}<br/>
+        RUC:{{u.val05}}<br/>
+        Razón Social:{{u.val06}}<br/>
+        Figura Organizativa:{{u.val07==="1"?"Asociación":""}}
+        {{u.val07==="2"?"Cooperativa":""}}
+        {{u.val07==="3"?"Comuna, comunidad":""}}
+        {{u.val07==="4"?"Otras (especifique)":""}}<br/>
+        Especificación otra:{{u.val08}}<br/>
+        Número Socios:{{u.val09}}<br/>
+        Representante Legal:{{u.val10}}<br/>
+        Teléfono de Contacto:{{u.val11}}<br/>
+        Correo electrónico:{{u.val12}}<br/>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

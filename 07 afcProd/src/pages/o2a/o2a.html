@@ -1,0 +1,36 @@
+<!--
+  Generated template for the O2aPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onClickCancel()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>AGRICULTURA FAMILIAR CAMPESINA - REGISTRO DE ORGANIZACIONES</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>Organizaciones</ion-list-header>
+    <ion-item><ion-label stacked>Nombre / Razón Social</ion-label><ion-input [(ngModel)]="v00_01"></ion-input></ion-item>
+    <ion-item><ion-label stacked>RUC / RISE</ion-label><ion-input [(ngModel)]="v00_02"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Dirección / Ubicación</ion-label><ion-input [(ngModel)]="v00_03"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Nombre del representante legal / representante</ion-label><ion-input [(ngModel)]="v00_04"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Contacto del representante legal / representante</ion-label><ion-input [(ngModel)]="v00_05"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Teléfonos de contacto</ion-label><ion-input [(ngModel)]="v00_06"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Dirección de correo electrónico</ion-label><ion-input [(ngModel)]="v00_07"></ion-input></ion-item>
+    <ion-item><ion-label stacked>Sitio web (incluidos sitios en redes sociales)</ion-label><ion-input [(ngModel)]="v00_08"></ion-input></ion-item>
+  </ion-list>
+  <button ion-button full (click)="guardarModuloO2a()">Guardar</button>
+</ion-content>

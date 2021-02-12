@@ -1,0 +1,80 @@
+<!--
+  Generated template for the E3gPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PRÁCTICAS DE EQUIDAD DE LA OPERACIÓN</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label stacked text-wrap>FORMA DE ACUERDO CON PROVEEDORES</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Contrato de suministro</ion-label><ion-checkbox [(ngModel)]="v04_01"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Consignación</ion-label><ion-checkbox [(ngModel)]="v04_02"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Comisión</ion-label><ion-checkbox [(ngModel)]="v04_03"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Compras individuales</ion-label><ion-checkbox [(ngModel)]="v04_04"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Congelador</ion-label><ion-checkbox [(ngModel)]="v04_05"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Otro</ion-label><ion-checkbox [(ngModel)]="v04_06"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Especifique Otro Forma de acuerdo</ion-label><ion-input [(ngModel)]="v04_07"></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item>
+    <ion-label stacked>FORMA DE PAGO</ion-label><ion-select [(ngModel)]="v04_08">
+    <ion-option value=1>CONTADO</ion-option>
+    <ion-option value=2>CRÉDITO</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item><ion-label stacked>EN CASO DE CRÉDITO ESPECIFICAR EL PLAZO DE PAGO</ion-label><ion-input [(ngModel)]="v04_09"></ion-input></ion-item>
+  <ion-item>
+    <ion-label stacked>¿TIENE ESTABLECIDO UN SISTEMA DE CONTROL DE CALIDAD PARA RECEPCIÓN?</ion-label><ion-select [(ngModel)]="v04_10"  >
+      <ion-option value=1>SI</ion-option>
+      <ion-option value=2>NO</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-label stacked text-wrap>¿TIENE UN SISTEMA DE SEGUIMIENTO DE LA SATISFACCIÓN DE LA CALIDAD?</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>encuestas</ion-label><ion-checkbox [(ngModel)]="v04_11"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Comunicación telefónica permanente</ion-label><ion-checkbox [(ngModel)]="v04_12"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>respuesta a posibles quejas</ion-label><ion-checkbox [(ngModel)]="v04_13"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Otro</ion-label><ion-checkbox [(ngModel)]="v04_14"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Especifique Otro Forma de seguimiento de la satisfacción de la calidad</ion-label><ion-input [(ngModel)]="v04_15"></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-label stacked text-wrap>FORMA DE REALIZAR PEDIDOS</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Basado en acuerdo previo formal</ion-label><ion-checkbox [(ngModel)]="v04_16"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Teléfono</ion-label><ion-checkbox [(ngModel)]="v04_17"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>e-mail</ion-label><ion-checkbox [(ngModel)]="v04_18"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>mensaje de texto</ion-label><ion-checkbox [(ngModel)]="v04_19"></ion-checkbox></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6><ion-label stacked>Otro</ion-label><ion-checkbox [(ngModel)]="v04_20"></ion-checkbox></ion-col>
+      <ion-col col-6><ion-label stacked>Especifique Otra Forma de realizar pedidos</ion-label><ion-input [(ngModel)]="v04_21"></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button full (click)="guardarModuloE3g()">Guardar</button>
+
+</ion-content>

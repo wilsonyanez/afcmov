@@ -1,0 +1,75 @@
+<!--
+  Generated template for the O2aPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="onClickCancel()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>CIRCUITOS ALTERNATIVOS DE COMERCIALIZACIÓN (CIALCO) - INFORMACIÓN DEL CIALCO</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-list>
+      <ion-list-header>INFORMACIÓN CIALCO</ion-list-header>
+      <ion-item>
+        <ion-label stacked>MODALIDAD DEL CIALCO</ion-label><ion-select [(ngModel)]="v00_01" required >
+          <ion-option value=1>Feria</ion-option>
+          <ion-option value=2>Canasta</ion-option>
+          <ion-option value=3>Venta en finca</ion-option>
+          <ion-option value=4>Agroturismo</ion-option>
+          <ion-option value=5>Tienda</ion-option>
+          <ion-option value=6>Compra pública</ion-option>
+          <ion-option value=7>Horeca</ion-option>
+          <ion-option value=8>Otro, ¿Cuál?</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item><ion-label stacked>En caso de Otro: Describir</ion-label><ion-input [(ngModel)]="v00_02" required></ion-input></ion-item>
+      <ion-item>
+        <ion-label stacked>DATOS DEL CIALCO</ion-label><ion-select [(ngModel)]="v00_03" required >
+          <ion-option value=1>Nuevo</ion-option>
+          <ion-option value=2>Fortalecido</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="item-divider">IDENTIFICACIÓN CIALCO</ion-item>
+      <ion-item><ion-label floating color="primary" stacked>NOMBRE / RAZÓN SOCIAL</ion-label><ion-input type="text" [(ngModel)]="v00_04" class="form-control" placeholder="Por ejemplo, Maria Perez" ></ion-input></ion-item>
+
+      <ion-item><ion-label stacked>CORREO ELECTRÓNICO</ion-label><ion-input type="text" [(ngModel)]="v00_05" placeholder="Por ejemplo, abc@efg.com" minlength="3" maxlength="250" ></ion-input></ion-item>
+
+      <ion-item><ion-label stacked>SITIO WEB (incluidos sitios en redes sociales)</ion-label><ion-input [(ngModel)]="v00_06"></ion-input></ion-item>
+      <ion-item class="item-divider">NÚMERO DE PRODUCTORES VINCULADOS</ion-item>
+      <ion-item><ion-label stacked>HOMBRES</ion-label><ion-input [(ngModel)]="v00_07" type="number" pattern="[0-9\+\-\]+" min="0" max="1000" (ionChange)="calcularVarTotal()" ></ion-input></ion-item>
+
+      <ion-item><ion-label stacked>MUJERES</ion-label><ion-input [(ngModel)]="v00_08" type="number" pattern="[0-9\+\-\]+" min="0" max="1000" (ionChange)="calcularVarTotal()" ></ion-input></ion-item>
+
+
+      <ion-item><ion-label stacked>TOTAL</ion-label><ion-input disabled="true" readonly="true" color=“primary” type="number" min="0" max="1000" [(ngModel)]="v00_09" ></ion-input></ion-item>
+      <ion-item class="item-divider">FECHA DE CREACIÓN</ion-item>
+      <ion-item>
+        <ion-label stacked>FECHA INICIO</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010-01-01" max="2030-12-31"  [(ngModel)]="v00_10" required></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>FECHA FIN</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="2010-01-01" max="2030-12-31"  [(ngModel)]="v00_11"></ion-datetime>
+      </ion-item>
+      <ion-item class="item-divider">ESTADO DEL CIALCO</ion-item>
+      <ion-item>
+        <ion-label stacked>ESTADO</ion-label><ion-select [(ngModel)]="v00_12" required>
+        <ion-option value=1>Activo</ion-option>
+        <ion-option value=2>Inactivo</ion-option>
+      </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+  <button ion-button full (click)="guardarModuloC4a()" class="fondoForm">Guardar</button>
+</ion-content>

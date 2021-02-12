@@ -1,0 +1,79 @@
+<!--
+  Generated template for the M1bPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DATOS GRUPO FAMILIAR CAMPESINO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>Miembro del grupo familiar campesino:</ion-list-header>
+    <ion-item><ion-label stacked>CEDULA</ion-label><ion-input [(ngModel)]="miembroGrupo.val01"  (ionBlur)="valida_cedula(miembroGrupo.val01)" ></ion-input></ion-item>
+      <ion-item><ion-label stacked>NOMBRES</ion-label><ion-input [(ngModel)]="miembroGrupo.val02"></ion-input></ion-item>
+      <ion-item><ion-label stacked>APELLIDOS</ion-label><ion-input [(ngModel)]="miembroGrupo.val03"></ion-input></ion-item>
+      <ion-item>
+        <ion-label stacked>GENERO</ion-label>
+        <ion-select [(ngModel)]="miembroGrupo.val04">
+          <ion-option value=1>Masculino</ion-option>
+          <ion-option value=2>Femenino</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>RELACION CON EL TITULAR</ion-label>
+        <ion-select [(ngModel)]="miembroGrupo.val05">
+            <ion-option value=1>Conyuge</ion-option>
+            <ion-option value=2>Hijo(a)</ion-option>
+            <ion-option value=3>Padre / Madre</ion-option>
+            <ion-option value=4>Hermano / Hermana</ion-option>
+            <ion-option value=5>Otro pariente</ion-option>
+            <ion-option value=6>No pariente</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>FECHA DE NACIMIENTO</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" min="1930" max="2030-12-31"  [(ngModel)]="miembroGrupo.val06"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>¿TRABAJA EN LA UNIDAD PRODUCTIVA? (SI/NO)</ion-label>
+        <ion-select [(ngModel)]="miembroGrupo.val07">
+          <ion-option value=1>SI</ion-option>
+          <ion-option value=2>NO</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item><ion-label stacked>¿CUÁNTAS HORAS A LA SEMANA?</ion-label><ion-input type="number" pattern="[0-9\+\-\]+" displayFormat="###" pickerFormat="###" min="0" max="100" [(ngModel)]="miembroGrupo.val08" (ionBlur)="compruebaValidoEntero() " ></ion-input></ion-item>
+      <ion-item><ion-label stacked>¿CUÁNTOS DÍAS A LA SEMANA?</ion-label><ion-input type="number" pattern="[0-9\+\-\]+" displayFormat="#" pickerFormat="#" min="0" max="7"  [(ngModel)]="miembroGrupo.val09" (ionBlur)="valida_numero_ds(miembroGrupo.val09, 1, 0, 7)" ></ion-input></ion-item>
+  </ion-list>
+  <button ion-button full (click)="guardarMiembroGrupoFamiliar()">Guardar</button>
+  <ion-list>
+    <ion-list-header>Datos del grupo familiar campesino</ion-list-header>
+    <ion-item *ngFor="let m of listaMiembrosGrupo" text-wrap>
+      <ion-label>Cedula:{{m.val01}}<br/>
+        Nombres y Apellidos:{{m.val02}} {{m.val03}}<br/>
+        Genero:
+          {{m.val04==="1"?"Masculino":""}}
+          {{m.val04==="2"?"Femenino":""}}<br/>
+        Relacion:
+          {{m.val05==="1"?"Conyuge":""}}
+          {{m.val05==="2"?"Hijo(a)":""}}
+          {{m.val05==="3"?"Padre / Madre":""}}
+          {{m.val05==="4"?"Hermano / Hermana)":""}}
+          {{m.val05==="5"?"Otro pariente":""}}
+          {{m.val05==="6"?"No pariente":""}}<br/>
+        Fecha Nacimiento: {{m.val06}}<br/>
+        Trabaja en UP:
+        {{m.val07==="1"?"SI":""}}
+        {{m.val07==="2"?"NO":""}}<br/>
+        Horas / semana: {{m.val08}}<br/>
+        Días / semana: {{m.val09}}<br/>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
